@@ -40,15 +40,6 @@
     </item>
     
     <item>
-      <title>关于解决 Server Tomcat v9.0 Server at localhost failed to start. 的问题</title>
-      <link>https://codechf.gitee.io/posts/tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
-      <pubDate>Thu, 01 Oct 2020 09:27:39 +0800</pubDate>
-      
-      <guid>https://codechf.gitee.io/posts/tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
-      <description>描述：通过 eclipse 进行 java web 开发的时候偶尔会出现 tomcat 无法启动的问题。 解决办法： 有以下几种原因造成： 端口被占用 tomcat 启动时间不够 eclipse 在管理 tomcat 时出现了问题。 最后</description>
-    </item>
-    
-    <item>
       <title>Mac OS 终端 iTerm2 并配置 zsh</title>
       <link>https://codechf.gitee.io/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
