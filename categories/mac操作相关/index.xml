@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mac操作相关 on codechf的个人博客</title>
-    <link>https://codechf.gitee.io/categories/mac%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</link>
+    <link>/categories/mac%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</link>
     <description>Recent content in Mac操作相关 on codechf的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;/a&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
     <lastBuildDate>Thu, 18 Jun 2020 09:27:39 +0800</lastBuildDate>
     
-	<atom:link href="https://codechf.gitee.io/categories/mac%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/mac%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Mac OS 终端 iTerm2 并配置 zsh</title>
-      <link>https://codechf.gitee.io/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</link>
+      <link>/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>https://codechf.gitee.io/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</guid>
+      <guid>/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</guid>
       <description>Mac OS 终端 iTerm2 之前一直使用的 Mac OS 自带的终端，觉得也还可以，后来看大神 onevcat 的直播视频，发现他用的是 iTerm，真的是非常好用，于是自己也开始倒腾起来</description>
     </item>
     
     <item>
       <title>Mac使用Tips汇总</title>
-      <link>https://codechf.gitee.io/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/</link>
+      <link>/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>https://codechf.gitee.io/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/</guid>
+      <guid>/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/</guid>
       <description>Mac访达显示隐藏文件 命令行： 1 2 defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder 将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，</description>
     </item>
     
     <item>
       <title>Mac加速时间机器备份</title>
-      <link>https://codechf.gitee.io/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</link>
+      <link>/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>https://codechf.gitee.io/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</guid>
+      <guid>/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</guid>
       <description>macOS时间机器备份加速命令 1 sudo sysctl debug.lowpri_throttle_enabled=0 回恢复为原来的速度的命令 1 sudo sysctl debug.lowpri_throttle_enabled=1</description>
     </item>
     
     <item>
       <title>Mac常用终端命令</title>
-      <link>https://codechf.gitee.io/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</link>
+      <link>/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>https://codechf.gitee.io/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
+      <guid>/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
       <description>Mac常用终端命令 目录操作 命令名 功能描述 使用举例 mkdir 创建一个目录 mkdir dirname rmdir 删除一个目录 rmdir dirname mvdir 移动或重命名一个目录 mvdir dir1 dir2 cd 改变当前目录 cd dirname pwd 显示当前</description>
     </item>
     
