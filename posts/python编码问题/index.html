@@ -12,7 +12,7 @@
 
 
 
-<meta name="author" content="CHENG-HF" />
+<meta name="author" content="codechf" />
 <meta name="description" content="出问题的代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 beautifulSoup_list = [] # 保存建立的各省份BeautifulSoup for item in province_url: req_second = urllib.request.Request(url=item, headers=headers) respoae_second = urllib.request.urlopen(req_second) soup_second = BeautifulSoup(respoae_second, &amp;#39;html.parser&amp;#39;) beautifulSoup_list.append(soup_second) # 获取" />
 
 
@@ -75,7 +75,7 @@
 
 
   
-    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/gruvbox-light.min.css" />
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/idea.min.css" />
   
 
 
@@ -114,6 +114,10 @@
 <div class="ui centered relaxed grid dream-grid">
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/default3.jpg);"></div>
+    </section>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
@@ -121,7 +125,9 @@
           <div class="sub header">
             @
             
-              CHENG-HF
+              
+                <a href="https://github.com/code-chf" target="_blank">codechf</a>
+              
             
 
             · 
@@ -162,25 +168,25 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list <span style="color:#000;font-weight:bold">=</span> []  <span style="color:#998;font-style:italic"># 保存建立的各省份BeautifulSoup</span>
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> province_url:
-    req_second <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>Request(url<span style="color:#000;font-weight:bold">=</span>item, headers<span style="color:#000;font-weight:bold">=</span>headers)
-    respoae_second <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>urlopen(req_second)
-    soup_second <span style="color:#000;font-weight:bold">=</span> BeautifulSoup(respoae_second, <span style="color:#d14">&#39;html.parser&#39;</span>)
-    beautifulSoup_list<span style="color:#000;font-weight:bold">.</span>append(soup_second)
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
+    req_second = urllib.request.Request(url=item, headers=headers)
+    respoae_second = urllib.request.urlopen(req_second)
+    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>)
+    beautifulSoup_list.append(soup_second)
     
-<span style="color:#998;font-style:italic"># 获取第二页面内容</span>
-index <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-sql_clearn <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;truncate table 超市省份表;&#34;</span>
-effect_row <span style="color:#000;font-weight:bold">=</span> cursor<span style="color:#000;font-weight:bold">.</span>execute(sql_clearn)
-connection<span style="color:#000;font-weight:bold">.</span>commit()
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> beautifulSoup_list:
-    so_second <span style="color:#000;font-weight:bold">=</span> beautifulSoup_list[index]<span style="color:#000;font-weight:bold">.</span>find_all(<span style="color:#d14">&#39;tr&#39;</span>, attrs<span style="color:#000;font-weight:bold">=</span>{<span style="color:#d14">&#39;height&#39;</span>: <span style="color:#d14">&#39;20&#39;</span>})
-    <span style="color:#000;font-weight:bold">for</span> idx, tr <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">enumerate</span>(so_second):
-        <span style="color:#000;font-weight:bold">if</span> idx <span style="color:#000;font-weight:bold">&gt;=</span> <span style="color:#099">0</span>:
-            tds <span style="color:#000;font-weight:bold">=</span> tr<span style="color:#000;font-weight:bold">.</span>find_all(<span style="color:#d14">&#39;td&#39;</span>)
-            <span style="color:#000;font-weight:bold">print</span>(tds[<span style="color:#099">0</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>], tds[<span style="color:#099">1</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>], tds[<span style="color:#099">2</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>], tds[<span style="color:#099">3</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>], tds[<span style="color:#099">4</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>], tds[<span style="color:#099">5</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])
-    index <span style="color:#000;font-weight:bold">=</span> index <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>
+<span style="color:#008000"># 获取第二页面内容</span>
+index = 0
+sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+connection.commit()
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
+    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
+    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
+        <span style="color:#00f">if</span> idx &gt;= 0:
+            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
+            <span style="color:#00f">print</span>(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])
+    index = index + 1
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="运行结果">运行结果：</h3>
@@ -204,17 +210,17 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">index <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-sql_clearn <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;truncate table 超市省份表;&#34;</span>
-effect_row <span style="color:#000;font-weight:bold">=</span> cursor<span style="color:#000;font-weight:bold">.</span>execute(sql_clearn)
-connection<span style="color:#000;font-weight:bold">.</span>commit()
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> beautifulSoup_list:
-    so_second <span style="color:#000;font-weight:bold">=</span> beautifulSoup_list[index]<span style="color:#000;font-weight:bold">.</span>find_all(<span style="color:#d14">&#39;tr&#39;</span>, attrs<span style="color:#000;font-weight:bold">=</span>{<span style="color:#d14">&#39;height&#39;</span>: <span style="color:#d14">&#39;20&#39;</span>})
-    <span style="color:#000;font-weight:bold">for</span> idx, tr <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">enumerate</span>(so_second):
-        <span style="color:#000;font-weight:bold">if</span> idx <span style="color:#000;font-weight:bold">&gt;=</span> <span style="color:#099">0</span>:
-            tds <span style="color:#000;font-weight:bold">=</span> tr<span style="color:#000;font-weight:bold">.</span>find_all(<span style="color:#d14">&#39;td&#39;</span>)
-            <span style="color:#000;font-weight:bold">print</span>(<span style="color:#0086b3">str</span>(tds[<span style="color:#099">0</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;gb2312&#39;</span>)<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#39;utf8&#39;</span>), <span style="color:#0086b3">str</span>(tds[<span style="color:#099">1</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;gb2312&#39;</span>)<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#39;utf8&#39;</span>), <span style="color:#0086b3">str</span>(tds[<span style="color:#099">2</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;gb2312&#39;</span>)<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#39;utf8&#39;</span>), <span style="color:#0086b3">str</span>(tds[<span style="color:#099">3</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;gb2312&#39;</span>)<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#39;utf8&#39;</span>), <span style="color:#0086b3">str</span>(tds[<span style="color:#099">4</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;gb2312&#39;</span>)<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#39;utf8&#39;</span>), <span style="color:#0086b3">str</span>(tds[<span style="color:#099">5</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">.</span>decode(<span style="color:#d14">&#39;gb2312&#39;</span>)<span style="color:#000;font-weight:bold">.</span>encode(<span style="color:#d14">&#39;utf8&#39;</span>))
-    index <span style="color:#000;font-weight:bold">=</span> index <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">index = 0
+sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+connection.commit()
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
+    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
+    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
+        <span style="color:#00f">if</span> idx &gt;= 0:
+            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
+            <span style="color:#00f">print</span>(str(tds[0].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[1].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[2].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[3].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[4].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[5].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>))
+    index = index + 1
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="结果报错">结果报错：</h3>
@@ -231,7 +237,7 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">print</span>(soup_second<span style="color:#000;font-weight:bold">.</span>original_encoding)
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">print</span>(soup_second.original_encoding)
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="结果如下">结果如下：</h4>
@@ -250,12 +256,12 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list <span style="color:#000;font-weight:bold">=</span> []  <span style="color:#998;font-style:italic"># 保存建立的各省份BeautifulSoup</span>
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> province_url:
-    req_second <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>Request(url<span style="color:#000;font-weight:bold">=</span>item, headers<span style="color:#000;font-weight:bold">=</span>headers)
-    respoae_second <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>urlopen(req_second)
-    soup_second <span style="color:#000;font-weight:bold">=</span> BeautifulSoup(respoae_second, <span style="color:#d14">&#39;html.parser&#39;</span>, from_encoding<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;gb18030&#39;</span>)
-    beautifulSoup_list<span style="color:#000;font-weight:bold">.</span>append(soup_second)
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
+    req_second = urllib.request.Request(url=item, headers=headers)
+    respoae_second = urllib.request.urlopen(req_second)
+    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>, from_encoding=<span style="color:#a31515">&#39;gb18030&#39;</span>)
+    beautifulSoup_list.append(soup_second)
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="完美解决问题">完美解决问题。</h3>
@@ -327,69 +333,69 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#998;font-style:italic"># -*- coding: utf-8 -*-</span>
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">urllib.request</span>
-<span style="color:#000;font-weight:bold">from</span> <span style="color:#555">urllib</span> <span style="color:#000;font-weight:bold">import</span> request
-<span style="color:#000;font-weight:bold">from</span> <span style="color:#555">bs4</span> <span style="color:#000;font-weight:bold">import</span> BeautifulSoup
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">re</span>
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">pymysql</span>
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">chardet</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000"># -*- coding: utf-8 -*-</span>
+<span style="color:#00f">import</span> urllib.request
+<span style="color:#00f">from</span> urllib <span style="color:#00f">import</span> request
+<span style="color:#00f">from</span> bs4 <span style="color:#00f">import</span> BeautifulSoup
+<span style="color:#00f">import</span> re
+<span style="color:#00f">import</span> pymysql
+<span style="color:#00f">import</span> chardet
 
-quote_url <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;http://www.wal-martchina.com/walmart/store/province.htm&#34;</span>
-headers <span style="color:#000;font-weight:bold">=</span> {
-        <span style="color:#d14">&#39;User-Agent&#39;</span>: <span style="color:#d14">&#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36&#39;</span>
+quote_url = <span style="color:#a31515">&#34;http://www.wal-martchina.com/walmart/store/province.htm&#34;</span>
+headers = {
+        <span style="color:#a31515">&#39;User-Agent&#39;</span>: <span style="color:#a31515">&#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36&#39;</span>
     }
-req <span style="color:#000;font-weight:bold">=</span>urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>Request(url<span style="color:#000;font-weight:bold">=</span>quote_url, headers<span style="color:#000;font-weight:bold">=</span>headers)
-respoae <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>urlopen(req)
-soup <span style="color:#000;font-weight:bold">=</span> BeautifulSoup(respoae, <span style="color:#d14">&#39;html.parser&#39;</span>)
+req =urllib.request.Request(url=quote_url, headers=headers)
+respoae = urllib.request.urlopen(req)
+soup = BeautifulSoup(respoae, <span style="color:#a31515">&#39;html.parser&#39;</span>)
 
-so <span style="color:#000;font-weight:bold">=</span> soup<span style="color:#000;font-weight:bold">.</span>find(<span style="color:#d14">&#39;table&#39;</span>, attrs<span style="color:#000;font-weight:bold">=</span>{<span style="color:#d14">&#39;class&#39;</span>: <span style="color:#d14">&#39;style5&#39;</span>})
-name_province <span style="color:#000;font-weight:bold">=</span> so<span style="color:#000;font-weight:bold">.</span>find_all(href<span style="color:#000;font-weight:bold">=</span>re<span style="color:#000;font-weight:bold">.</span>compile(<span style="color:#d14">&#34;.htm&#34;</span>))
-province_url <span style="color:#000;font-weight:bold">=</span> []  <span style="color:#998;font-style:italic"># 定义url空列表</span>
-province_name <span style="color:#000;font-weight:bold">=</span> []  <span style="color:#998;font-style:italic"># 定义name空列表</span>
+so = soup.find(<span style="color:#a31515">&#39;table&#39;</span>, attrs={<span style="color:#a31515">&#39;class&#39;</span>: <span style="color:#a31515">&#39;style5&#39;</span>})
+name_province = so.find_all(href=re.compile(<span style="color:#a31515">&#34;.htm&#34;</span>))
+province_url = []  <span style="color:#008000"># 定义url空列表</span>
+province_name = []  <span style="color:#008000"># 定义name空列表</span>
 
-<span style="color:#998;font-style:italic"># 正则表达式获取短链接，拼接成长链接</span>
-<span style="color:#998;font-style:italic"># 正则表达式获取省份名字</span>
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> name_province:
-    province_url<span style="color:#000;font-weight:bold">.</span>append(<span style="color:#d14">&#34;http://www.wal-martchina.com/walmart/store/&#34;</span><span style="color:#000;font-weight:bold">+</span>re<span style="color:#000;font-weight:bold">.</span>search(<span style="color:#d14">r</span><span style="color:#d14">&#39;[a-zA-z]+.htm&#39;</span>, <span style="color:#0086b3">str</span>(item))<span style="color:#000;font-weight:bold">.</span>group())
-    province_name<span style="color:#000;font-weight:bold">.</span>append(re<span style="color:#000;font-weight:bold">.</span>search(<span style="color:#d14">r</span><span style="color:#d14">&#39;[\u4e00-\u9fa5].*[\u4e00-\u9fa5]&#39;</span>, <span style="color:#0086b3">str</span>(item))<span style="color:#000;font-weight:bold">.</span>group())
+<span style="color:#008000"># 正则表达式获取短链接，拼接成长链接</span>
+<span style="color:#008000"># 正则表达式获取省份名字</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> name_province:
+    province_url.append(<span style="color:#a31515">&#34;http://www.wal-martchina.com/walmart/store/&#34;</span>+re.search(<span style="color:#a31515">r</span><span style="color:#a31515">&#39;[a-zA-z]+.htm&#39;</span>, str(item)).group())
+    province_name.append(re.search(<span style="color:#a31515">r</span><span style="color:#a31515">&#39;[\u4e00-\u9fa5].*[\u4e00-\u9fa5]&#39;</span>, str(item)).group())
 
-beautifulSoup_list <span style="color:#000;font-weight:bold">=</span> []  <span style="color:#998;font-style:italic"># 保存建立的各省份BeautifulSoup</span>
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> province_url:
-    req_second <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>Request(url<span style="color:#000;font-weight:bold">=</span>item, headers<span style="color:#000;font-weight:bold">=</span>headers)
-    respoae_second <span style="color:#000;font-weight:bold">=</span> urllib<span style="color:#000;font-weight:bold">.</span>request<span style="color:#000;font-weight:bold">.</span>urlopen(req_second)
-    soup_second <span style="color:#000;font-weight:bold">=</span> BeautifulSoup(respoae_second, <span style="color:#d14">&#39;html.parser&#39;</span>, from_encoding<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;gb18030&#39;</span>)
-    <span style="color:#998;font-style:italic"># print(soup_second.original_encoding)</span>
-    beautifulSoup_list<span style="color:#000;font-weight:bold">.</span>append(soup_second)
+beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
+    req_second = urllib.request.Request(url=item, headers=headers)
+    respoae_second = urllib.request.urlopen(req_second)
+    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>, from_encoding=<span style="color:#a31515">&#39;gb18030&#39;</span>)
+    <span style="color:#008000"># print(soup_second.original_encoding)</span>
+    beautifulSoup_list.append(soup_second)
 
-connection <span style="color:#000;font-weight:bold">=</span> pymysql<span style="color:#000;font-weight:bold">.</span>connect(host<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;localhost&#39;</span>, port<span style="color:#000;font-weight:bold">=</span><span style="color:#099">3306</span>, user<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;root&#39;</span>, password<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;cc122112&#39;</span>, db<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;databases&#39;</span>, charset<span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#39;utf8&#39;</span>)
-<span style="color:#998;font-style:italic"># 获取游标</span>
-cursor <span style="color:#000;font-weight:bold">=</span> connection<span style="color:#000;font-weight:bold">.</span>cursor()
-<span style="color:#998;font-style:italic"># 创建数据表</span>
-sql_clearn <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;truncate table 省份表;&#34;</span>
-effect_row <span style="color:#000;font-weight:bold">=</span> cursor<span style="color:#000;font-weight:bold">.</span>execute(sql_clearn)
-index <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-<span style="color:#000;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> province_name:
-    sql <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;insert into `省份表` values (&#39;沃尔玛&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span>i<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span>province_url[index]<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;);&#34;</span>
-    effect_row <span style="color:#000;font-weight:bold">=</span> cursor<span style="color:#000;font-weight:bold">.</span>execute(sql)
-    index <span style="color:#000;font-weight:bold">=</span> index <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>
-connection<span style="color:#000;font-weight:bold">.</span>commit()
+connection = pymysql.connect(host=<span style="color:#a31515">&#39;localhost&#39;</span>, port=3306, user=<span style="color:#a31515">&#39;root&#39;</span>, password=<span style="color:#a31515">&#39;cc122112&#39;</span>, db=<span style="color:#a31515">&#39;databases&#39;</span>, charset=<span style="color:#a31515">&#39;utf8&#39;</span>)
+<span style="color:#008000"># 获取游标</span>
+cursor = connection.cursor()
+<span style="color:#008000"># 创建数据表</span>
+sql_clearn = <span style="color:#a31515">&#34;truncate table 省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+index = 0
+<span style="color:#00f">for</span> i <span style="color:#00f">in</span> province_name:
+    sql = <span style="color:#a31515">&#34;insert into `省份表` values (&#39;沃尔玛&#39;, &#39;&#34;</span>+i+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+province_url[index]+<span style="color:#a31515">&#34;&#39;);&#34;</span>
+    effect_row = cursor.execute(sql)
+    index = index + 1
+connection.commit()
 
-<span style="color:#998;font-style:italic"># 获取第二页面内容</span>
-index <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>
-sql_clearn <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;truncate table 超市省份表;&#34;</span>
-effect_row <span style="color:#000;font-weight:bold">=</span> cursor<span style="color:#000;font-weight:bold">.</span>execute(sql_clearn)
-connection<span style="color:#000;font-weight:bold">.</span>commit()
-<span style="color:#000;font-weight:bold">for</span> item <span style="color:#000;font-weight:bold">in</span> beautifulSoup_list:
-    so_second <span style="color:#000;font-weight:bold">=</span> beautifulSoup_list[index]<span style="color:#000;font-weight:bold">.</span>find_all(<span style="color:#d14">&#39;tr&#39;</span>, attrs<span style="color:#000;font-weight:bold">=</span>{<span style="color:#d14">&#39;height&#39;</span>: <span style="color:#d14">&#39;20&#39;</span>})
-    <span style="color:#000;font-weight:bold">for</span> idx, tr <span style="color:#000;font-weight:bold">in</span> <span style="color:#0086b3">enumerate</span>(so_second):
-        <span style="color:#000;font-weight:bold">if</span> idx <span style="color:#000;font-weight:bold">&gt;=</span> <span style="color:#099">0</span>:
-            tds <span style="color:#000;font-weight:bold">=</span> tr<span style="color:#000;font-weight:bold">.</span>find_all(<span style="color:#d14">&#39;td&#39;</span>)
-            <span style="color:#998;font-style:italic"># print(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])</span>
-            sql <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;insert into 超市省份表 values (&#39;沃尔玛&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span><span style="color:#0086b3">str</span>(tds[<span style="color:#099">0</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span><span style="color:#0086b3">str</span>(tds[<span style="color:#099">1</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span><span style="color:#0086b3">str</span>(tds[<span style="color:#099">2</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span><span style="color:#0086b3">str</span>(tds[<span style="color:#099">3</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span><span style="color:#0086b3">str</span>(tds[<span style="color:#099">4</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;, &#39;&#34;</span><span style="color:#000;font-weight:bold">+</span><span style="color:#0086b3">str</span>(tds[<span style="color:#099">5</span>]<span style="color:#000;font-weight:bold">.</span>contents[<span style="color:#099">0</span>])<span style="color:#000;font-weight:bold">+</span><span style="color:#d14">&#34;&#39;);&#34;</span>
-            <span style="color:#998;font-style:italic"># effect_row = cursor.execute(sql)</span>
-    index <span style="color:#000;font-weight:bold">=</span> index <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>
-connection<span style="color:#000;font-weight:bold">.</span>commit()
+<span style="color:#008000"># 获取第二页面内容</span>
+index = 0
+sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+connection.commit()
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
+    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
+    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
+        <span style="color:#00f">if</span> idx &gt;= 0:
+            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
+            <span style="color:#008000"># print(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])</span>
+            sql = <span style="color:#a31515">&#34;insert into 超市省份表 values (&#39;沃尔玛&#39;, &#39;&#34;</span>+str(tds[0].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[1].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[2].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[3].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[4].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[5].contents[0])+<span style="color:#a31515">&#34;&#39;);&#34;</span>
+            <span style="color:#008000"># effect_row = cursor.execute(sql)</span>
+    index = index + 1
+connection.commit()
 </code></pre></td></tr></table>
 </div>
 </div></article>
@@ -472,6 +478,8 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
       <a class="ui label" href="/tags/%E5%85%B6%E4%BB%96" title="其他">其他</a>
     
       <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+    
+      <a class="ui label" href="/tags/%E6%96%87%E6%A1%A3" title="文档">文档</a>
     
       <a class="ui label" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言">编程语言</a>
     
@@ -585,6 +593,32 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
               <div class="item">
                 <div class="content">
                   <a href="/posts/%E9%9B%86%E5%AE%A2ap&#43;ac%E7%BB%84%E7%BD%91%E6%89%AB%E7%9B%B2%E8%B4%B4/" class="item">集客AP&#43;AC组网扫盲贴</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E6%96%87%E6%A1%A3" class="item">文档</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/markdown%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95%E6%96%87%E6%A1%A3/" class="item">Markdown标准语法文档</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/vim%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97/" class="item">Vim中文指南</a>
                 </div>
               </div>
             
@@ -868,8 +902,8 @@ connection<span style="color:#000;font-weight:bold">.</span>commit()
 
   function setHighlightTheme() {
     var isDark = localStore.getItem('hugo-theme-dream-is-dark')
-    var lightTheme = "gruvbox-light"
-    var darkTheme = "gruvbox-dark"
+    var lightTheme = "idea"
+    var darkTheme = "atelier-seaside-dark"
     var theme = isDark ? darkTheme : lightTheme
 
     $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')

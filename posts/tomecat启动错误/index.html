@@ -12,7 +12,7 @@
 
 
 
-<meta name="author" content="CHENG-HF" />
+<meta name="author" content="codechf" />
 <meta name="description" content="描述：通过 eclipse 进行 java web 开发的时候偶尔会出现 tomcat 无法启动的问题。 解决办法： 有以下几种原因造成： 端口被占用 tomcat 启动时间不够 eclipse 在管理 tomcat 时出现了问题。 最后" />
 
 
@@ -75,7 +75,7 @@
 
 
   
-    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/gruvbox-light.min.css" />
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/idea.min.css" />
   
 
 
@@ -114,6 +114,10 @@
 <div class="ui centered relaxed grid dream-grid">
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/default2.jpg);"></div>
+    </section>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
@@ -121,7 +125,9 @@
           <div class="sub header">
             @
             
-              CHENG-HF
+              
+                <a href="https://github.com/code-chf" target="_blank">codechf</a>
+              
             
 
             · 
@@ -233,6 +239,8 @@
       <a class="ui label" href="/tags/%E5%85%B6%E4%BB%96" title="其他">其他</a>
     
       <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+    
+      <a class="ui label" href="/tags/%E6%96%87%E6%A1%A3" title="文档">文档</a>
     
       <a class="ui label" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言">编程语言</a>
     
@@ -346,6 +354,32 @@
               <div class="item">
                 <div class="content">
                   <a href="/posts/%E9%9B%86%E5%AE%A2ap&#43;ac%E7%BB%84%E7%BD%91%E6%89%AB%E7%9B%B2%E8%B4%B4/" class="item">集客AP&#43;AC组网扫盲贴</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E6%96%87%E6%A1%A3" class="item">文档</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/markdown%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95%E6%96%87%E6%A1%A3/" class="item">Markdown标准语法文档</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/vim%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97/" class="item">Vim中文指南</a>
                 </div>
               </div>
             
@@ -629,8 +663,8 @@
 
   function setHighlightTheme() {
     var isDark = localStore.getItem('hugo-theme-dream-is-dark')
-    var lightTheme = "gruvbox-light"
-    var darkTheme = "gruvbox-dark"
+    var lightTheme = "idea"
+    var darkTheme = "atelier-seaside-dark"
     var theme = isDark ? darkTheme : lightTheme
 
     $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')

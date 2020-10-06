@@ -12,7 +12,7 @@
 
 
 
-<meta name="author" content="CHENG-HF" />
+<meta name="author" content="codechf" />
 <meta name="description" content="Mac访达显示隐藏文件 命令行： 1 2 defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder 将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，" />
 
 
@@ -75,7 +75,7 @@
 
 
   
-    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/gruvbox-light.min.css" />
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/idea.min.css" />
   
 
 
@@ -114,6 +114,10 @@
 <div class="ui centered relaxed grid dream-grid">
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(/img/default4.jpg);"></div>
+    </section>
+    
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
@@ -121,7 +125,9 @@
           <div class="sub header">
             @
             
-              CHENG-HF
+              
+                <a href="https://github.com/code-chf" target="_blank">codechf</a>
+              
             
 
             · 
@@ -203,8 +209,8 @@ KillAll Finder
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastUpdatesAvailable <span style="color:#099">0</span>
-sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable <span style="color:#099">0</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastUpdatesAvailable 0
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable 0
 sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist RecommendedUpdates
 </code></pre></td></tr></table>
 </div>
@@ -219,7 +225,7 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist Recomme
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Reg add HKLM<span style="color:#d14">\S</span>YSTEM<span style="color:#d14">\C</span>urrentControlSet<span style="color:#d14">\C</span>ontrol<span style="color:#d14">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style="color:#099">1</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Reg add HKLM<span style="color:#a31515">\S</span>YSTEM<span style="color:#a31515">\C</span>urrentControlSet<span style="color:#a31515">\C</span>ontrol<span style="color:#a31515">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -242,8 +248,8 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist Recomme
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm /System/Library/PrelinkedKernels/prelinkedkernel
 sudo rm /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache
-sudo chmod -R <span style="color:#099">755</span> /System/Library/Extensions
-sudo chmod -R <span style="color:#099">755</span> /Library/Extensions
+sudo chmod -R 755 /System/Library/Extensions
+sudo chmod -R 755 /Library/Extensions
 sudo chown -R root:wheel /System/Library/Extensions
 sudo chown -R root:wheel /Library/Extensions
 sudo touch /System/Library/Extensions
@@ -289,12 +295,12 @@ sudo kextcache -i /
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pmset -a hibernatemode <span style="color:#099">0</span>
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pmset -a hibernatemode 0
 sudo rm /var/vm/sleepimage
 sudo mkdir /var/vm/sleepimage
-sudo pmset -a standby <span style="color:#099">0</span>
-sudo pmset -a autopoweroff <span style="color:#099">0</span>
-sudo pmset -a proximitywake <span style="color:#099">0</span>
+sudo pmset -a standby 0
+sudo pmset -a autopoweroff 0
+sudo pmset -a proximitywake 0
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -394,6 +400,8 @@ sudo pmset -a proximitywake <span style="color:#099">0</span>
       <a class="ui label" href="/tags/%E5%85%B6%E4%BB%96" title="其他">其他</a>
     
       <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+    
+      <a class="ui label" href="/tags/%E6%96%87%E6%A1%A3" title="文档">文档</a>
     
       <a class="ui label" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言">编程语言</a>
     
@@ -507,6 +515,32 @@ sudo pmset -a proximitywake <span style="color:#099">0</span>
               <div class="item">
                 <div class="content">
                   <a href="/posts/%E9%9B%86%E5%AE%A2ap&#43;ac%E7%BB%84%E7%BD%91%E6%89%AB%E7%9B%B2%E8%B4%B4/" class="item">集客AP&#43;AC组网扫盲贴</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E6%96%87%E6%A1%A3" class="item">文档</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/markdown%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95%E6%96%87%E6%A1%A3/" class="item">Markdown标准语法文档</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/vim%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97/" class="item">Vim中文指南</a>
                 </div>
               </div>
             
@@ -790,8 +824,8 @@ sudo pmset -a proximitywake <span style="color:#099">0</span>
 
   function setHighlightTheme() {
     var isDark = localStore.getItem('hugo-theme-dream-is-dark')
-    var lightTheme = "gruvbox-light"
-    var darkTheme = "gruvbox-dark"
+    var lightTheme = "idea"
+    var darkTheme = "atelier-seaside-dark"
     var theme = isDark ? darkTheme : lightTheme
 
     $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
