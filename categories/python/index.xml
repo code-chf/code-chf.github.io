@@ -18,7 +18,7 @@
       <pubDate>Thu, 01 Oct 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/python%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
-      <description>出问题的代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 beautifulSoup_list = [] # 保存建立的各省份BeautifulSoup for item in province_url: req_second = urllib.request.Request(url=item, headers=headers) respoae_second = urllib.request.urlopen(req_second) soup_second = BeautifulSoup(respoae_second, &amp;#39;html.parser&amp;#39;) beautifulSoup_list.append(soup_second) # 获取</description>
+      <description>出问题的代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 beautifulSoup_list = [] # 保存建立的各省份BeautifulSoup for item in province_url: req_second = urllib.request.Request(url=item, headers=headers) respoae_second = urllib.request.urlopen(req_second) soup_second = BeautifulSoup(respoae_second, &amp;#39;html.parser&amp;#39;) beautifulSoup_list.append(soup_second) # 获取第</description>
     </item>
     
   </channel>
