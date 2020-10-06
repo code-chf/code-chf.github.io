@@ -18,7 +18,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</guid>
-      <description>Mac OS 终端 iTerm2 之前一直使用的 Mac OS 自带的终端，觉得也还可以，后来看大神 onevcat 的直播视频，发现他用的是 iTerm，真的是非常好用，于是自己也开始倒腾起来</description>
+      <description>&lt;p&gt;MacOs 第三方shell（iTerm）并配置zsh&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/</guid>
-      <description>Mac访达显示隐藏文件 命令行： 1 2 defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder 将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，</description>
+      <description>&lt;p&gt;Mac常用小技巧及黑苹果优化技巧。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</guid>
-      <description>macOS时间机器备份加速命令 1 sudo sysctl debug.lowpri_throttle_enabled=0 回恢复为原来的速度的命令 1 sudo sysctl debug.lowpri_throttle_enabled=1</description>
+      <description>&lt;p&gt;解决Macos时间机器备份速度慢的问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
-      <description>Mac常用终端命令 目录操作 命令名 功能描述 使用举例 mkdir 创建一个目录 mkdir dirname rmdir 删除一个目录 rmdir dirname mvdir 移动或重命名一个目录 mvdir dir1 dir2 cd 改变当前目录 cd dirname pwd 显示当前</description>
+      <description>&lt;p&gt;收录Mac常用终端命令。&lt;/p&gt;</description>
     </item>
     
   </channel>

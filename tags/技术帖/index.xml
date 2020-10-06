@@ -13,21 +13,21 @@
     
     
     <item>
-      <title>Python爬虫问题</title>
+      <title>BeautifulSoup编码问题</title>
       <link>/posts/python%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 01 Oct 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/python%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
-      <description>出问题的代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 beautifulSoup_list = [] # 保存建立的各省份BeautifulSoup for item in province_url: req_second = urllib.request.Request(url=item, headers=headers) respoae_second = urllib.request.urlopen(req_second) soup_second = BeautifulSoup(respoae_second, &amp;#39;html.parser&amp;#39;) beautifulSoup_list.append(soup_second) # 获取第</description>
+      <description>&lt;p&gt;写爬虫遇到的BeautifulSoup编码问题。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>关于解决 Server Tomcat v9.0 Server at localhost failed to start. 的问题</title>
+      <title>Tomcat启动错误</title>
       <link>/posts/tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/</link>
       <pubDate>Thu, 01 Oct 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/</guid>
-      <description>描述：通过 eclipse 进行 java web 开发的时候偶尔会出现 tomcat 无法启动的问题。 解决办法： 有以下几种原因造成： 端口被占用 tomcat 启动时间不够 eclipse 在管理 tomcat 时出现了问题。 最后</description>
+      <description>&lt;p&gt;Eclipse开发过程中，Tomcat无法启动的问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</guid>
-      <description>Mac OS 终端 iTerm2 之前一直使用的 Mac OS 自带的终端，觉得也还可以，后来看大神 onevcat 的直播视频，发现他用的是 iTerm，真的是非常好用，于是自己也开始倒腾起来</description>
+      <description>&lt;p&gt;MacOs 第三方shell（iTerm）并配置zsh&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/</guid>
-      <description>Mac访达显示隐藏文件 命令行： 1 2 defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder 将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，</description>
+      <description>&lt;p&gt;Mac常用小技巧及黑苹果优化技巧。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</guid>
-      <description>macOS时间机器备份加速命令 1 sudo sysctl debug.lowpri_throttle_enabled=0 回恢复为原来的速度的命令 1 sudo sysctl debug.lowpri_throttle_enabled=1</description>
+      <description>&lt;p&gt;解决Macos时间机器备份速度慢的问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
       <guid>/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
-      <description>Mac常用终端命令 目录操作 命令名 功能描述 使用举例 mkdir 创建一个目录 mkdir dirname rmdir 删除一个目录 rmdir dirname mvdir 移动或重命名一个目录 mvdir dir1 dir2 cd 改变当前目录 cd dirname pwd 显示当前</description>
+      <description>&lt;p&gt;收录Mac常用终端命令。&lt;/p&gt;</description>
     </item>
     
   </channel>
