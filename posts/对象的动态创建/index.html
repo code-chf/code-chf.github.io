@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mac使用Tips汇总 | codechf的个人博客</title>
+    <title>类的解析：对象的动态创建 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,28 +13,28 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="Mac常用小技巧及黑苹果优化技巧。
+<meta name="description" content="记录上课时的一些笔记，方便自己学习查阅。
 " />
 
 
 
 <meta name="generator" content="Hugo 0.70.0" />
 
-<link rel="canonical" href="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" />
+<link rel="canonical" href="/posts/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA/" />
 
 
-<meta property="og:title" content="Mac使用Tips汇总" />
-<meta property="og:description" content="Mac常用小技巧及黑苹果优化技巧。" />
+<meta property="og:title" content="类的解析：对象的动态创建" />
+<meta property="og:description" content="记录上课时的一些笔记，方便自己学习查阅。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" />
-<meta property="article:published_time" content="2020-06-18T09:27:39+08:00" />
-<meta property="article:modified_time" content="2020-06-18T09:27:39+08:00" />
+<meta property="og:url" content="/posts/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA/" />
+<meta property="article:published_time" content="2020-10-09T16:03:13+08:00" />
+<meta property="article:modified_time" content="2020-10-09T16:03:13+08:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac使用Tips汇总"/>
-<meta name="twitter:description" content="Mac常用小技巧及黑苹果优化技巧。"/>
+<meta name="twitter:title" content="类的解析：对象的动态创建"/>
+<meta name="twitter:description" content="记录上课时的一些笔记，方便自己学习查阅。"/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -116,13 +116,13 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(/img/mac%e4%bd%bf%e7%94%a8tips.jpeg);"></div>
+      <div class="cover-img" style="background-image: url(/img/default1.jpg);"></div>
     </section>
     
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          Mac使用Tips汇总
+          类的解析：对象的动态创建
           <div class="sub header">
             @
             
@@ -132,107 +132,21 @@
             
 
             · 
-                星期四，六月 18 日，2020 年
+                星期五，十月 9 日，2020 年
               
 
-            · 2 分钟阅读
+            · 3 分钟阅读
 
             · 更新于
               
-                星期四，六月 18 日，2020 年
+                星期五，十月 9 日，2020 年
               
           </div>
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><p>Mac常用小技巧及黑苹果优化技巧。</p>
-<ol>
-<li>
-<h2 id="mac访达显示隐藏文件">Mac访达显示隐藏文件</h2>
-<h3 id="命令行">命令行：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write com.apple.finder AppleShowAllFiles -bool true;
-KillAll Finder
-</code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p>将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，重启之后就可以看到隐藏的文件或文件夹。</p>
-</blockquote>
-<h3 id="快捷键">快捷键：</h3>
-<p><code>command + Shift + .</code></p>
-</li>
-<li>
-<h2 id="macos-10154-系统--更新系统后意外退出及崩溃闪退问题修复方法">macOS 10.15.4 系统 / 更新系统后「意外退出」及「崩溃闪退」问题修复方法</h2>
-<ol>
-<li>
-<h3 id="第一步准备工作">第一步：准备工作</h3>
-<p>安装 Xcode：商店或网页安装</p>
-<p>安装 Command Line Tools 工具：<code>xcode-select --install</code></p>
-<p>弹出安装窗口后选择<code>继续安装</code>，安装过程需要几分钟，请耐心等待</p>
-</li>
-<li>
-<h3 id="第二步签名">第二步：签名</h3>
-<p>输入命令：<code>sudo codesign --force --deep --sign - (应用路径)</code></p>
-</li>
-<li>
-<h3 id="第三步解决错误">第三步：解决错误</h3>
-<p>如果遇到以下错误：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/文件位置 : replacing existing signature
-/文件位置 : resource fork,Finder information,or similar detritus not allowed
-</code></pre></td></tr></table>
-</div>
-</div><p>先执行：<code>xattr -cr /文件位置（直接将应用拖进去即可）</code></p>
-<p>然后执行：<code>codesign --force --deep --sign - /文件位置（直接将应用拖进去即可）</code></p>
-</li>
-</ol>
-</li>
-<li>
-<h2 id="mac去除设置小红点">Mac去除设置小红点：</h2>
-<h3 id="打开终端运行">打开终端运行：</h3>
-<p><code>defaults write com.apple.systempreferences AttentionPrefBundleIDs 0</code></p>
-<h3 id="然后重启dock栏">然后重启Dock栏：</h3>
-<p><code>killall Dock</code></p>
-<h3 id="如果上面不起作用的话用这个">如果上面不起作用的话，用这个：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastUpdatesAvailable 0
-sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable 0
-sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist RecommendedUpdates
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<h2 id="黑果优化命令">黑果优化命令：</h2>
-<ol>
-<li>
-<h3 id="解决macos和windows时间同步">解决macOS和Windows时间同步：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Reg add HKLM<span style="color:#a31515">\S</span>YSTEM<span style="color:#a31515">\C</span>urrentControlSet<span style="color:#a31515">\C</span>ontrol<span style="color:#a31515">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<h3 id="重建kexts缓存">重建Kexts缓存：</h3>
+      <article style="margin-top: 2rem;"><p>记录上课时的一些笔记，方便自己学习查阅。</p>
+<h3 id="testa类">TestA类</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -246,90 +160,257 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist Recomme
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm /System/Library/PrelinkedKernels/prelinkedkernel
-sudo rm /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache
-sudo chmod -R 755 /System/Library/Extensions
-sudo chmod -R 755 /Library/Extensions
-sudo chown -R root:wheel /System/Library/Extensions
-sudo chown -R root:wheel /Library/Extensions
-sudo touch /System/Library/Extensions
-sudo touch /Library/Extensions
-sudo kextcache -q -update-volume /
-sudo kextcache -system-caches
-sudo kextcache -i /
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> cn.jxufe.test;
+<span style="color:#00f">import</span> java.lang.reflect.Constructor;
+<span style="color:#00f">import</span> java.lang.reflect.Field;
+<span style="color:#00f">import</span> java.lang.reflect.Method;
+<span style="color:#00f">import</span> java.lang.reflect.Parameter;
+<span style="color:#00f">import</span> javassist.Modifier;
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">TestA</span> {
+    <span style="color:#00f">public</span> <span style="color:#00f">static</span> <span style="color:#2b91af">void</span> main(String[] args) <span style="color:#00f">throws</span> Exception {
+        <span style="color:#008000">// TODO Auto-generated method stub
+</span><span style="color:#008000"></span>        Class&lt;?&gt; myClass = Class.forName(<span style="color:#a31515">&#34;cn.jxufe.test.Cat&#34;</span>);
+        Object myObject = myClass.getDeclaredConstructor().newInstance();
+        System.out.println(String.format(<span style="color:#a31515">&#34;类的全路径名称:%s&#34;</span>, myClass.getName()));
+        System.out.println(String.format(<span style="color:#a31515">&#34;类的名称:%s&#34;</span>, myClass.getSimpleName()));
+        System.out.println(<span style="color:#a31515">&#34;\r\n================== 构造方法解析 =====================&#34;</span>);
+        <span style="color:#008000">/* 方法  */</span>
+        Constructor[] constructors = myClass.getDeclaredConstructors(); 
+        <span style="color:#00f">for</span>(Constructor constructor : constructors) {
+            System.out.println(String.format(<span style="color:#a31515">&#34;构造方法名称: %s %s&#34;</span>,
+
+Modifier.toString(constructor.getModifiers()), constructor.getName()));
+
+            <span style="color:#008000">/* 获取方法参数定义  */</span>
+            Parameter[] parameters  = constructor.getParameters();
+            <span style="color:#00f">for</span>(Parameter parameter : parameters) {
+                System.out.println(
+                        String.format(
+                                <span style="color:#a31515">&#34;\t参数: %s %s&#34;</span>, 
+                                parameter.getType().getTypeName(),
+                                parameter.getName()
+                                )
+                        );
+            }
+            System.out.println();
+        }
+        System.out.println(<span style="color:#a31515">&#34;\r\n================== 一般方法解析 =====================&#34;</span>);
+        <span style="color:#008000">/* 获取方法  */</span>
+        Method[] methods = myClass.getDeclaredMethods(); 
+        <span style="color:#00f">for</span>(Method method : methods) {
+            System.out.println(String.format(<span style="color:#a31515">&#34;方法名称:%s %s&#34;</span>,
+
+Modifier.toString(method.getModifiers()), method.getName()));
+
+            <span style="color:#008000">/* 获取方法参数定义  */</span>
+            Parameter[] parameters  = method.getParameters();
+            <span style="color:#00f">for</span>(Parameter parameter : parameters) {
+                System.out.println(
+                        String.format(
+                                <span style="color:#a31515">&#34;\t参数:%s %s&#34;</span>, 
+                                parameter.getType().getTypeName(),
+                                parameter.getName()
+                                )
+                        );
+            }
+            System.out.println(String.format(<span style="color:#a31515">&#34;return: %s&#34;</span>, method.getReturnType())+<span style="color:#a31515">&#34;\r\n&#34;</span>);
+        }
+        System.out.println(<span style="color:#a31515">&#34;\r\n================== 属性的解析 =====================&#34;</span>);
+        <span style="color:#008000">/* 获取方法  */</span>
+        Field[] fields = myClass.getDeclaredFields(); 
+        <span style="color:#00f">for</span>(Field field : fields) {
+            field.setAccessible(<span style="color:#00f">true</span>);
+            System.out.println(String.format(<span style="color:#a31515">&#34;属性:%s %s %s %s \r\n&#34;</span>,
+
+Modifier.toString(field.getModifiers()),field.getType(), 
+
+field.getName(),field.get(myObject)));
+
+        }
+    }
+}
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h3 id="允许安装任何来源">允许安装任何来源：</h3>
+</div><h3 id="cat类">Cat类</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo spctl --master-disable
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> cn.jxufe.test;
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Cat</span> {
+    <span style="color:#00f">public</span> String name;
+    <span style="color:#00f">private</span> String nickName = <span style="color:#a31515">&#34;乌云踏雪&#34;</span>;
+    <span style="color:#00f">public</span> String favor = <span style="color:#a31515">&#34;fish&#34;</span>;
+    <span style="color:#00f">private</span> <span style="color:#2b91af">int</span> legs  = 4;
+    <span style="color:#00f">public</span> Cat() {
+        System.out.println(<span style="color:#a31515">&#34;创建一个无参数的猫&#34;</span>);
+    }
+    <span style="color:#00f">public</span> Cat(String leftEye,String RightEye,<span style="color:#2b91af">int</span> legs) {
+        System.out.println(<span style="color:#a31515">&#34;创建一个带参数的猫，左眼：&#34;</span>+leftEye+<span style="color:#a31515">&#34; 右眼：&#34;</span>+RightEye+<span style="color:#a31515">&#34; 腿：&#34;</span>+legs +<span style="color:#a31515">&#34;条&#34;</span>);
+    }
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> miao(){
+        System.out.println(<span style="color:#a31515">&#34;猫：喵&#34;</span>);
+    }
+    <span style="color:#00f">public</span> String wantToEat(String food){
+        System.out.println(<span style="color:#a31515">&#34;猫：饿了,吃&#34;</span>+food);
+        <span style="color:#00f">return</span> food;
+    }
+    <span style="color:#00f">private</span> String selfCleaning(){
+        System.out.println(<span style="color:#a31515">&#34;猫：开始舔毛&#34;</span>);
+        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;自我清洁&#34;</span>;
+    }
+    <span style="color:#00f">private</span> String talk(String phrase){
+        System.out.println(<span style="color:#a31515">&#34;猫：&#34;</span>+phrase);
+        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;talk done&#34;</span>;
+    }
+    <span style="color:#00f">public</span> String getName() {
+        <span style="color:#00f">return</span> name;
+    }
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setName(String name) {
+        <span style="color:#00f">this</span>.name = name;
+    }
+    <span style="color:#00f">public</span> String getNickName() {
+        <span style="color:#00f">return</span> nickName;
+    }
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setNickName(String nickName) {
+        <span style="color:#00f">this</span>.nickName = nickName;
+    }
+    <span style="color:#00f">public</span> String getFavor() {
+        <span style="color:#00f">return</span> favor;
+    }
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setFavor(String favor) {
+        <span style="color:#00f">this</span>.favor = favor;
+    }
+    <span style="color:#00f">public</span> <span style="color:#2b91af">int</span> getLegs() {
+        <span style="color:#00f">return</span> legs;
+    }
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setLegs(<span style="color:#2b91af">int</span> legs) {
+        <span style="color:#00f">this</span>.legs = legs;
+    }
+}
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h3 id="解决1014以上系统字体模糊">解决10.14以上系统字体模糊：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<h3 id="系统睡眠优化代码">系统睡眠优化代码：</h3>
-<p>更新了系统必须执行一次，否则电脑休眠会存在问题</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pmset -a hibernatemode 0
-sudo rm /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
-sudo pmset -a standby 0
-sudo pmset -a autopoweroff 0
-sudo pmset -a proximitywake 0
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<h3 id="清除nvram重置ec">清除NvRAM/重置EC</h3>
-<ul>
-<li>请先移除电源适配器 (笔记本使用电池供电)</li>
-<li>关机状态下按住 <strong><code>Fn + D + 电源按钮</code></strong></li>
-<li>键盘亮松开电源键，保持 <strong><code>Fn + D</code></strong>按住</li>
-<li>出现第一屏松开 <strong><code>Fn + D</code></strong></li>
-<li>笔记本屏幕黑屏，按下回车键</li>
-<li>弹出 CMOS 提示，再次按下回车键</li>
-<li>电脑自动关机，需手动开机</li>
-<li>NvRAM / EC 已重置</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol></article>
+</div><blockquote>
+<p>上课时间：2020年10月9日，星期五，下午</p>
+</blockquote></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       
         
-          <a class="ui label" href="/tags/mac" title="Mac">Mac</a>
-        
-          <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+          <a class="ui label" href="/tags/java" title="java">java</a>
         
       
       <div
