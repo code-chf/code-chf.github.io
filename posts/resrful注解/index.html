@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mac使用Tips汇总 | codechf的个人博客</title>
+    <title>RESRful:注解 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,28 +13,27 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="Mac常用小技巧及黑苹果优化技巧。
-" />
+<meta name="description" content="" />
 
 
 
 <meta name="generator" content="Hugo 0.70.0" />
 
-<link rel="canonical" href="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" />
+<link rel="canonical" href="/posts/resrful%E6%B3%A8%E8%A7%A3/" />
 
 
-<meta property="og:title" content="Mac使用Tips汇总" />
-<meta property="og:description" content="Mac常用小技巧及黑苹果优化技巧。" />
+<meta property="og:title" content="RESRful:注解" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" />
-<meta property="article:published_time" content="2020-06-18T09:27:39+08:00" />
-<meta property="article:modified_time" content="2020-06-18T09:27:39+08:00" />
+<meta property="og:url" content="/posts/resrful%E6%B3%A8%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-10-10T14:20:14+08:00" />
+<meta property="article:modified_time" content="2020-10-10T14:20:14+08:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac使用Tips汇总"/>
-<meta name="twitter:description" content="Mac常用小技巧及黑苹果优化技巧。"/>
+<meta name="twitter:title" content="RESRful:注解"/>
+<meta name="twitter:description" content=""/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -116,13 +115,13 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(/img/mac%e4%bd%bf%e7%94%a8tips.jpeg);"></div>
+      <div class="cover-img" style="background-image: url(/img/default1.jpg);"></div>
     </section>
     
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          Mac使用Tips汇总
+          RESRful:注解
           <div class="sub header">
             @
             
@@ -132,161 +131,282 @@
             
 
             · 
-                星期四，六月 18 日，2020 年
+                星期六，十月 10 日，2020 年
               
 
-            · 2 分钟阅读
+            · 4 分钟阅读
 
             · 更新于
               
-                星期四，六月 18 日，2020 年
+                星期六，十月 10 日，2020 年
               
           </div>
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><p>Mac常用小技巧及黑苹果优化技巧。</p>
-<ol>
-<li>
-<h2 id="mac访达显示隐藏文件">Mac访达显示隐藏文件</h2>
-<h3 id="命令行">命令行：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write com.apple.finder AppleShowAllFiles -bool true;
-KillAll Finder
-</code></pre></td></tr></table>
-</div>
-</div><blockquote>
-<p>将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，重启之后就可以看到隐藏的文件或文件夹。</p>
-</blockquote>
-<h3 id="快捷键">快捷键：</h3>
-<p><code>command + Shift + .</code></p>
-</li>
-<li>
-<h2 id="macos-10154-系统--更新系统后意外退出及崩溃闪退问题修复方法">macOS 10.15.4 系统 / 更新系统后「意外退出」及「崩溃闪退」问题修复方法</h2>
-<ol>
-<li>
-<h3 id="第一步准备工作">第一步：准备工作</h3>
-<p>安装 Xcode：商店或网页安装</p>
-<p>安装 Command Line Tools 工具：<code>xcode-select --install</code></p>
-<p>弹出安装窗口后选择<code>继续安装</code>，安装过程需要几分钟，请耐心等待</p>
-</li>
-<li>
-<h3 id="第二步签名">第二步：签名</h3>
-<p>输入命令：<code>sudo codesign --force --deep --sign - (应用路径)</code></p>
-</li>
-<li>
-<h3 id="第三步解决错误">第三步：解决错误</h3>
-<p>如果遇到以下错误：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/文件位置 : replacing existing signature
-/文件位置 : resource fork,Finder information,or similar detritus not allowed
-</code></pre></td></tr></table>
-</div>
-</div><p>先执行：<code>xattr -cr /文件位置（直接将应用拖进去即可）</code></p>
-<p>然后执行：<code>codesign --force --deep --sign - /文件位置（直接将应用拖进去即可）</code></p>
-</li>
-</ol>
-</li>
-<li>
-<h2 id="mac去除设置小红点">Mac去除设置小红点：</h2>
-<h3 id="打开终端运行">打开终端运行：</h3>
-<p><code>defaults write com.apple.systempreferences AttentionPrefBundleIDs 0</code></p>
-<h3 id="然后重启dock栏">然后重启Dock栏：</h3>
-<p><code>killall Dock</code></p>
-<h3 id="如果上面不起作用的话用这个">如果上面不起作用的话，用这个：</h3>
+      <article style="margin-top: 2rem;"><h1 style="text-align:center">@Path注解</h1>
+<h2 id="1path位置">(1)@Path位置</h2>
+<h3 id="1放在类前面将class-test映射到路径a">1.放在类前面，将class Test映射到路径/a</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastUpdatesAvailable 0
-sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable 0
-sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist RecommendedUpdates
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Test</span>{
+
+}
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h2 id="黑果优化命令">黑果优化命令：</h2>
-<ol>
-<li>
-<h3 id="解决macos和windows时间同步">解决macOS和Windows时间同步：</h3>
+</div><h3 id="2放在方法前将方法method映射到路径b">2.放在方法前，将方法method映射到路径/b</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Reg add HKLM<span style="color:#a31515">\S</span>YSTEM<span style="color:#a31515">\C</span>urrentControlSet<span style="color:#a31515">\C</span>ontrol<span style="color:#a31515">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/b&#34;</span>)
+<span style="color:#00f">public</span> String methodB(){
+	<span style="color:#00f">return</span> <span style="color:#a31515">&#34;hello&#34;</span>;
+}
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h3 id="重建kexts缓存">重建Kexts缓存：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm /System/Library/PrelinkedKernels/prelinkedkernel
-sudo rm /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache
-sudo chmod -R 755 /System/Library/Extensions
-sudo chmod -R 755 /Library/Extensions
-sudo chown -R root:wheel /System/Library/Extensions
-sudo chown -R root:wheel /Library/Extensions
-sudo touch /System/Library/Extensions
-sudo touch /Library/Extensions
-sudo kextcache -q -update-volume /
-sudo kextcache -system-caches
-sudo kextcache -i /
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<h3 id="允许安装任何来源">允许安装任何来源：</h3>
+</div><h2 id="2资源路径的映射思路">(2)资源路径的映射思路</h2>
+<h3 id="1抽象概念">1.抽象概念：</h3>
+<table><tr>
+		<td bgcolor="red" style="color: white;">协议</td>
+		<td bgcolor="blue"style="color: white;">主机</td>
+		<td bgcolor="green"style="color: white;">:端口</td>
+		<td bgcolor="orange"style="color: white;">/项目</td>
+		<td bgcolor="pink"style="color: white;">/类映射路径</td>
+		<td bgcolor="purple"style="color: white;">/方法映射路径</td>
+		<td bgcolor="black"style="color: white;">可选其他部分</td>
+</tr></table>
+<h3 id="2具体实例">2.具体实例：</h3>
+<table><tr>
+		<td bgcolor="red" style="color: white;">http://</td>
+		<td bgcolor="blue"style="color: white;">127.0.0.1</td>
+		<td bgcolor="green"style="color: white;">:8080</td>
+		<td bgcolor="orange"style="color: white;">/restful</td>
+		<td bgcolor="pink"style="color: white;">/a</td>
+		<td bgcolor="purple"style="color: white;">/b</td>
+		<td bgcolor="black"style="color: white;">/123456</td>
+</tr></table>
+<h2 id="3完整的例子">(3)完整的例子</h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo spctl --master-disable
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">MyAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;b&#34;</span>)  
+    <span style="color:#00f">public</span> String getMyName() {        
+        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;Mike&#34;</span>;  
+    }  
+} 
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h3 id="解决1014以上系统字体模糊">解决10.14以上系统字体模糊：</h3>
+</div><h2 id="4path中可使用正则表达式对资源进行通配映射">(4)@Path中可使用正则表达式对资源进行通配映射</h2>
+<h3 id="表达格式">表达格式：</h3>
+<p>1.<code>{variable-name[:reqular-expression]}</code></p>
+<h3 id="实例1">实例1：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">MyAPI</span>{
+	@GET
+	@Path(<span style="color:#a31515">&#34;{var:.*}/b&#34;</span>)
+	<span style="color:#00f">public</span> String getMyName(){
+		<span style="color:#00f">return</span> <span style="color:#a31515">&#34;Mike&#34;</span>;
+	}
+}
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h3 id="系统睡眠优化代码">系统睡眠优化代码：</h3>
-<p>更新了系统必须执行一次，否则电脑休眠会存在问题</p>
+</div><h3 id="可以通配如下url对资源的引用">可以通配如下URL对资源的引用：</h3>
+<ul>
+<li>GET/restful/a/1/b/</li>
+<li>GET/restful/a/c/b/</li>
+<li>GET/restful/a/2/d/b/</li>
+</ul>
+<h3 id="实例2">实例2:</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">MyAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;{var}/b&#34;</span>)  
+    <span style="color:#00f">public</span> String getMyName() {        
+        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;Mike&#34;</span>;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="可以通配如下url对资源的引用-1">可以通配如下URL对资源的引用：</h3>
+<ul>
+<li>GET/restful/a/c/b/</li>
+<li>GET/restful/a/1/b/</li>
+</ul>
+<h3 id="但是不可以通配如下url">但是不可以通配如下URL：</h3>
+<ul>
+<li>GET/restful/a/1/2/b/</li>
+<li>GET/restful/a/1/c/2/b/</li>
+</ul>
+</br>
+<h1 style="text-align:center">@GET注解</h1>
+<h2 id="get位置">@GET位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-get">1.放在方法前，表示该方法允许的 HTTP 请求方法是 GET：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@GET  
+@Path(<span style="color:#a31515">&#34;/b&#34;</span>)  
+ <span style="color:#00f">public</span> String methodB() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;hello&#34;</span>;  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2资源路径的映射思路-1">2资源路径的映射思路</h3>
+<p>1.抽象概念：</p>
+<table><tr>
+		<td bgcolor="red" style="color: white;">协议</td>
+		<td bgcolor="blue"style="color: white;">主机</td>
+		<td bgcolor="green"style="color: white;">:端口</td>
+		<td bgcolor="orange"style="color: white;">/项目</td>
+		<td bgcolor="pink"style="color: white;">/类映射路径</td>
+		<td bgcolor="purple"style="color: white;">/方法映射路径</td>
+		<td bgcolor="black"style="color: white;">可选其他部分</td>
+</tr></table>
+<p>2.具体实例：</p>
+<table><tr>
+		<td bgcolor="red" style="color: white;">http://</td>
+		<td bgcolor="blue"style="color: white;">127.0.0.1</td>
+		<td bgcolor="green"style="color: white;">:8080</td>
+		<td bgcolor="orange"style="color: white;">/restful</td>
+		<td bgcolor="pink"style="color: white;">/a</td>
+		<td bgcolor="purple"style="color: white;">/b</td>
+		<td bgcolor="black"style="color: white;">/123456</td>
+</tr></table>
+</br>
+<h1 style="text-align:center">@POST注解</h1>
+<h2 id="post位置">@POST位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-post">1.放在方法前，表示该方法允许的 HTTP 请求方法是 POST：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@POST  
+@Path(<span style="color:#a31515">&#34;/post&#34;</span>)  
+<span style="color:#00f">public</span> String methodPost() {
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;post&#34;</span>;  
+}  
+</code></pre></td></tr></table>
+</div>
+</div></br>
+<h1 style="text-align:center">@PUT注解</h1>
+<h2 id="put位置">@PUT位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-put">1.放在方法前，表示该方法允许的 HTTP 请求方法是 PUT：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@PUT  
+@Path(<span style="color:#a31515">&#34;/put&#34;</span>)  
+ <span style="color:#00f">public</span> String methodPut() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;put&#34;</span>;  
+} 
+</code></pre></td></tr></table>
+</div>
+</div></br>
+<h1 style="text-align:center">@DELETE注解</h1>
+<h2 id="delete位置">@DELETE位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-delete">1.放在方法前，表示该方法允许的 HTTP 请求方法是 DELETE：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@DELETE  
+@Path(<span style="color:#a31515">&#34;/delete&#34;</span>)  
+ <span style="color:#00f">public</span> String methodDELETE() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;delete&#34;</span>;  
+} 
+</code></pre></td></tr></table>
+</div>
+</div></br>
+<h1 style="text-align:center">@Produces注解</h1>
+<h2 id="produces位置">@Produces位置</h2>
+<h3 id="1放在类前定义-class-test-中所有的方法返回值的格式">1.放在类前，定义 class Test 中所有的方法返回值的格式：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)  
+@Produces(<span style="color:#a31515">&#34;text/plain; charset=utf-8&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Test</span>{ 
+
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2放在方法前定义该方法的返回值格式">2.放在方法前，定义该方法的返回值格式：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -297,39 +417,136 @@ sudo kextcache -i /
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pmset -a hibernatemode 0
-sudo rm /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
-sudo pmset -a standby 0
-sudo pmset -a autopoweroff 0
-sudo pmset -a proximitywake 0
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/b&#34;</span>)  
+@Produces(<span style="color:#a31515">&#34;text/plain; charset=gb2312&#34;</span>)  
+ <span style="color:#00f">public</span> String methodB() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;你好&#34;</span>;  
+    
+}
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<h3 id="清除nvram重置ec">清除NvRAM/重置EC</h3>
-<ul>
-<li>请先移除电源适配器 (笔记本使用电池供电)</li>
-<li>关机状态下按住 <strong><code>Fn + D + 电源按钮</code></strong></li>
-<li>键盘亮松开电源键，保持 <strong><code>Fn + D</code></strong>按住</li>
-<li>出现第一屏松开 <strong><code>Fn + D</code></strong></li>
-<li>笔记本屏幕黑屏，按下回车键</li>
-<li>弹出 CMOS 提示，再次按下回车键</li>
-<li>电脑自动关机，需手动开机</li>
-<li>NvRAM / EC 已重置</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol></article>
+</div><h2 id="produces格式">@Produces格式</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Produces (<span style="color:#a31515">&#34;Mime-Type/Content-Type; 字符编码&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="mime-typecontent-type">Mime-Type/Content-Type</h2>
+<p>Mime（Multipurpose Internet Mail Extensions），描述消息内容类型的因特网标准。
+Mime-Type 强调资源扩展名；Content-Type 强调资源本身的类型。</p>
+<h2 id="常见-mime-typecontent-type">常见 Mime-Type/Content-Type</h2>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">扩展名</th>
+<th align="center">Minme-Type/Content-Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">超文本标记语言</td>
+<td align="center">.html<br />.htm</td>
+<td align="center">text/html</td>
+</tr>
+<tr>
+<td align="center">普通文本</td>
+<td align="center">.txt</td>
+<td align="center">text/plain</td>
+</tr>
+<tr>
+<td align="center">RTF文本</td>
+<td align="center">.rtf</td>
+<td align="center">application/rtf</td>
+</tr>
+<tr>
+<td align="center">GIF图形</td>
+<td align="center">.gif</td>
+<td align="center">image/gif</td>
+</tr>
+<tr>
+<td align="center">JPEG图形</td>
+<td align="center">.jpeg<br />.jpg</td>
+<td align="center">image/jpeg</td>
+</tr>
+<tr>
+<td align="center">mp4视频文件</td>
+<td align="center">.mp4</td>
+<td align="center">video/mp4</td>
+</tr>
+<tr>
+<td align="center">mp3音频文件</td>
+<td align="center">.mp3</td>
+<td align="center">audio/x-mpeg</td>
+</tr>
+<tr>
+<td align="center">JSON文件</td>
+<td align="center">.json</td>
+<td align="center">application/json</td>
+</tr>
+<tr>
+<td align="center">二进制流文件</td>
+<td align="center">*.*</td>
+<td align="center">application/octet-stream</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符编码">字符编码</h2>
+<h3 id="什么是字符编码">什么是字符编码？</h3>
+<p>        计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。</br>        字符编码 (encoding) 和字符集不同。字符集只是字符的集合，不一定适合作网络传送、处理，有时须经编码 (encode) 后才能应用。如 Unicode 可依不同需要以 UTF-8、UTF-16、UTF-32 等方式编码。
+</br>        字符编码就是以二进制的数字来对应字符集的字符。 因此，对字符进行编码，是信息交流的技术基础。</p>
+<h3 id="常见字符编码">常见字符编码</h3>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="left">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ASCII 码</td>
+<td align="left">采取 7 位编码，所以是 2^7=128, 共可以表示 128 个字符，包括 34 个字符，（如换行 LF，回车 CR 等），其余 94 位为英文字母和标点符号及运算符号等。</td>
+</tr>
+<tr>
+<td align="center">ISO8859-1</td>
+<td align="left">在 ASCII 码的基础上涵盖了大多数西欧语言字符，仍然是单字节编码，它总共能表示 256 个字符。</td>
+</tr>
+<tr>
+<td align="center">GB2312</td>
+<td align="left">全称为《信息交换用汉字编码字符集基本集》，它是双字节编码，总的编码范围是 A1~F7，其中 A1~A9 为符号区，B0~F7 为汉字区。</td>
+</tr>
+<tr>
+<td align="center">GBK</td>
+<td align="left">全称《汉字内码扩展规范》，扩展了 GB2312，加入更多的汉字，它的编码范围是 8140~FEFE（去掉 XX7F），与 GB2312 兼容。</td>
+</tr>
+<tr>
+<td align="center">GB18030</td>
+<td align="left">《数字交换用汉字编码字符集》，它可能是单字节、双字节或者四字节编码，与 GB2312 编码兼容。</td>
+</tr>
+<tr>
+<td align="center">UTF-8</td>
+<td align="left">UTF-8 用 1 到 6 个字节编码 Unicode 字符。用在网页上可以统一页面显示中文简体繁体及其它语言（如英文，日文，韩文）。</td>
+</tr>
+<tr>
+<td align="center">UTF-16</td>
+<td align="left">具体定义了 Unicode 字符在计算机中的存取方法。采用 2 字节来表示 Unicode 转化格式，它是定长的表示方法，不论什么字符都可以用两个字节表示。</td>
+</tr>
+<tr>
+<td align="center">BIG5</td>
+<td align="left">Big5，又称为大五码或五大码，是使用繁体中文（正体中文）社区中最常用的电脑汉字字符集标准。Big5 码是一套双字节字符集，使用了双八码存储方法，即以两个字节来表示一个字。</td>
+</tr>
+</tbody>
+</table></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       
         
-          <a class="ui label" href="/tags/mac" title="Mac">Mac</a>
-        
-          <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+          <a class="ui label" href="/tags/java" title="java">java</a>
         
       
       <div
