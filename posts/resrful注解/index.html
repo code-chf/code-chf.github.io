@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>RESRful:注解 | codechf的个人博客</title>
+    <title>RESTful:注解 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,7 +13,8 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="" />
+<meta name="description" content="记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。
+" />
 
 
 
@@ -22,8 +23,8 @@
 <link rel="canonical" href="/posts/resrful%E6%B3%A8%E8%A7%A3/" />
 
 
-<meta property="og:title" content="RESRful:注解" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="RESTful:注解" />
+<meta property="og:description" content="记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/resrful%E6%B3%A8%E8%A7%A3/" />
 <meta property="article:published_time" content="2020-10-10T14:20:14+08:00" />
@@ -32,8 +33,8 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RESRful:注解"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="RESTful:注解"/>
+<meta name="twitter:description" content="记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。"/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -121,7 +122,7 @@
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          RESRful:注解
+          RESTful:注解
           <div class="sub header">
             @
             
@@ -134,7 +135,7 @@
                 星期六，十月 10 日，2020 年
               
 
-            · 4 分钟阅读
+            · 6 分钟阅读
 
             · 更新于
               
@@ -144,7 +145,8 @@
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><h1 style="text-align:center">@Path注解</h1>
+      <article style="margin-top: 2rem;"><p>记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。</p>
+<h1 style="text-align:center">一、@Path注解</h1>
 <h2 id="1path位置">(1)@Path位置</h2>
 <h3 id="1放在类前面将class-test映射到路径a">1.放在类前面，将class Test映射到路径/a</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -286,7 +288,7 @@
 <li>GET/restful/a/1/c/2/b/</li>
 </ul>
 </br>
-<h1 style="text-align:center">@GET注解</h1>
+<h1 style="text-align:center">二、@GET注解</h1>
 <h2 id="get位置">@GET位置</h2>
 <h3 id="1放在方法前表示该方法允许的-http-请求方法是-get">1.放在方法前，表示该方法允许的 HTTP 请求方法是 GET：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -327,7 +329,7 @@
 		<td bgcolor="black"style="color: white;">/123456</td>
 </tr></table>
 </br>
-<h1 style="text-align:center">@POST注解</h1>
+<h1 style="text-align:center">三、@POST注解</h1>
 <h2 id="post位置">@POST位置</h2>
 <h3 id="1放在方法前表示该方法允许的-http-请求方法是-post">1.放在方法前，表示该方法允许的 HTTP 请求方法是 POST：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -347,7 +349,7 @@
 </code></pre></td></tr></table>
 </div>
 </div></br>
-<h1 style="text-align:center">@PUT注解</h1>
+<h1 style="text-align:center">四、@PUT注解</h1>
 <h2 id="put位置">@PUT位置</h2>
 <h3 id="1放在方法前表示该方法允许的-http-请求方法是-put">1.放在方法前，表示该方法允许的 HTTP 请求方法是 PUT：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -367,7 +369,7 @@
 </code></pre></td></tr></table>
 </div>
 </div></br>
-<h1 style="text-align:center">@DELETE注解</h1>
+<h1 style="text-align:center">五、@DELETE注解</h1>
 <h2 id="delete位置">@DELETE位置</h2>
 <h3 id="1放在方法前表示该方法允许的-http-请求方法是-delete">1.放在方法前，表示该方法允许的 HTTP 请求方法是 DELETE：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -387,7 +389,7 @@
 </code></pre></td></tr></table>
 </div>
 </div></br>
-<h1 style="text-align:center">@Produces注解</h1>
+<h1 style="text-align:center">六、@Produces注解</h1>
 <h2 id="produces位置">@Produces位置</h2>
 <h3 id="1放在类前定义-class-test-中所有的方法返回值的格式">1.放在类前，定义 class Test 中所有的方法返回值的格式：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -540,7 +542,541 @@ Mime-Type 强调资源扩展名；Content-Type 强调资源本身的类型。</p
 <td align="left">Big5，又称为大五码或五大码，是使用繁体中文（正体中文）社区中最常用的电脑汉字字符集标准。Big5 码是一套双字节字符集，使用了双八码存储方法，即以两个字节来表示一个字。</td>
 </tr>
 </tbody>
-</table></article>
+</table>
+</br>
+<h1 style="text-align:center">七、案例成功需要注意的三个规范</h1>
+<h2 id="1系统分析与设计">1.系统分析与设计</h2>
+<p>对给定的需求进行分析，并明确该需求涉及到哪些请求与响应，并将这些请求进行分类。每一类的请求可集中在一个 Class 中，该类中的每种请求对应设计为该 Class 中的相关方法及其实现代码。</br></br>
+<img src="https://cdn.jsdelivr.net/gh/code-chf/uPic-file@master/uPic/2020/10/8Q8zF0-63D5BB03D0D914C34042783525D537CE.png" alt="63D5BB03D0D914C34042783525D537CE">
+</br></p>
+<h2 id="2注解与web服务器">2.注解与Web服务器</h2>
+<h3 id="规划并设置注解">规划并设置注解</h3>
+<p>        对规划已定的 Class 和方法设置所需标注，这些标注包括：请求方法约束、路径绑定、输入参数控制、输出结果控制、访问权限控制等。
+</br>        本小结案例中只涉及请求方法约束、路径绑定、输出结果控制这 3 个层面的简单实现。</br></br></p>
+<p><img src="https://cdn.jsdelivr.net/gh/code-chf/uPic-file@master/uPic/2020/10/cLt6mB-BC97C68003E07D731D28763B02EBD5C3.png" alt="BC97C68003E07D731D28763B02EBD5C3">
+</br></p>
+<h2 id="3正确配置服务器-webxml">3.正确配置服务器 web.xml</h2>
+<p>        在 web.xml 中对设计好的 API Class 进行正确的配置，使 RESTEasy 框架可以在 Tomcat 启动时正确地在 Web 容器中注册这些 API Class。只有 Web 容器成功注册这些 API Class 后，我们才能调用这些 API Class 所提供的资源访问接口实现系统功能。</br></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">&lt;context-param&gt;  
+    &lt;param-name&gt;resteasy.resources&lt;/param-name&gt;  
+    &lt;param-value&gt; 全路径 Class1 名，全路径 Class2 名，...&lt;/param-value&gt;  
+&lt;/context-param&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3api代码">3.API代码</h2>
+<h3 id="1restfulentitystudent">(1)restful.entity.Student</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.entity;
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlElement;
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlRootElement;
+
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Student</span> {
+    <span style="color:#00f">private</span> String code;
+    <span style="color:#00f">private</span> String name;
+    
+    <span style="color:#00f">public</span> String getCode() {
+        <span style="color:#00f">return</span> code;
+    }
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCode(String code) {
+        <span style="color:#00f">this</span>.code = code;
+    }
+
+    <span style="color:#00f">public</span> String getName() {
+        <span style="color:#00f">return</span> name;
+    }
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setName(String name) {
+        <span style="color:#00f">this</span>.name = name;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2restfulentityteacher">(2)restful.entity.Teacher</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.entity;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlElement;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlRootElement;  
+
+@XmlRootElement(name = <span style="color:#a31515">&#34;teacher&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Teacher</span> {  
+    <span style="color:#00f">private</span> String code;  
+    <span style="color:#00f">private</span> String name;  
+    <span style="color:#00f">private</span> String title;  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getCode() {  
+        <span style="color:#00f">return</span> code;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCode(String code) {  
+        <span style="color:#00f">this</span>.code = code;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getName() {  
+        <span style="color:#00f">return</span> name;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setName(String name) {  
+        <span style="color:#00f">this</span>.name = name;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getTitle() {  
+        <span style="color:#00f">return</span> title;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setTitle(String title) {  
+        <span style="color:#00f">this</span>.title = title;  
+    }  
+} 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3restfulentityschedule">(3)restful.entity.Schedule</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.entity;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlElement;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlRootElement;  
+
+@XmlRootElement(name = <span style="color:#a31515">&#34;schedule&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Schedule</span> {  
+    <span style="color:#00f">private</span> String code;  
+    <span style="color:#00f">private</span> String caption;  
+    <span style="color:#00f">private</span> String classNO;  
+    <span style="color:#00f">private</span> String time;  
+    <span style="color:#00f">private</span> String classroom;
+    
+    @XmlElement  
+    <span style="color:#00f">public</span> String getCode() {  
+        <span style="color:#00f">return</span> code;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCode(String code) {  
+        <span style="color:#00f">this</span>.code = code;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getCaption() {  
+        <span style="color:#00f">return</span> caption;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCaption(String caption) {  
+        <span style="color:#00f">this</span>.caption = caption;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getClassNO() {  
+        <span style="color:#00f">return</span> classNO;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setClassNO(String classNO) {  
+        <span style="color:#00f">this</span>.classNO = classNO;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getTime() {  
+        <span style="color:#00f">return</span> time;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setTime(String time) {  
+        <span style="color:#00f">this</span>.time = time;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getClassroom() {  
+        <span style="color:#00f">return</span> classroom;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setClassroom(String classroom) {  
+        <span style="color:#00f">this</span>.classroom = classroom;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4restfulapistudentapi">(4)restful.api.StudentAPI</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">import</span> java.util.ArrayList;  
+<span style="color:#00f">import</span> java.util.List;  
+<span style="color:#00f">import</span> javax.ws.rs.GET;  
+<span style="color:#00f">import</span> javax.ws.rs.POST;  
+<span style="color:#00f">import</span> javax.ws.rs.Path;  
+<span style="color:#00f">import</span> javax.ws.rs.Produces;  
+<span style="color:#00f">import</span> restful.entity.Schedule;  
+<span style="color:#00f">import</span> restful.entity.Student;  
+
+@Path(<span style="color:#a31515">&#34;/student&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">StudentAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;/basicInfo&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/json;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> Student basicInfo() {  
+        Student student = <span style="color:#00f">new</span> Student();  
+        student.setCode(<span style="color:#a31515">&#34;0140035&#34;</span>);  
+        student.setName(<span style="color:#a31515">&#34;张三&#34;</span>);        
+        <span style="color:#00f">return</span> student;  
+    }  
+
+    @POST  
+    @Path(<span style="color:#a31515">&#34;/schedule&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/xml;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> List&lt;Schedule&gt; schedule() {  
+        List&lt;Schedule&gt; schedules = <span style="color:#00f">new</span> ArrayList&lt;Schedule&gt;();  
+        Schedule schedule = <span style="color:#00f">new</span> Schedule();  
+        schedule.setCode(<span style="color:#a31515">&#34;00001&#34;</span>);  
+        schedule.setCaption(<span style="color:#a31515">&#34;线性代数&#34;</span>);  
+        schedule.setClassNO(<span style="color:#a31515">&#34;A01&#34;</span>);  
+        schedule.setClassroom(<span style="color:#a31515">&#34;5121&#34;</span>);  
+        schedule.setTime(<span style="color:#a31515">&#34;1-123&#34;</span>);  
+        schedules.add(schedule);  
+        schedule = <span style="color:#00f">new</span> Schedule();  
+        schedule.setCode(<span style="color:#a31515">&#34;00002&#34;</span>);  
+        schedule.setCaption(<span style="color:#a31515">&#34;大学语文&#34;</span>);  
+        schedule.setClassNO(<span style="color:#a31515">&#34;B03&#34;</span>);  
+        schedule.setClassroom(<span style="color:#a31515">&#34;1101&#34;</span>);  
+        schedule.setTime(<span style="color:#a31515">&#34;4-56&#34;</span>);  
+        schedules.add(schedule);  
+        <span style="color:#00f">return</span> schedules;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5restfulapiteacherapi">(5)restful.api.TeacherAPI</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.api;  
+<span style="color:#00f">import</span> java.util.ArrayList;  
+<span style="color:#00f">import</span> java.util.List;  
+<span style="color:#00f">import</span> javax.ws.rs.GET;  
+<span style="color:#00f">import</span> javax.ws.rs.POST;  
+<span style="color:#00f">import</span> javax.ws.rs.Path;  
+<span style="color:#00f">import</span> javax.ws.rs.Produces;  
+<span style="color:#00f">import</span> restful.entity.Schedule;  
+<span style="color:#00f">import</span> restful.entity.Teacher;  
+
+@Path(<span style="color:#a31515">&#34;/teacher&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">TeacherAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;/basicInfo&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/xml;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> Teacher basicInfo() {  
+        Teacher teacher = <span style="color:#00f">new</span> Teacher();  
+        teacher.setCode(<span style="color:#a31515">&#34;000001&#34;</span>);  
+        teacher.setName(<span style="color:#a31515">&#34;陈老师&#34;</span>);  
+        teacher.setTitle(<span style="color:#a31515">&#34;讲师&#34;</span>);  
+        <span style="color:#00f">return</span> teacher;  
+    }  
+
+    @POST  
+    @Path(<span style="color:#a31515">&#34;/schedule&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/json;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> List&lt;Schedule&gt; schedule() {  
+        List&lt;Schedule&gt; schedules = <span style="color:#00f">new</span> ArrayList&lt;Schedule&gt;();  
+        Schedule schedule = <span style="color:#00f">new</span> Schedule();  
+        schedule.setCode(<span style="color:#a31515">&#34;00002&#34;</span>);  
+        schedule.setCaption(<span style="color:#a31515">&#34;大学语文&#34;</span>);  
+        schedule.setClassNO(<span style="color:#a31515">&#34;B03&#34;</span>);  
+        schedule.setClassroom(<span style="color:#a31515">&#34;1101&#34;</span>);  
+        schedule.setTime(<span style="color:#a31515">&#34;4-56&#34;</span>);  
+        schedules.add(schedule);  
+        <span style="color:#00f">return</span> schedules;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="6webxml">(6)web.xml</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#00f">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+
+&lt;web-app version=<span style="color:#a31515">&#34;3.0&#34;</span> xmlns=<span style="color:#a31515">&#34;https://java.sun.com/xml/ns/javaee&#34;</span> xmlns:xsi=<span style="color:#a31515">&#34;https://www.w3.org/2001/XMLSchema-instance&#34;</span> xsi:schemaLocation=<span style="color:#a31515">&#34;https://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&#34;</span>&gt;  
+
+    &lt;display-name&gt;restful&lt;/display-name&gt;   
+
+    &lt;context-param&gt;  
+        &lt;param-name&gt;resteasy.resources&lt;/param-name&gt;  
+        &lt;param-value&gt;restful.api.StudentAPI,restful.api.TeacherAPI&lt;/param-value&gt;  
+    &lt;/context-param&gt;  
+
+    &lt;listener&gt;  
+        &lt;listener-class&gt;org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap&lt;/listener-class&gt;  
+    &lt;/listener&gt;  
+
+    &lt;servlet&gt;  
+        &lt;servlet-name&gt;Resteasy&lt;/servlet-name&gt;  
+        &lt;servlet-class&gt;org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher&lt;/servlet-class&gt;  
+    &lt;/servlet&gt;  
+
+    &lt;context-param&gt;  
+        &lt;param-name&gt;resteasy.servlet.mapping.prefix&lt;/param-name&gt;  
+        &lt;param-value&gt;/&lt;/param-value&gt;  
+    &lt;/context-param&gt;  
+
+    &lt;servlet-mapping&gt;  
+        &lt;servlet-name&gt;Resteasy&lt;/servlet-name&gt;  
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  
+    &lt;/servlet-mapping&gt;  
+
+&lt;/web-app&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>上课时间：2020年10月10日，星期四，下午</p>
+</blockquote></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
@@ -748,7 +1284,7 @@ Mime-Type 强调资源扩展名；Content-Type 强调资源本身的类型。</p
             
               <div class="item">
                 <div class="content">
-                  <a href="/posts/resrful%E6%B3%A8%E8%A7%A3/" class="item">RESRful:注解</a>
+                  <a href="/posts/resrful%E6%B3%A8%E8%A7%A3/" class="item">RESTful:注解</a>
                 </div>
               </div>
             
@@ -879,8 +1415,11 @@ Mime-Type 强调资源扩展名；Content-Type 强调资源本身的类型。</p
   </section>
 </article>
 
+    
   </div>
+
 </div>
+
 
           </div>
         </section>
