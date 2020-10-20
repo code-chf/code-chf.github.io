@@ -190,7 +190,7 @@ connection.commit()
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="运行结果">运行结果：</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/CHENG-H-F/uPic-file@master/uPic/image-20200710082914960.png" alt="image-20200710082914960"></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710082914960.png" alt="image-20200710082914960"></p>
 <h4 id="结果分析可以看到部分出现了乱码初步判定时页面编码问题这个时候去看了一下爬取的url网页上查看源代码发现这样一条">结果分析，可以看到部分出现了乱码，初步判定时页面编码问题，这个时候去看了一下爬取的url，网页上查看源代码，发现这样一条：</h4>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <h4 id="每个页面都相同的一条按理说网页编码已经是gb2312怎么爬取下来会出现乱码呢brbr">每个页面都相同的一条，按理说网页编码已经是&quot;GB2312&rdquo;，怎么爬取下来会出现乱码呢？</br></br></h4>
@@ -224,10 +224,10 @@ connection.commit()
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="结果报错">结果报错：</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/CHENG-H-F/uPic-file@master/uPic/image-20200710084148545.png" alt="image-20200710084148545"></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710084148545.png" alt="image-20200710084148545"></p>
 <h4 id="说明str方法中没有decode属性">说明str（）方法中没有decode（）属性</h4>
 <h4 id="尝试去掉str可是结果还是">尝试去掉str（），可是结果还是：</h4>
-<p><img src="https://cdn.jsdelivr.net/gh/CHENG-H-F/uPic-file@master/uPic/image-20200710084511173.png" alt="image-20200710084511173"></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710084511173.png" alt="image-20200710084511173"></p>
 <h4 id="说明去掉str后结果是一个对象不能用decodebr">说明去掉str（）后，结果是一个对象，不能用decode（）</br></h4>
 <h3 id="思考一下输出结果部分是乱码那这样所以用decodegb2312解码的时候就会出现问题愿意可能是因为输出编码不止一种编码如果是其他编码的话用gb2312去解码就会出现问题">思考一下，输出结果部分是乱码，那这样所以用decode（‘gb2312’）解码的时候，就会出现问题，愿意可能是因为输出编码不止一种编码，如果是其他编码的话，用gb2312去解码就会出现问题。</h3>
 <h3 id="换一种思路爬取网页的时候先将页面全部转换为一种编码">换一种思路，爬取网页的时候，先将页面全部转换为一种编码。</h3>
@@ -241,7 +241,7 @@ connection.commit()
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="结果如下">结果如下：</h4>
-<p><img src="https://cdn.jsdelivr.net/gh/CHENG-H-F/uPic-file@master/uPic/image-20200710085232037.png" alt="image-20200710085232037"></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710085232037.png" alt="image-20200710085232037"></p>
 <h4 id="结果分析爬取到的编码果然不同两种编码方式怎么统一呢">结果分析：爬取到的编码果然不同，两种编码方式。怎么统一呢？</h4>
 <h3 id="查找原因发现这是beautifulsoup4框架内部的结果beautifuldoup4网页解码的时候会自动去猜测网页的编码格式但是也有猜错的时候像上面这样的结果就是猜错的情况">查找原因，发现这是Beautifulsoup4框架内部的结果，Beautifuldoup4网页解码的时候，会自动去猜测网页的编码格式，但是也有猜错的时候，像上面这样的结果就是猜错的情况。</h3>
 </br>
@@ -651,6 +651,12 @@ connection.commit()
           </div>
           <div class="content">
             <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/" class="item">常用正则表达式模板</a>
+                </div>
+              </div>
             
               <div class="item">
                 <div class="content">

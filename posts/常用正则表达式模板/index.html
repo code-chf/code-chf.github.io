@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mac OS 终端 iTerm2 并配置 zsh | codechf的个人博客</title>
+    <title>常用正则表达式模板 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,28 +13,28 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="MacOs 第三方shell（iTerm）并配置zsh
+<meta name="description" content="开发中常用的一些正则表达式，用正则校验数据。
 " />
 
 
 
 <meta name="generator" content="Hugo 0.70.0" />
 
-<link rel="canonical" href="/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/" />
+<link rel="canonical" href="/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/" />
 
 
-<meta property="og:title" content="Mac OS 终端 iTerm2 并配置 zsh" />
-<meta property="og:description" content="MacOs 第三方shell（iTerm）并配置zsh" />
+<meta property="og:title" content="常用正则表达式模板" />
+<meta property="og:description" content="开发中常用的一些正则表达式，用正则校验数据。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/" />
-<meta property="article:published_time" content="2020-06-18T09:27:39+08:00" />
-<meta property="article:modified_time" content="2020-06-18T09:27:39+08:00" />
+<meta property="og:url" content="/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/" />
+<meta property="article:published_time" content="2020-10-20T23:49:09+08:00" />
+<meta property="article:modified_time" content="2020-10-20T23:49:09+08:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac OS 终端 iTerm2 并配置 zsh"/>
-<meta name="twitter:description" content="MacOs 第三方shell（iTerm）并配置zsh"/>
+<meta name="twitter:title" content="常用正则表达式模板"/>
+<meta name="twitter:description" content="开发中常用的一些正则表达式，用正则校验数据。"/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -116,13 +116,13 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(/img/mac%e7%bb%88%e7%ab%afiterm2%e6%9c%89%e5%85%b3%e9%85%8d%e7%bd%ae.png);"></div>
+      <div class="cover-img" style="background-image: url(https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/VLibp0-V2L4TI.png);"></div>
     </section>
     
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          Mac OS 终端 iTerm2 并配置 zsh
+          常用正则表达式模板
           <div class="sub header">
             @
             
@@ -132,155 +132,99 @@
             
 
             · 
-                星期四，六月 18 日，2020 年
+                星期二，十月 20 日，2020 年
               
 
-            · 5 分钟阅读
+            · 8 分钟阅读
 
             · 更新于
               
-                星期四，六月 18 日，2020 年
+                星期二，十月 20 日，2020 年
               
           </div>
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><p>MacOs 第三方shell（iTerm）并配置zsh</p>
-<h1 id="mac-os-终端-iterm2">Mac OS 终端 iTerm2</h1>
-<p>之前一直使用的 Mac OS 自带的终端，觉得也还可以，后来看大神 onevcat 的直播视频，发现他用的是 iTerm，真的是非常好用，于是自己也开始倒腾起来。</p>
-<h2 id="iterm2">iTerm2</h2>
-<h3 id="1-下载安装">1. 下载安装</h3>
-<p><a href="https://link.jianshu.com?t=https%3A%2F%2Fwww.iterm2.com%2Fdownloads.html">官网下载地址</a></p>
-<p>下载下来直接是一个 App ，你可以直接打开，也可以把它拖到 Applications 目录下。</p>
-<h3 id="2-偏好设置">2. 偏好设置</h3>
-<p><code>菜单</code> —&gt; <code>Preferences</code> —&gt; <code>Profiles</code></p>
-<p><img src="/i/3aeb5c3a-00f6-47fb-bbc4-9cdb6cdfabad.jpg" alt=""></p>
-<p>在左侧的列表里显示了你的所有配置文件（<code>Profile</code>），目前列表里只有一个默认的 <code>Default</code>，这个是 iTerm 默认的窗口模板配置文件，我们接下来创建自己的窗口配置文件。</p>
-<p>点击列表下方的 <code>+</code> 号，新建配置文件</p>
-<p><img src="/i/8be1c671-57d4-4a83-8c5a-355b0b827f29.jpg" alt=""></p>
-<p><code>General</code> 里面填写基础的配置：</p>
-<ul>
-<li><strong>Name</strong>：配置文件名称</li>
-<li><strong>Shortcut Key</strong>：打开该窗口的快捷键</li>
-<li><strong>Tags</strong>：标签，方便在左侧列表快速查找到该配置文件</li>
-<li><strong>Badge</strong>：标记，在窗口上显示你的个人标识。</li>
-</ul>
-<p><code>Colors</code> 里面设置颜色相关的配置：</p>
-<ul>
-<li><strong>Foreground</strong>：前景色，窗口文字颜色</li>
-<li><strong>Background</strong>：窗口背景色</li>
-<li><strong>Links</strong>：链接的颜色</li>
-<li><strong>Selection</strong>：选中内容的背景色</li>
-<li><strong>Selected Text</strong>：选中文字的颜色</li>
-<li><strong>Badge</strong>：标记的颜色</li>
-<li><strong>Cursor</strong>：光标的颜色</li>
-</ul>
-<blockquote>
-<p>这里还可以去网上下载主题配色，然后使用别人配置的主题，<a href="https://link.jianshu.com?t=https%3A%2F%2Fgithub.com%2Fmbadolato%2FiTerm2-Color-Schemes">下载地址</a>，下载完成以后，选择 <code>Color Presets</code> —&gt; <code>Import</code>，选择你下载的文件夹，找到目录下的 <code>schemes</code> 文件夹，选中里面你想要的主题，点击 <code>open</code> 导入，然后就可以使用了。</p>
-</blockquote>
-<blockquote>
-<p><a href="https://link.jianshu.com?t=http%3A%2F%2Fblog.csdn.net%2Fzhongtiankai%2Farticle%2Fdetails%2F71597499">修改 mac 终端 (terminal) 字体颜色</a></p>
-</blockquote>
-<p><code>Text</code> 里面设置窗口文字相关的配置：</p>
-<ul>
-<li><strong>Cursor</strong>：光标的样式</li>
-<li><strong>Font</strong>：文字字体</li>
-</ul>
-<p><code>Window</code> 里设置窗口相关的配置：</p>
-<ul>
-<li><strong>Transparency</strong>：窗口的透明度</li>
-<li><strong>Background Image</strong>：窗口的背景图片</li>
-</ul>
-<h3 id="3-亮点功能">3. 亮点功能</h3>
-<h4 id="快速隐藏和显示">快速隐藏和显示</h4>
-<p><code>Profiles</code> —&gt; <code>Keys</code> —&gt; <code>Hotkey</code>，选中，默认的快捷键是：<code>option + Space</code></p>
-<h4 id="自动补齐">自动补齐</h4>
-<p>iTerm2 可以自动补齐命令，输入若干字符，按 <code>Command + ;</code> 弹出自动补齐窗口，列出曾经使用过的命令。</p>
-<h4 id="时间轴">时间轴</h4>
-<p>如果你想查看你最近一段时间执行的操作，可以使用时间轴功能。</p>
-<p>快捷键：<code>Command + Option + B</code></p>
-<h4 id="智能选中">智能选中</h4>
-<p>在 iTerm2 中，双击选中，三击选中整行。可以识别网址，引号引起的字符串，邮箱地址等。</p>
-<p>在 iTerm2 中，选中即复制。即任何选中状态的字符串都被放到了系统剪切板中。</p>
-<h4 id="强大的-command-键">强大的 Command 键</h4>
-<p>按住 <code>command</code> 键：</p>
-<ul>
-<li>可以拖拽选中的字符串</li>
-<li>点击 <code>url</code>：调用默认浏览器访问该网址</li>
-<li>点击文件：调用默认程序打开文件</li>
-<li>点击文件夹：在 <code>Finder</code> 中打开该文件夹</li>
-<li>同时按住 <code>option</code> 键，可以以矩形选中</li>
-</ul>
-<h4 id="常用快捷键">常用快捷键</h4>
-<p>快捷键</p>
-<p>说明</p>
-<p><code>Command + Shift + H</code></p>
-<p>历史粘贴记录</p>
-<p><code>Command + Shift + ;</code></p>
-<p>历史命令记录</p>
-<p><code>Command + D</code></p>
-<p>同个窗口横向分屏</p>
-<p><code>Command + Shift + D</code></p>
-<p>同个窗口竖向分屏</p>
-<p><code>Command + Option + E</code></p>
-<p>快速预览所有窗口</p>
-<p><code>Command + /</code></p>
-<p>高亮当前鼠标的位置</p>
-<p><code>Command + T</code></p>
-<p>新建窗口</p>
-<p><code>Command + W</code></p>
-<p>关闭窗口</p>
-<p><code>Command + 左右方向键</code></p>
-<p>切换窗口</p>
-<p><code>Command + 上下方向键</code></p>
-<p>上下滚动内容</p>
-<p><code>Command + 数字</code></p>
-<p>切换至指定窗口</p>
-<p><code>Command + ,</code></p>
-<p>打开偏好设置</p>
-<p><code>Command + F</code></p>
-<p>智能查找</p>
-<h2 id="zsh">zsh</h2>
-<h3 id="1-下载安装-1">1. 下载安装</h3>
-<p>Mac 系统自带了 <code>zsh</code>, 一般不是最新版，如果需要最新版可通过 <code>Homebrew</code> 来安装。</p>
+      <article style="margin-top: 2rem;"><p>开发中常用的一些正则表达式，用正则校验数据。</p>
+<h1 id="常用正则表达式模板httpswwwcnblogscomyoohoehp9095409html"><a href="https://www.cnblogs.com/YooHoeh/p/9095409.html">常用正则表达式模板</a></h1>
+<p>很多不太懂正则的朋友，在遇到需要用正则校验数据时，往往是在网上去找很久，结果找来的还是不很符合要求。所以我最近把开发中常用的一些正则表达式整理了一下，在这里分享一下。给自己留个底，也给朋友们做个参考。</p>
+<h2 id="一校验数字的表达式"><strong>一、校验数字的表达式</strong></h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install zsh
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">数字：^\[0-9\]\*$
+n位的数字：^\\d{n}$
+至少n位的数字：^\\d{n,}$
+m-n位的数字：^\\d{m,n}$
+零和非零开头的数字：^(0|\[1-9\]\[0-9\]\*)$
+非零开头的最多带两位小数的数字：^(\[1-9\]\[0-9\]\*)+(.\[0-9\]{1,2})?$
+带1-2位小数的正数或负数：^(\\-)?\\d+(\\.\\d{1,2})?$
+正数、负数、和小数：^(\\-|\\+)?\\d+(\\.\\d+)?$
+有两位小数的正实数：^\[0-9\]+(.\[0-9\]{2})?$
+有1~3位小数的正实数：^\[0-9\]+(.\[0-9\]{1,3})?$
+非零的正整数：^\[1-9\]\\d\*$ 或 ^(\[1-9\]\[0-9\]\*){1,3}$ 或 ^\\+?\[1-9\]\[0-9\]\*$
+非零的负整数：^\\-\[1-9\]\[\]0-9&#34;\*$ 或 ^-\[1-9\]\\d\*$
+非负整数：^\\d+$ 或 ^\[1-9\]\\d\*|0$
+非正整数：^-\[1-9\]\\d\*|0$ 或 ^((-\\d+)|(0+))$
+非负浮点数：^\\d+(\\.\\d+)?$ 或 ^\[1-9\]\\d\*\\.\\d\*|0\\.\\d\*\[1-9\]\\d\*|0?\\.0+|0$
+非正浮点数：^((-\\d+(\\.\\d+)?)|(0+(\\.0+)?))$ 或 ^(-(\[1-9\]\\d\*\\.\\d\*|0\\.\\d\*\[1-9\]\\d\*))|0?\\.0+|0$
+正浮点数：^\[1-9\]\\d\*\\.\\d\*|0\\.\\d\*\[1-9\]\\d\*$ 或 ^((\[0-9\]+\\.\[0-9\]\*\[1-9\]\[0-9\]\*)|(\[0-9\]\*\[1-9\]\[0-9\]\*\\.\[0-9\]+)|(\[0-9\]\*\[1-9\]\[0-9\]\*))$
+负浮点数：^-(\[1-9\]\\d\*\\.\\d\*|0\\.\\d\*\[1-9\]\\d\*)$ 或 ^(-((\[0-9\]+\\.\[0-9\]\*\[1-9\]\[0-9\]\*)|(\[0-9\]\*\[1-9\]\[0-9\]\*\\.\[0-9\]+)|(\[0-9\]\*\[1-9\]\[0-9\]\*)))$
+浮点数：^(-?\\d+)(\\.\\d+)?$ 或 ^-?(\[1-9\]\\d\*\\.\\d\*|0\\.\\d\*\[1-9\]\\d\*|0?\\.0+|0)$
 </code></pre></td></tr></table>
 </div>
-</div><p>可通过 <code>zsh --version</code> 查看 <code>zsh</code> 的版本。</p>
-<p>安装完成以后，将 <code>zsh</code> 设置为默认的 <code>Shell</code>。</p>
+</div><h2 id="二校验字符的表达式"><strong>二、校验字符的表达式</strong></h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chsh -s /bin/zsh
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">汉字：^\[\\u4e00-\\u9fa5\]{0,}$
+英文和数字：^\[A-Za-z0-9\]+$ 或 ^\[A-Za-z0-9\]{4,40}$
+长度为3-20的所有字符：^.{3,20}$
+由26个英文字母组成的字符串：^\[A-Za-z\]+$
+由26个大写英文字母组成的字符串：^\[A-Z\]+$
+由26个小写英文字母组成的字符串：^\[a-z\]+$
+由数字和26个英文字母组成的字符串：^\[A-Za-z0-9\]+$
+由数字、26个英文字母或者下划线组成的字符串：^\\w+$ 或 ^\\w{3,20}$
+中文、英文、数字包括下划线：^\[\\u4E00-\\u9FA5A-Za-z0-9\_\]+$
+中文、英文、数字但不包括下划线等符号：^\[\\u4E00-\\u9FA5A-Za-z0-9\]+$ 或 ^\[\\u4E00-\\u9FA5A-Za-z0-9\]{2,20}$
+可以输入含有^%&amp;&#39;,;=?$\\&#34;等字符：\[^%&amp;&#39;,;=?$\\x22\]+
+禁止输入含有~的字符：\[^~\\x22\]+
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="2-安装-oh-my-zsh">2. 安装 oh my zsh</h3>
-<p>使用 <code>crul</code> 安装：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh -c <span style="color:#a31515">&#34;</span><span style="color:#00f">$(</span>curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh<span style="color:#00f">)</span><span style="color:#a31515">&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>使用 <code>wget</code> 安装：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sh -c <span style="color:#a31515">&#34;</span><span style="color:#00f">$(</span>wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -<span style="color:#00f">)</span><span style="color:#a31515">&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>安装成功：</p>
+</div><h2 id="三特殊需求表达式"><strong>三、特殊需求表达式</strong></h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -305,159 +249,63 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Cloning Oh My Zsh...
-Cloning into <span style="color:#a31515">&#39;/root/.oh-my-zsh&#39;</span>...
-remote: Counting objects: 712, <span style="color:#00f">done</span>.
-remote: Compressing objects: 100% (584/584), <span style="color:#00f">done</span>.
-remote: Total 712 (delta 15), reused 522 (delta 4), pack-reused 0
-Receiving objects: 100% (712/712), 443.58 KiB | 27.00 KiB/s, <span style="color:#00f">done</span>.
-Resolving deltas: 100% (15/15), <span style="color:#00f">done</span>.
-Checking connectivity... <span style="color:#00f">done</span>.
-Looking <span style="color:#00f">for</span> an existing zsh config...
-Using the Oh My Zsh template file and adding it to ~/.zshrc
-Copying your current PATH and adding it to the end of ~/.zshrc <span style="color:#00f">for</span> you.
-Time to change your default shell to zsh!
-        __                                     __
- ____  / /_     ____ ___  __  __   ____  _____/ /_
-/ __ <span style="color:#a31515">\/</span> __ <span style="color:#a31515">\ </span>  / __ <span style="color:#a31515">`</span>__ <span style="color:#a31515">\/</span> / / /  /_  / / ___/ __ <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / /
-<span style="color:#a31515">\_</span>___/_/ /_/  /_/ /_/ /_/<span style="color:#a31515">\_</span>_, /    /___/____/_/ /_/
-                       /____/                       ....is now installed!
-
-Please look over the ~/.zshrc file to <span style="color:#00f">select</span> plugins, themes, and options.
-p.s. Follow us at https://twitter.com/ohmyzsh.
-p.p.s. Get stickers and t-shirts at http://shop.planetargon.com.
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">Email地址：^\\w+(\[-+.\]\\w+)\*@\\w+(\[-.\]\\w+)\*\\.\\w+(\[-.\]\\w+)\*$
+域名：\[a-zA-Z0-9\]\[-a-zA-Z0-9\]{0,62}(/.\[a-zA-Z0-9\]\[-a-zA-Z0-9\]{0,62})+/.?
+InternetURL：\[a-zA-z\]+://\[^\\s\]\* 或 ^http://(\[\\w-\]+\\.)+\[\\w-\]+(/\[\\w-./?%&amp;=\]\*)?$
+手机号码：^(13\[0-9\]|14\[0-9\]|15\[0-9\]|166|17\[0-9\]|18\[0-9\]|19\[8|9\])\\d{8}$
+电话号码(&#34;XXX-XXXXXXX&#34;、&#34;XXXX-XXXXXXXX&#34;、&#34;XXX-XXXXXXX&#34;、&#34;XXX-XXXXXXXX&#34;、&#34;XXXXXXX&#34;和&#34;XXXXXXXX)：^(\\(\\d{3,4}-)|\\d{3.4}-)?\\d{7,8}$ 
+国内电话号码(0511\-4405222、021\-87888822)：\\d{3}-\\d{8}|\\d{4}-\\d{7}
+18位身份证号码(数字、字母x结尾)：^((\\d{18})|(\[0-9x\]{18})|(\[0-9X\]{18}))$
+帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^\[a-zA-Z\]\[a-zA-Z0-9\_\]{4,15}$
+密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^\[a-zA-Z\]\\w{5,17}$
+强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.\*\\d)(?=.\*\[a-z\])(?=.\*\[A-Z\]).{8,10}$
+日期格式：^\\d{4}-\\d{1,2}-\\d{1,2}
+一年的12个月(01～09和1～12)：^(0?\[1-9\]|1\[0-2\])$
+一个月的31天(01～09和1～31)：^((0?\[1-9\])|((1|2)\[0-9\])|30|31)$
+钱的输入格式：
+    1.有四种钱的表示形式我们可以接受:&#34;10000.00&#34; 和 &#34;10,000.00&#34;, 和没有 &#34;分&#34; 的 &#34;10000&#34; 和 &#34;10,000&#34;：^\[1-9\]\[0-9\]\*$
+    2.这表示任意一个不以0开头的数字,但是,这也意味着一个字符&#34;0&#34;不通过,所以我们采用下面的形式：^(0|\[1-9\]\[0-9\]\*)$
+    3.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?\[1-9\]\[0-9\]\*)$
+    4.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^\[0-9\]+(.\[0-9\]+)?$
+    5.必须说明的是,小数点后面至少应该有1位数,所以&#34;10.&#34;是不通过的,但是 &#34;10&#34; 和 &#34;10.2&#34; 是通过的：^\[0-9\]+(.\[0-9\]{2})?$
+    6.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^\[0-9\]+(.\[0-9\]{1,2})?$
+    7.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^\[0-9\]{1,3}(,\[0-9\]{3})\*(.\[0-9\]{1,2})?$
+    8.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^(\[0-9\]+|\[0-9\]{1,3}(,\[0-9\]{3})\*)(.\[0-9\]{1,2})?$
+    9.备注：这就是最终结果了,别忘了&#34;+&#34;可以用&#34;\*&#34;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里.
+xml文件：^(\[a-zA-Z\]+-?)+\[a-zA-Z0-9\]+\\\\.\[x|X\]\[m|M\]\[l|L\]$
+中文字符的正则表达式：\[\\u4e00-\\u9fa5\]
+双字节字符：\[^\\x00-\\xff\]    (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))
+空白行的正则表达式：\\n\\s\*\\r    (可以用来删除空白行)
+HTML标记的正则表达式：&lt;(\\S\*?)\[^&gt;\]\*&gt;.\*?&lt;/\\1&gt;|&lt;.\*? /&gt;    (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)
+首尾空白字符的正则表达式：^\\s\*|\\s\*$或(^\\s\*)|(\\s\*$)    (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)
+腾讯QQ号：\[1-9\]\[0-9\]{4,}    (腾讯QQ号从10000开始)
+中国邮政编码：\[1-9\]\\d{5}(?!\\d)    (中国邮政编码为6位数字)
+IP地址：\\d+\\.\\d+\\.\\d+\\.\\d+    (提取IP地址时有用)
+IP地址：((?:(?:25\[0-5\]|2\[0-4\]\\\\d|\[01\]?\\\\d?\\\\d)\\\\.){3}(?:25\[0-5\]|2\[0-4\]\\\\d|\[01\]?\\\\d?\\\\d)) (由@飞龙三少 提供,感谢共享)
 </code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>安装完成以后，默认 <code>Shell</code> 的 <code>~/.bashrc</code> 文件默认不再加载了，替代的是 <code>~/.zlogin</code> 和 <code>~/.zshrc</code>。所以如果你在 <code>~/.bashrc</code> 里配置了某些设置，需要把她们复制到 <code>~/.zshrc</code> 中。</p>
-</blockquote>
-<h4 id="oh-my-zsh-目录结构">oh my zsh 目录结构</h4>
-<p>进入 <code>~/.oh-my-zsh</code> 目录后，看看该目录的结构</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">~ ls ~/.oh-my-zsh
-CONTRIBUTING.md cache           log             templates
-LICENSE.txt     custom          oh-my-zsh.sh    themes
-README.md       lib             plugins         tools
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>lib 提供了核心功能的脚本库</li>
-<li>tools 提供安装、升级等功能的快捷工具</li>
-<li>plugins 自带插件的存在放位置</li>
-<li>templates 自带模板的存在放位置</li>
-<li>themes 自带主题文件的存在放位置</li>
-<li>custom 个性化配置目录，自安装的插件和主题可放这里</li>
-</ul>
-<h3 id="3-配置">3. 配置</h3>
-<p><code>zsh</code> 的配置主要集中在 <code>~/.zshrc</code> 里，用 <code>vim</code> 或你喜欢的其他编辑器打开<code>.zshrc</code>。</p>
-<p>可以在此处定义自己的环境变量和别名，当然，<code>oh my zsh</code> 在安装时已经自动读取当前的环境变量并进行了设置，你可以继续追加其他环境变量。</p>
-<h4 id="别名设置">别名设置：</h4>
-<p><code>zsh</code> 不仅可以设置通用别名，还能针对文件类型设置对应的打开程序，比如：</p>
-<ul>
-<li>
-<p><code>alias -s html=vi</code>，意思就是你在命令行输入 <code>hello.html</code>，<code>zsh</code> 会为你自动打开 <code>vim</code> 并读取 <code>hello.html</code>；</p>
-</li>
-<li>
-<p><code>alias -s gz='tar -xzvf'</code>，表示自动解压后缀为 <code>gz</code> 的压缩包。</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">alias cls=<span style="color:#a31515">&#39;clear&#39;</span>
-alias ll=<span style="color:#a31515">&#39;ls -l&#39;</span>
-alias la=<span style="color:#a31515">&#39;ls -a&#39;</span>
-alias vi=<span style="color:#a31515">&#39;vim&#39;</span>
-alias javac=<span style="color:#a31515">&#34;javac -J-Dfile.encoding=utf8&#34;</span>
-alias grep=<span style="color:#a31515">&#34;grep --color=auto&#34;</span>
-alias -s html=vi   <span style="color:#008000"># 在命令行直接输入后缀为 html 的文件名，会在 vim 中打开</span>
-alias -s rb=vi     <span style="color:#008000"># 在命令行直接输入 ruby 文件，会在 vim 中打开</span>
-alias -s py=vi       <span style="color:#008000"># 在命令行直接输入 python 文件，会用 vim 中打开，以下类似</span>
-alias -s js=vi
-alias -s c=vi
-alias -s java=vi
-alias -s txt=vi
-alias -s gz=<span style="color:#a31515">&#39;tar -xzvf&#39;</span>
-alias -s tgz=<span style="color:#a31515">&#39;tar -xzvf&#39;</span>
-alias -s zip=<span style="color:#a31515">&#39;unzip&#39;</span>
-alias -s bz2=<span style="color:#a31515">&#39;tar -xjvf&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<h4 id="主题设置">主题设置：</h4>
-<p><code>oh my zsh</code> 提供了数十种主题，相关文件在 <code>~/.oh-my-zsh/themes</code> 目录下，你可以自己选择，也可以自己编写主题。</p>
-<p>在<code>.zshrc</code> 里找到 <code>ZSH_THEME</code>，就可以设置主题了，默认主题是：<code>ZSH_THEME=”robbyrussell”</code></p>
-<p><code>ZSH_THEME=&quot;random&quot;</code>，主题设置为随机，这样我们每打开一个窗口，都会随机在默认主题中选择一个。</p>
-<h4 id="插件设置">插件设置：</h4>
-<p><code>oh my zsh</code> 项目提供了完善的插件体系，相关的文件在 <code>~/.oh-my-zsh/plugins</code> 目录下，默认提供了 100 多种，大家可以根据自己的实际学习和工作环境采用，想了解每个插件的功能，只要打开相关目录下的 <code>zsh</code> 文件看一下就知道了。插件也是在<code>.zshrc</code> 里配置，找到 <code>plugins</code> 关键字，你就可以加载自己的插件了，系统默认加载 <code>git</code>，你可以在后面追加内容，如下：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">plugins=(git zsh-autosuggestions autojump zsh-syntax-highlighting)
-</code></pre></td></tr></table>
-</div>
-</div><h5 id="安装-zsh-autosuggestions">安装 <code>zsh-autosuggestions</code></h5>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-</code></pre></td></tr></table>
-</div>
-</div><p>添加至 <code>plugins</code></p>
-<h5 id="安装-zsh-syntax-highlighting">安装 <code>zsh-syntax-highlighting</code></h5>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span style="color:#a31515">${</span>ZSH_CUSTOM<span style="color:#00f">:-</span>~/.oh-my-zsh/custom<span style="color:#a31515">}</span>/plugins/zsh-syntax-highlighting
-</code></pre></td></tr></table>
-</div>
-</div><p>添加至 <code>plugins</code></p>
-<h3 id="卸载-oh-my-zsh">卸载 oh my zsh</h3>
-<p>直接在终端中，运行 <code>uninstall_oh_my_zsh</code> 既可以卸载。</p>
-<h2 id="参考文章">参考文章</h2>
-<p><a href="https://link.jianshu.com?t=http%3A%2F%2Fmacshuo.com%2F%3Fp%3D676">终极 Shell zsh</a><br>
-<a href="https://link.jianshu.com?t=http%3A%2F%2Fwdxtub.com%2F2016%2F02%2F18%2Foh-my-zsh%2F">zsh 全程指南</a></p></article>
+</div><p>原文地址：http://www.cnblogs.com/zxin/archive/2013/01/26/2877765.html 作者：zxin 出处：http://zxin.cnblogs.com/</p></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       
         
-          <a class="ui label" href="/tags/mac" title="Mac">Mac</a>
-        
           <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+        
+          <a class="ui label" href="/tags/%E6%96%87%E6%A1%A3" title="文档">文档</a>
         
       
       <div
