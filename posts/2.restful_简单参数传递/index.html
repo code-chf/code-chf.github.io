@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BeautifulSoup编码问题 | codechf的个人博客</title>
+    <title>2.RESTful:简单参数传递 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,28 +13,28 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="写爬虫遇到的BeautifulSoup编码问题。
+<meta name="description" content="本文主要介绍参数的传递过程，涉及到URL、@PathParam、@QueryParam等注解的实现原理，并通过打酱油例子实践。
 " />
 
 
 
 <meta name="generator" content="Hugo 0.70.0" />
 
-<link rel="canonical" href="/posts/python%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" />
+<link rel="canonical" href="/posts/2.restful_%E7%AE%80%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" />
 
 
-<meta property="og:title" content="BeautifulSoup编码问题" />
-<meta property="og:description" content="写爬虫遇到的BeautifulSoup编码问题。" />
+<meta property="og:title" content="2.RESTful:简单参数传递" />
+<meta property="og:description" content="本文主要介绍参数的传递过程，涉及到URL、@PathParam、@QueryParam等注解的实现原理，并通过打酱油例子实践。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/python%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" />
-<meta property="article:published_time" content="2020-10-01T09:27:39+08:00" />
-<meta property="article:modified_time" content="2020-10-01T09:27:39+08:00" />
+<meta property="og:url" content="/posts/2.restful_%E7%AE%80%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" />
+<meta property="article:published_time" content="2020-10-10T14:20:14+08:00" />
+<meta property="article:modified_time" content="2020-10-10T14:20:14+08:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="BeautifulSoup编码问题"/>
-<meta name="twitter:description" content="写爬虫遇到的BeautifulSoup编码问题。"/>
+<meta name="twitter:title" content="2.RESTful:简单参数传递"/>
+<meta name="twitter:description" content="本文主要介绍参数的传递过程，涉及到URL、@PathParam、@QueryParam等注解的实现原理，并通过打酱油例子实践。"/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -116,13 +116,13 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(/img/%e7%88%ac%e8%99%abBeautifulSoup%e7%bc%96%e7%a0%81%e9%97%ae%e9%a2%98.jpg);"></div>
+      <div class="cover-img" style="background-image: url(https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/Jmplz3-XhRKxe.png);"></div>
     </section>
     
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          BeautifulSoup编码问题
+          2.RESTful:简单参数传递
           <div class="sub header">
             @
             
@@ -132,21 +132,74 @@
             
 
             · 
-                星期四，十月 1 日，2020 年
+                星期六，十月 10 日，2020 年
               
 
-            · 3 分钟阅读
+            · 4 分钟阅读
 
             · 更新于
               
-                星期四，十月 1 日，2020 年
+                星期六，十月 10 日，2020 年
               
           </div>
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><p>写爬虫遇到的BeautifulSoup编码问题。</p>
-<h3 id="出问题的代码">出问题的代码：</h3>
+      <article style="margin-top: 2rem;"><p>本文主要介绍参数的传递过程，涉及到URL、@PathParam、@QueryParam等注解的实现原理，并通过打酱油例子实践。</p>
+<h1 style="text-align:center">一、API参数的简单传递</h1>
+<h2 id="简单参数传递的可选方式">简单参数传递的可选方式</h2>
+<p>简单参数传递可以选择两种方式传递：</p>
+<ol>
+<li>附加在路径上，表观现象如真实的资源路径无差异。</li>
+<li>附加在资源路径的“?”后，按照标准的值对链条进行传参。前者称之为@PathParam注解传参，后者称之为@QueryParams注解传参。</li>
+</ol>
+</br>
+<h1 style="text-align:center">二、@PathParam注解</h1>
+<h2 id="路径传参">路径传参</h2>
+<p>路径传参，就参数传递的形式而言是讲参数嵌入到路径中，并从表观形态上与资源实体所对应的路径具有不可区分性。</p>
+<p>1.URL指向的是资源文件：</p>
+<table><tr>
+		<td bgcolor="red" style="color: white;">http://</td>
+		<td bgcolor="blue"style="color: white;">127.0.0.1</td>
+		<td bgcolor="green"style="color: white;">:8080</td>
+		<td bgcolor="orange"style="color: white;">/restful</td>
+        <td bgcolor="pink"style="color: white;">/files</br>(路径)</td>
+		<td bgcolor="purple"style="color: white;">/txt</br>(路径)</td>
+		<td bgcolor="black"style="color: white;">/welcome.txt</br>(文件名)</td>
+</tr></table>
+<p>2.URL指向的是类的方法：</p>
+<table><tr>
+		<td bgcolor="red" style="color: white;">http://</td>
+		<td bgcolor="blue"style="color: white;">127.0.0.1</td>
+		<td bgcolor="green"style="color: white;">:8080</td>
+		<td bgcolor="orange"style="color: white;">/restful</td>
+        <td bgcolor="pink"style="color: white;">/files</br>(Class类名)</td>
+		<td bgcolor="purple"style="color: white;">/txt</br>(处理方法)</td>
+		<td bgcolor="black"style="color: white;">/welcome.txt</br>(参数)</td>
+</tr></table>
+</br>
+<h2 id="pathparam注解使用方法">@PathParam注解使用方法</h2>
+<ol>
+<li>
+<p>@PathParam语法形式</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/pyO3qh-61E3DAE4A79D4ADAFF794EC91ABA42C8.png" alt="img"></p>
+</li>
+<li>
+<p>在@Path中配置参数模版</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/NgRSbJ-BD0145DC908634B6223ECBEDF98DAD7B.png" alt="img"></p>
+<p>实例：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/rl6ciI-97B56C47D26AA64812158F84CAF6460E.png" alt="img"></p>
+</li>
+<li>
+<p>在Class方法的参数列表中为相关参数配置@PathParam标注，进行参数赋值</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/aMPghE-69680253064DDCA63D45435D3E36ADDA.png" alt="img"></p>
+<p>实例：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/yfx7P3-15B864A76B9B2FC32B7F5927EB7670CD.png" alt="img"></p>
+</li>
+</ol>
+<h2 id="path与pathparam注解联合工作原理">@Path与@PathParam注解联合工作原理</h2>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/dYiPIu-1DBADA7997C932FF87451E47D33448B7.png" alt="img"></p>
+<h2 id="pathparam注解完整示例">@PathParam注解完整示例</h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -166,35 +219,50 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
-    req_second = urllib.request.Request(url=item, headers=headers)
-    respoae_second = urllib.request.urlopen(req_second)
-    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>)
-    beautifulSoup_list.append(soup_second)
-<span style="color:#008000"># 获取第二页面内容</span>
-index = 0
-sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
-effect_row = cursor.execute(sql_clearn)
-connection.commit()
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
-    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
-    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
-        <span style="color:#00f">if</span> idx &gt;= 0:
-            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
-            <span style="color:#00f">print</span>(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])
-    index = index + 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.api;  
+<span style="color:#00f">import</span> javax.ws.rs.GET;  
+<span style="color:#00f">import</span> javax.ws.rs.Path;  
+<span style="color:#00f">import</span> javax.ws.rs.PathParam;  
+<span style="color:#00f">import</span> javax.ws.rs.Produces;  
+
+@Path(<span style="color:#a31515">&#34;/test&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">TestParam</span> {
+
+    @GET  
+    @Produces(<span style="color:#a31515">&#34;text/html;charset=UTF-8&#34;</span>)  
+    @Path(<span style="color:#a31515">&#34;/path/{name}/a/{age}/{gender}/myfile&#34;</span>)  
+    <span style="color:#00f">public</span> String testPath(@PathParam(<span style="color:#a31515">&#34;age&#34;</span>) <span style="color:#2b91af">int</span> value1, @PathParam(<span style="color:#a31515">&#34;name&#34;</span>) String value2, @PathParam(<span style="color:#a31515">&#34;gender&#34;</span>) String value3) {  
+
+        <span style="color:#00f">return</span> String.format(<span style="color:#a31515">&#34;我的档案:&lt;br&gt;姓名:%s，年龄：%d,性别：%s&#34;</span>, value2,value1,value3);  
+    }  
+}  
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="运行结果">运行结果：</h3>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710082914960.png" alt="image-20200710082914960"></p>
-<h4 id="结果分析可以看到部分出现了乱码初步判定时页面编码问题这个时候去看了一下爬取的url网页上查看源代码发现这样一条">结果分析，可以看到部分出现了乱码，初步判定时页面编码问题，这个时候去看了一下爬取的url，网页上查看源代码，发现这样一条：</h4>
-<META http-equiv=Content-Type content="text/html; charset=gb2312">
-<h4 id="每个页面都相同的一条按理说网页编码已经是gb2312怎么爬取下来会出现乱码呢brbr">每个页面都相同的一条，按理说网页编码已经是&quot;GB2312&rdquo;，怎么爬取下来会出现乱码呢？</br></br></h4>
-<h3 id="初步解决方法在输出的时候先decode解码为unicode再encode编码为utf8像这样">初步解决方法：在输出的时候先decode()解码为Unicode，再encode()编码为utf8，像这样：</h3>
+</div></br>
+<h1 style="text-align:center">三、@QueryParam注解</h1>
+<h2 id="query传参">Query传参</h2>
+<p>Query是指URL中由“问号”引导出的值对参数链条。</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/gAqB1j-03C8DD1A6DB168B229D1736E66FA0C27.png" alt="img"></p>
+<p>实例：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/5LUmbr-B7DCECBD03CAD0D599685D31D601113F.png" alt="img"></p>
+<h2 id="queryparam注解使用方法">@QueryParam注解使用方法</h2>
+<ol>
+<li>
+<p>@QueryParam语法形式</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/Q6vykx-E37878F18089E16978E759B69AA0161C.png" alt="img"></p>
+</li>
+<li>
+<p>在Class方法的参数列表中为相关参数配置@QueryParam标注，进行参数赋值</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/2pU7R3-E532D5A2F92411B7F41661ACF5D8DDEC.png" alt="img"></p>
+<p>实例：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/TULRrv-8BFF22BF0F89F6DC0F6155AFE897975E.png" alt="img"></p>
+<h2 id="queryparam注解工作原理">@QueryParam注解工作原理</h2>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/A6EL9D-19AAAF27BE42E5BA9E64C474BEBABF3C.png" alt="img"></p>
+<h2 id="queryparam注解完整示例">@QueryParam注解完整示例</h2>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -208,44 +276,88 @@ connection.commit()
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">index = 0
-sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
-effect_row = cursor.execute(sql_clearn)
-connection.commit()
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
-    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
-    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
-        <span style="color:#00f">if</span> idx &gt;= 0:
-            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
-            <span style="color:#00f">print</span>(str(tds[0].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[1].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[2].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[3].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[4].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[5].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>))
-    index = index + 1
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.api;  
+<span style="color:#00f">import</span> javax.ws.rs.GET;  
+<span style="color:#00f">import</span> javax.ws.rs.Path;  
+<span style="color:#00f">import</span> javax.ws.rs.PathParam;  
+<span style="color:#00f">import</span> javax.ws.rs.Produces;  
+<span style="color:#00f">import</span> javax.ws.rs.QueryParam;  
+
+@Path(<span style="color:#a31515">&#34;/test&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">TestParam</span> {  
+    @GET  
+    @Produces(<span style="color:#a31515">&#34;text/html;charset=UTF-8&#34;</span>)  
+    @Path(<span style="color:#a31515">&#34;/query&#34;</span>)  
+    <span style="color:#00f">public</span> String testQuery(@QueryParam(<span style="color:#a31515">&#34;age&#34;</span>) <span style="color:#2b91af">int</span> value1, @QueryParam(<span style="color:#a31515">&#34;name&#34;</span>) String value2, @QueryParam(<span style="color:#a31515">&#34;gender&#34;</span>) String value3) {  
+        <span style="color:#00f">return</span> String.format(<span style="color:#a31515">&#34;我的档案:&lt;br&gt;姓名:%s，年龄：%d,性别：%s&#34;</span>, value2,value1,value3);  
+    }  
+}
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="结果报错">结果报错：</h3>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710084148545.png" alt="image-20200710084148545"></p>
-<h4 id="说明str方法中没有decode属性">说明str（）方法中没有decode（）属性</h4>
-<h4 id="尝试去掉str可是结果还是">尝试去掉str（），可是结果还是：</h4>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710084511173.png" alt="image-20200710084511173"></p>
-<h4 id="说明去掉str后结果是一个对象不能用decodebr">说明去掉str（）后，结果是一个对象，不能用decode（）</br></h4>
-<h3 id="思考一下输出结果部分是乱码那这样所以用decodegb2312解码的时候就会出现问题愿意可能是因为输出编码不止一种编码如果是其他编码的话用gb2312去解码就会出现问题">思考一下，输出结果部分是乱码，那这样所以用decode（‘gb2312’）解码的时候，就会出现问题，愿意可能是因为输出编码不止一种编码，如果是其他编码的话，用gb2312去解码就会出现问题。</h3>
-<h3 id="换一种思路爬取网页的时候先将页面全部转换为一种编码">换一种思路，爬取网页的时候，先将页面全部转换为一种编码。</h3>
-<h4 id="先用这段代码判断一下爬取到的网页的编码">先用这段代码判断一下爬取到的网页的编码：</h4>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">print</span>(soup_second.original_encoding)
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="结果如下">结果如下：</h4>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710085232037.png" alt="image-20200710085232037"></p>
-<h4 id="结果分析爬取到的编码果然不同两种编码方式怎么统一呢">结果分析：爬取到的编码果然不同，两种编码方式。怎么统一呢？</h4>
-<h3 id="查找原因发现这是beautifulsoup4框架内部的结果beautifuldoup4网页解码的时候会自动去猜测网页的编码格式但是也有猜错的时候像上面这样的结果就是猜错的情况">查找原因，发现这是Beautifulsoup4框架内部的结果，Beautifuldoup4网页解码的时候，会自动去猜测网页的编码格式，但是也有猜错的时候，像上面这样的结果就是猜错的情况。</h3>
-</br>
-<h3 id="最终解决办法建立beautiful对象的时候指定编码为gb18030">最终解决办法，建立Beautiful对象的时候指定编码为gb18030。</h3>
+</div></br>
+<h1 style="text-align:center">四、打两斤酱油</h1>
+<h2 id="需求描述">需求描述</h2>
+<table><tr>
+		<td><img src='https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/MhrZJT-HBjdpn.jpg' alt='MhrZJT-HBjdpn'/></td>
+<td>
+1. 存在左侧售卖机，可售卖各种饮料和酱油、醋。</br>
+2. 使用RESTEasy为该自动售卖机设计售卖接口。	</br>
+3. 售卖接口可通过@PathParam接收商品和数量信息，通过@QueryParam接收投币金额（单位：元）。</br>
+4. 售卖接口通过JSON格式向售卖机返回如下信息：</br>
+<blockquote>
+<p>（a）商品名称；</br>
+（b）商品数量；</br>
+（c）找零数额（单位：元）；</br>
+（d）消息状态码；</br>
+（e）消息状态描述；</br></p>
+</blockquote>
+<ol start="5">
+<li>售卖产品基本信息如下：</br></li>
+</ol>
+<table>
+	<header>
+		<td>编号</td><td>名称</td><td>价格（元）</td>
+	</header>
+	<tr>
+		<td>0</td><td>可乐</td><td>3</td>
+	</tr>
+	<tr>
+		<td>1</td><td>雪碧</td><td>3</td>
+	</tr>
+	<tr>
+		<td>2</td><td>橙汁</td><td>2.5</td>
+	</tr>
+	<tr>
+		<td>3</td><td>玉泉+C</td><td>7</td>
+	</tr>
+	<tr>
+		<td>4</td><td>酱油</td><td>14</td>
+	</tr>
+	<tr>
+		<td>5</td><td>水动乐</td><td>4</td>
+	</tr>
+	<tr>
+		<td>6</td><td>醋</td><td>18</td>
+	</tr>
+	<tr>
+		<td>7</td><td>铅笔</td><td>1</td>
+	</tr>
+</table>
+假设上述0-6号商品数量无限，7号无货。</br></br>
+消息状态码及其描述：</br>
+0：成功售卖；-100：金额不足，全额退款；-200：商品库存不足，全额退款；-300：无此商品售卖，全额退款</br>
+</td>
+</tr></table>
+<h2 id="测试用例">测试用例</h2>
+<p>小明的妈妈给了小明20元钱，小明来到上述售卖机前，通过售卖机选择酱油2瓶，并投币20元后，自动售卖机通过售卖接口发送数据，并得到如下反馈：</br>
+GET方法调用接口：<code>https://127.0.0.1/caseSale/sale/act/4/2?pay=20</code> </br></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -254,159 +366,113 @@ connection.commit()
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
-    req_second = urllib.request.Request(url=item, headers=headers)
-    respoae_second = urllib.request.urlopen(req_second)
-    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>, from_encoding=<span style="color:#a31515">&#39;gb18030&#39;</span>)
-    beautifulSoup_list.append(soup_second)
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{  
+    &#34;name&#34;: <span style="color:#a31515">&#34;酱油&#34;</span>,  
+    &#34;amount&#34;: 2,  
+    &#34;change&#34;: 20,  
+    &#34;resultCode&#34;: -100,  
+    &#34;resultText&#34;: <span style="color:#a31515">&#34;金额不足，全额退款&#34;</span>  
+} 
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="完美解决问题">完美解决问题。</h3>
-<h3 id="附上所有代码">附上所有代码：</h3>
+</div><p>GET方法调用接口：<code>https://127.0.0.1/caseSale/sale/act/7/4?pay=20</code>小明通过售卖机选择铅笔4支，并投币20元后，自动售卖机通过售卖接口发送数据，并得到如下反馈：</br></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000"># -*- coding: utf-8 -*-</span>
-<span style="color:#00f">import</span> urllib.request
-<span style="color:#00f">from</span> urllib <span style="color:#00f">import</span> request
-<span style="color:#00f">from</span> bs4 <span style="color:#00f">import</span> BeautifulSoup
-<span style="color:#00f">import</span> re
-<span style="color:#00f">import</span> pymysql
-<span style="color:#00f">import</span> chardet
-
-quote_url = <span style="color:#a31515">&#34;http://www.wal-martchina.com/walmart/store/province.htm&#34;</span>
-headers = {
-        <span style="color:#a31515">&#39;User-Agent&#39;</span>: <span style="color:#a31515">&#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36&#39;</span>
-    }
-req =urllib.request.Request(url=quote_url, headers=headers)
-respoae = urllib.request.urlopen(req)
-soup = BeautifulSoup(respoae, <span style="color:#a31515">&#39;html.parser&#39;</span>)
-
-so = soup.find(<span style="color:#a31515">&#39;table&#39;</span>, attrs={<span style="color:#a31515">&#39;class&#39;</span>: <span style="color:#a31515">&#39;style5&#39;</span>})
-name_province = so.find_all(href=re.compile(<span style="color:#a31515">&#34;.htm&#34;</span>))
-province_url = []  <span style="color:#008000"># 定义url空列表</span>
-province_name = []  <span style="color:#008000"># 定义name空列表</span>
-
-<span style="color:#008000"># 正则表达式获取短链接，拼接成长链接</span>
-<span style="color:#008000"># 正则表达式获取省份名字</span>
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> name_province:
-    province_url.append(<span style="color:#a31515">&#34;http://www.wal-martchina.com/walmart/store/&#34;</span>+re.search(<span style="color:#a31515">r</span><span style="color:#a31515">&#39;[a-zA-z]+.htm&#39;</span>, str(item)).group())
-    province_name.append(re.search(<span style="color:#a31515">r</span><span style="color:#a31515">&#39;[\u4e00-\u9fa5].*[\u4e00-\u9fa5]&#39;</span>, str(item)).group())
-
-beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
-    req_second = urllib.request.Request(url=item, headers=headers)
-    respoae_second = urllib.request.urlopen(req_second)
-    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>, from_encoding=<span style="color:#a31515">&#39;gb18030&#39;</span>)
-    <span style="color:#008000"># print(soup_second.original_encoding)</span>
-    beautifulSoup_list.append(soup_second)
-
-connection = pymysql.connect(host=<span style="color:#a31515">&#39;localhost&#39;</span>, port=3306, user=<span style="color:#a31515">&#39;root&#39;</span>, password=<span style="color:#a31515">&#39;cc122112&#39;</span>, db=<span style="color:#a31515">&#39;databases&#39;</span>, charset=<span style="color:#a31515">&#39;utf8&#39;</span>)
-<span style="color:#008000"># 获取游标</span>
-cursor = connection.cursor()
-<span style="color:#008000"># 创建数据表</span>
-sql_clearn = <span style="color:#a31515">&#34;truncate table 省份表;&#34;</span>
-effect_row = cursor.execute(sql_clearn)
-index = 0
-<span style="color:#00f">for</span> i <span style="color:#00f">in</span> province_name:
-    sql = <span style="color:#a31515">&#34;insert into `省份表` values (&#39;沃尔玛&#39;, &#39;&#34;</span>+i+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+province_url[index]+<span style="color:#a31515">&#34;&#39;);&#34;</span>
-    effect_row = cursor.execute(sql)
-    index = index + 1
-connection.commit()
-
-<span style="color:#008000"># 获取第二页面内容</span>
-index = 0
-sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
-effect_row = cursor.execute(sql_clearn)
-connection.commit()
-<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
-    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
-    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
-        <span style="color:#00f">if</span> idx &gt;= 0:
-            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
-            <span style="color:#008000"># print(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])</span>
-            sql = <span style="color:#a31515">&#34;insert into 超市省份表 values (&#39;沃尔玛&#39;, &#39;&#34;</span>+str(tds[0].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[1].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[2].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[3].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[4].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[5].contents[0])+<span style="color:#a31515">&#34;&#39;);&#34;</span>
-            <span style="color:#008000"># effect_row = cursor.execute(sql)</span>
-    index = index + 1
-connection.commit()
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{  
+    &#34;name&#34;: <span style="color:#a31515">&#34;铅笔&#34;</span>,  
+    &#34;amount&#34;: 4,  
+    &#34;change&#34;: 20,  
+    &#34;resultCode&#34;: -200,  
+    &#34;resultText&#34;: <span style="color:#a31515">&#34;商品无库存，全额退款&#34;</span>  
+} 
 </code></pre></td></tr></table>
 </div>
-</div></article>
+</div><p>GET方法调用接口：<code>https://127.0.0.1/caseSale/sale/act/4/1?pay=20</code>小明通过售卖机选择酱油1瓶，并投币20元后，自动售卖机通过售卖接口发送数据，并得到如下反馈：</br></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{  
+    &#34;name&#34;: <span style="color:#a31515">&#34;酱油&#34;</span>,  
+    &#34;amount&#34;: 1,  
+    &#34;change&#34;: 6,  
+    &#34;resultCode&#34;: 0,  
+    &#34;resultText&#34;: <span style="color:#a31515">&#34;售卖成功&#34;</span>  
+} 
+</code></pre></td></tr></table>
+</div>
+</div><p>小明通过售卖机选择橙汁3瓶，并投币12元后，自动售卖机通过售卖接口发送数据，并得到如下反馈：</br></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{  
+    &#34;name&#34;: <span style="color:#a31515">&#34;橙汁&#34;</span>,  
+    &#34;amount&#34;: 3,  
+    &#34;change&#34;: 4.5,  
+    &#34;resultCode&#34;: 0,  
+    &#34;resultText&#34;: <span style="color:#a31515">&#34;售卖成功&#34;</span>  
+} 
+</code></pre></td></tr></table>
+</div>
+</div><p>GET方法调用接口：<code>https://127.0.0.1/caseSale/sale/act/8/1?pay=20</code>小明通过售卖机选择西瓜(范围在0-7之外的编号)1个，并投币20元后，自动售卖机通过售卖接口发送数据，并得到如下反馈：</br></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{  
+    &#34;name&#34;: <span style="color:#a31515">&#34;未注册商品&#34;</span>,  
+    &#34;amount&#34;: 1,  
+    &#34;change&#34;: 20,  
+    &#34;resultCode&#34;: -300,  
+    &#34;resultText&#34;: <span style="color:#a31515">&#34;无此商品售卖，全额退款&#34;</span>  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="具体实现">具体实现</h2>
+<p>待更新ing·······</p>
+<blockquote>
+<p>上课时间：2020年10月22日，星期四，下午</p>
+</blockquote></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       
         
-          <a class="ui label" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言">编程语言</a>
-        
-          <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+          <a class="ui label" href="/tags/java" title="java">java</a>
         
       
       <div
