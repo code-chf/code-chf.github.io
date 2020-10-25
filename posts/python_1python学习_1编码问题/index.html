@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mac使用Tips汇总 | codechf的个人博客</title>
+    <title>BeautifulSoup编码问题 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,28 +13,28 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="Mac常用小技巧及黑苹果优化技巧。
+<meta name="description" content="写爬虫遇到的BeautifulSoup编码问题。
 " />
 
 
 
 <meta name="generator" content="Hugo 0.70.0" />
 
-<link rel="canonical" href="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" />
+<link rel="canonical" href="/posts/python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" />
 
 
-<meta property="og:title" content="Mac使用Tips汇总" />
-<meta property="og:description" content="Mac常用小技巧及黑苹果优化技巧。" />
+<meta property="og:title" content="BeautifulSoup编码问题" />
+<meta property="og:description" content="写爬虫遇到的BeautifulSoup编码问题。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" />
-<meta property="article:published_time" content="2020-06-18T09:27:39+08:00" />
-<meta property="article:modified_time" content="2020-06-18T09:27:39+08:00" />
+<meta property="og:url" content="/posts/python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2020-10-01T09:27:39+08:00" />
+<meta property="article:modified_time" content="2020-10-01T09:27:39+08:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Mac使用Tips汇总"/>
-<meta name="twitter:description" content="Mac常用小技巧及黑苹果优化技巧。"/>
+<meta name="twitter:title" content="BeautifulSoup编码问题"/>
+<meta name="twitter:description" content="写爬虫遇到的BeautifulSoup编码问题。"/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -116,13 +116,13 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(/img/mac%e4%bd%bf%e7%94%a8tips.jpeg);"></div>
+      <div class="cover-img" style="background-image: url(/img/%e7%88%ac%e8%99%abBeautifulSoup%e7%bc%96%e7%a0%81%e9%97%ae%e9%a2%98.jpg);"></div>
     </section>
     
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          Mac使用Tips汇总
+          BeautifulSoup编码问题
           <div class="sub header">
             @
             
@@ -132,87 +132,69 @@
             
 
             · 
-                星期四，六月 18 日，2020 年
+                星期四，十月 1 日，2020 年
               
 
-            · 2 分钟阅读
+            · 3 分钟阅读
 
             · 更新于
               
-                星期四，六月 18 日，2020 年
+                星期四，十月 1 日，2020 年
               
           </div>
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><p>Mac常用小技巧及黑苹果优化技巧。</p>
-<h2 id="1mac访达显示隐藏文件">1.Mac访达显示隐藏文件</h2>
-<h3 id="命令行">命令行：</h3>
+      <article style="margin-top: 2rem;"><p>写爬虫遇到的BeautifulSoup编码问题。</p>
+<h3 id="出问题的代码">出问题的代码：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write com.apple.finder AppleShowAllFiles -bool true;
-KillAll Finder
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
+    req_second = urllib.request.Request(url=item, headers=headers)
+    respoae_second = urllib.request.urlopen(req_second)
+    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>)
+    beautifulSoup_list.append(soup_second)
+<span style="color:#008000"># 获取第二页面内容</span>
+index = 0
+sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+connection.commit()
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
+    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
+    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
+        <span style="color:#00f">if</span> idx &gt;= 0:
+            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
+            <span style="color:#00f">print</span>(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])
+    index = index + 1
 </code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>将true改为false，即可恢复隐藏状态。killall Finder这条命令是重启访达，重启之后就可以看到隐藏的文件或文件夹。</p>
-</blockquote>
-<h3 id="快捷键">快捷键：</h3>
-<p><code>command + Shift + .</code></p>
-<h2 id="2macos-10154-系统--更新系统后意外退出及崩溃闪退问题修复方法">2.macOS 10.15.4 系统 / 更新系统后「意外退出」及「崩溃闪退」问题修复方法</h2>
-<h3 id="1第一步准备工作">1.第一步：准备工作</h3>
-<p>安装 Xcode：商店或网页安装</p>
-<p>安装 Command Line Tools 工具：<code>xcode-select --install</code></p>
-<p>弹出安装窗口后选择<code>继续安装</code>，安装过程需要几分钟，请耐心等待</p>
-<h3 id="2第二步签名">2.第二步：签名</h3>
-<p>输入命令：<code>sudo codesign --force --deep --sign - (应用路径)</code></p>
-<h3 id="3第三步解决错误">3.第三步：解决错误</h3>
-<p>如果遇到以下错误：</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/文件位置 : replacing existing signature
-/文件位置 : resource fork,Finder information,or similar detritus not allowed
-</code></pre></td></tr></table>
-</div>
-</div><p>先执行：<code>xattr -cr /文件位置（直接将应用拖进去即可）</code></p>
-<p>然后执行：<code>codesign --force --deep --sign - /文件位置（直接将应用拖进去即可）</code></p>
-<h2 id="3mac去除设置小红点">3.Mac去除设置小红点：</h2>
-<h3 id="打开终端运行">打开终端运行：</h3>
-<p><code>defaults write com.apple.systempreferences AttentionPrefBundleIDs 0</code></p>
-<h3 id="然后重启dock栏">然后重启Dock栏：</h3>
-<p><code>killall Dock</code></p>
-<h3 id="如果上面不起作用的话用这个">如果上面不起作用的话，用这个：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastUpdatesAvailable 0
-sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist LastRecommendedUpdatesAvailable 0
-sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist RecommendedUpdates
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="4黑果优化命令">4.黑果优化命令：</h2>
-<h3 id="1解决macos和windows时间同步">1.解决macOS和Windows时间同步：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Reg add HKLM<span style="color:#a31515">\S</span>YSTEM<span style="color:#a31515">\C</span>urrentControlSet<span style="color:#a31515">\C</span>ontrol<span style="color:#a31515">\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2重建kexts缓存">2.重建Kexts缓存：</h3>
+</div><h3 id="运行结果">运行结果：</h3>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710082914960.png" alt="image-20200710082914960"></p>
+<h4 id="结果分析可以看到部分出现了乱码初步判定时页面编码问题这个时候去看了一下爬取的url网页上查看源代码发现这样一条">结果分析，可以看到部分出现了乱码，初步判定时页面编码问题，这个时候去看了一下爬取的url，网页上查看源代码，发现这样一条：</h4>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<h4 id="每个页面都相同的一条按理说网页编码已经是gb2312怎么爬取下来会出现乱码呢brbr">每个页面都相同的一条，按理说网页编码已经是&quot;GB2312&rdquo;，怎么爬取下来会出现乱码呢？</br></br></h4>
+<h3 id="初步解决方法在输出的时候先decode解码为unicode再encode编码为utf8像这样">初步解决方法：在输出的时候先decode()解码为Unicode，再encode()编码为utf8，像这样：</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -228,39 +210,42 @@ sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate.plist Recomme
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rm /System/Library/PrelinkedKernels/prelinkedkernel
-sudo rm /System/Library/Caches/com.apple.kext.caches/Startup/kernelcache
-sudo chmod -R 755 /System/Library/Extensions
-sudo chmod -R 755 /Library/Extensions
-sudo chown -R root:wheel /System/Library/Extensions
-sudo chown -R root:wheel /Library/Extensions
-sudo touch /System/Library/Extensions
-sudo touch /Library/Extensions
-sudo kextcache -q -update-volume /
-sudo kextcache -system-caches
-sudo kextcache -i /
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">index = 0
+sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+connection.commit()
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
+    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
+    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
+        <span style="color:#00f">if</span> idx &gt;= 0:
+            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
+            <span style="color:#00f">print</span>(str(tds[0].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[1].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[2].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[3].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[4].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>), str(tds[5].contents[0]).decode(<span style="color:#a31515">&#39;gb2312&#39;</span>).encode(<span style="color:#a31515">&#39;utf8&#39;</span>))
+    index = index + 1
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="3允许安装任何来源">3.允许安装任何来源：</h3>
+</div><h3 id="结果报错">结果报错：</h3>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710084148545.png" alt="image-20200710084148545"></p>
+<h4 id="说明str方法中没有decode属性">说明str（）方法中没有decode（）属性</h4>
+<h4 id="尝试去掉str可是结果还是">尝试去掉str（），可是结果还是：</h4>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710084511173.png" alt="image-20200710084511173"></p>
+<h4 id="说明去掉str后结果是一个对象不能用decodebr">说明去掉str（）后，结果是一个对象，不能用decode（）</br></h4>
+<h3 id="思考一下输出结果部分是乱码那这样所以用decodegb2312解码的时候就会出现问题愿意可能是因为输出编码不止一种编码如果是其他编码的话用gb2312去解码就会出现问题">思考一下，输出结果部分是乱码，那这样所以用decode（‘gb2312’）解码的时候，就会出现问题，愿意可能是因为输出编码不止一种编码，如果是其他编码的话，用gb2312去解码就会出现问题。</h3>
+<h3 id="换一种思路爬取网页的时候先将页面全部转换为一种编码">换一种思路，爬取网页的时候，先将页面全部转换为一种编码。</h3>
+<h4 id="先用这段代码判断一下爬取到的网页的编码">先用这段代码判断一下爬取到的网页的编码：</h4>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo spctl --master-disable
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00f">print</span>(soup_second.original_encoding)
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="4解决1014以上系统字体模糊">4.解决10.14以上系统字体模糊：</h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="5系统睡眠优化代码">5.系统睡眠优化代码：</h3>
-<p>更新了系统必须执行一次，否则电脑休眠会存在问题</p>
+</div><h4 id="结果如下">结果如下：</h4>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/image-20200710085232037.png" alt="image-20200710085232037"></p>
+<h4 id="结果分析爬取到的编码果然不同两种编码方式怎么统一呢">结果分析：爬取到的编码果然不同，两种编码方式。怎么统一呢？</h4>
+<h3 id="查找原因发现这是beautifulsoup4框架内部的结果beautifuldoup4网页解码的时候会自动去猜测网页的编码格式但是也有猜错的时候像上面这样的结果就是猜错的情况">查找原因，发现这是Beautifulsoup4框架内部的结果，Beautifuldoup4网页解码的时候，会自动去猜测网页的编码格式，但是也有猜错的时候，像上面这样的结果就是猜错的情况。</h3>
+</br>
+<h3 id="最终解决办法建立beautiful对象的时候指定编码为gb18030">最终解决办法，建立Beautiful对象的时候指定编码为gb18030。</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -271,31 +256,155 @@ sudo kextcache -i /
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">sudo pmset -a hibernatemode 0
-sudo rm /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
-sudo pmset -a standby 0
-sudo pmset -a autopoweroff 0
-sudo pmset -a proximitywake 0
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
+    req_second = urllib.request.Request(url=item, headers=headers)
+    respoae_second = urllib.request.urlopen(req_second)
+    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>, from_encoding=<span style="color:#a31515">&#39;gb18030&#39;</span>)
+    beautifulSoup_list.append(soup_second)
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="6清除nvram重置ec">6.清除NvRAM/重置EC</h3>
-<ul>
-<li>请先移除电源适配器 (笔记本使用电池供电)</li>
-<li>关机状态下按住 <strong><code>Fn + D + 电源按钮</code></strong></li>
-<li>键盘亮松开电源键，保持 <strong><code>Fn + D</code></strong>按住</li>
-<li>出现第一屏松开 <strong><code>Fn + D</code></strong></li>
-<li>笔记本屏幕黑屏，按下回车键</li>
-<li>弹出 CMOS 提示，再次按下回车键</li>
-<li>电脑自动关机，需手动开机</li>
-<li>NvRAM / EC 已重置</li>
-</ul></article>
+</div><h3 id="完美解决问题">完美解决问题。</h3>
+<h3 id="附上所有代码">附上所有代码：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000"># -*- coding: utf-8 -*-</span>
+<span style="color:#00f">import</span> urllib.request
+<span style="color:#00f">from</span> urllib <span style="color:#00f">import</span> request
+<span style="color:#00f">from</span> bs4 <span style="color:#00f">import</span> BeautifulSoup
+<span style="color:#00f">import</span> re
+<span style="color:#00f">import</span> pymysql
+<span style="color:#00f">import</span> chardet
+
+quote_url = <span style="color:#a31515">&#34;http://www.wal-martchina.com/walmart/store/province.htm&#34;</span>
+headers = {
+        <span style="color:#a31515">&#39;User-Agent&#39;</span>: <span style="color:#a31515">&#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36&#39;</span>
+    }
+req =urllib.request.Request(url=quote_url, headers=headers)
+respoae = urllib.request.urlopen(req)
+soup = BeautifulSoup(respoae, <span style="color:#a31515">&#39;html.parser&#39;</span>)
+
+so = soup.find(<span style="color:#a31515">&#39;table&#39;</span>, attrs={<span style="color:#a31515">&#39;class&#39;</span>: <span style="color:#a31515">&#39;style5&#39;</span>})
+name_province = so.find_all(href=re.compile(<span style="color:#a31515">&#34;.htm&#34;</span>))
+province_url = []  <span style="color:#008000"># 定义url空列表</span>
+province_name = []  <span style="color:#008000"># 定义name空列表</span>
+
+<span style="color:#008000"># 正则表达式获取短链接，拼接成长链接</span>
+<span style="color:#008000"># 正则表达式获取省份名字</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> name_province:
+    province_url.append(<span style="color:#a31515">&#34;http://www.wal-martchina.com/walmart/store/&#34;</span>+re.search(<span style="color:#a31515">r</span><span style="color:#a31515">&#39;[a-zA-z]+.htm&#39;</span>, str(item)).group())
+    province_name.append(re.search(<span style="color:#a31515">r</span><span style="color:#a31515">&#39;[\u4e00-\u9fa5].*[\u4e00-\u9fa5]&#39;</span>, str(item)).group())
+
+beautifulSoup_list = []  <span style="color:#008000"># 保存建立的各省份BeautifulSoup</span>
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> province_url:
+    req_second = urllib.request.Request(url=item, headers=headers)
+    respoae_second = urllib.request.urlopen(req_second)
+    soup_second = BeautifulSoup(respoae_second, <span style="color:#a31515">&#39;html.parser&#39;</span>, from_encoding=<span style="color:#a31515">&#39;gb18030&#39;</span>)
+    <span style="color:#008000"># print(soup_second.original_encoding)</span>
+    beautifulSoup_list.append(soup_second)
+
+connection = pymysql.connect(host=<span style="color:#a31515">&#39;localhost&#39;</span>, port=3306, user=<span style="color:#a31515">&#39;root&#39;</span>, password=<span style="color:#a31515">&#39;cc122112&#39;</span>, db=<span style="color:#a31515">&#39;databases&#39;</span>, charset=<span style="color:#a31515">&#39;utf8&#39;</span>)
+<span style="color:#008000"># 获取游标</span>
+cursor = connection.cursor()
+<span style="color:#008000"># 创建数据表</span>
+sql_clearn = <span style="color:#a31515">&#34;truncate table 省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+index = 0
+<span style="color:#00f">for</span> i <span style="color:#00f">in</span> province_name:
+    sql = <span style="color:#a31515">&#34;insert into `省份表` values (&#39;沃尔玛&#39;, &#39;&#34;</span>+i+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+province_url[index]+<span style="color:#a31515">&#34;&#39;);&#34;</span>
+    effect_row = cursor.execute(sql)
+    index = index + 1
+connection.commit()
+
+<span style="color:#008000"># 获取第二页面内容</span>
+index = 0
+sql_clearn = <span style="color:#a31515">&#34;truncate table 超市省份表;&#34;</span>
+effect_row = cursor.execute(sql_clearn)
+connection.commit()
+<span style="color:#00f">for</span> item <span style="color:#00f">in</span> beautifulSoup_list:
+    so_second = beautifulSoup_list[index].find_all(<span style="color:#a31515">&#39;tr&#39;</span>, attrs={<span style="color:#a31515">&#39;height&#39;</span>: <span style="color:#a31515">&#39;20&#39;</span>})
+    <span style="color:#00f">for</span> idx, tr <span style="color:#00f">in</span> enumerate(so_second):
+        <span style="color:#00f">if</span> idx &gt;= 0:
+            tds = tr.find_all(<span style="color:#a31515">&#39;td&#39;</span>)
+            <span style="color:#008000"># print(tds[0].contents[0], tds[1].contents[0], tds[2].contents[0], tds[3].contents[0], tds[4].contents[0], tds[5].contents[0])</span>
+            sql = <span style="color:#a31515">&#34;insert into 超市省份表 values (&#39;沃尔玛&#39;, &#39;&#34;</span>+str(tds[0].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[1].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[2].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[3].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[4].contents[0])+<span style="color:#a31515">&#34;&#39;, &#39;&#34;</span>+str(tds[5].contents[0])+<span style="color:#a31515">&#34;&#39;);&#34;</span>
+            <span style="color:#008000"># effect_row = cursor.execute(sql)</span>
+    index = index + 1
+connection.commit()
+</code></pre></td></tr></table>
+</div>
+</div></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       
         
-          <a class="ui label" href="/tags/mac" title="Mac">Mac</a>
+          <a class="ui label" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言">编程语言</a>
         
           <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
         
