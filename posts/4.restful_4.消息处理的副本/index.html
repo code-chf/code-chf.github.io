@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>RESTful:3.表单参数传递 | codechf的个人博客</title>
+    <title>RESTful:4.消息处理 | codechf的个人博客</title>
 
     
 <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,28 +13,27 @@
 
 
 <meta name="author" content="codechf" />
-<meta name="description" content="本章是RESTful学习的第三章，主要介绍了Form表单及@Form注解的应用，并通过一个实战的例子要巩固加深相关知识。
-" />
+<meta name="description" content="" />
 
 
 
 <meta name="generator" content="Hugo 0.70.0" />
 
-<link rel="canonical" href="https://code-chf.github.io/posts/3.restful_3.%E8%A1%A8%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" />
+<link rel="canonical" href="https://code-chf.github.io/posts/4.restful_4.%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E7%9A%84%E5%89%AF%E6%9C%AC/" />
 
 
-<meta property="og:title" content="RESTful:3.表单参数传递" />
-<meta property="og:description" content="本章是RESTful学习的第三章，主要介绍了Form表单及@Form注解的应用，并通过一个实战的例子要巩固加深相关知识。" />
+<meta property="og:title" content="RESTful:4.消息处理" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://code-chf.github.io/posts/3.restful_3.%E8%A1%A8%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" />
-<meta property="article:published_time" content="2020-10-29T08:07:54+08:00" />
-<meta property="article:modified_time" content="2020-10-29T08:07:54+08:00" />
+<meta property="og:url" content="https://code-chf.github.io/posts/4.restful_4.%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E7%9A%84%E5%89%AF%E6%9C%AC/" />
+<meta property="article:published_time" content="2020-10-29T09:07:53+08:00" />
+<meta property="article:modified_time" content="2020-10-29T09:07:53+08:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RESTful:3.表单参数传递"/>
-<meta name="twitter:description" content="本章是RESTful学习的第三章，主要介绍了Form表单及@Form注解的应用，并通过一个实战的例子要巩固加深相关知识。"/>
+<meta name="twitter:title" content="RESTful:4.消息处理"/>
+<meta name="twitter:description" content=""/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -116,13 +115,13 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/ywFaQr-huAAgX.png);"></div>
+      <div class="cover-img" style="background-image: url(https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/xJofAf-NCZJ6s.png);"></div>
     </section>
     
     <section class="ui attached segment">
       <header>
         <h1 class="ui large header">
-          RESTful:3.表单参数传递
+          RESTful:4.消息处理
           <div class="sub header">
             @
             
@@ -135,7 +134,7 @@
                 星期四，十月 29 日，2020 年
               
 
-            · 2 分钟阅读
+            · 3 分钟阅读
 
             · 更新于
               
@@ -145,13 +144,36 @@
         </h1>
       </header>
 
-      <article style="margin-top: 2rem;"><p>本章是RESTful学习的第三章，主要介绍了Form表单及@Form注解的应用，并通过一个实战的例子要巩固加深相关知识。</p>
-<h1 style="text-align:center;">Form表单参数传递</h1>
-<h2 id="form表单"><strong>Form表单</strong></h2>
-<p>Form表单是一个容器，可将容器内的对象集合组织成参数集合，并向服务器发送这些参数。该容器内的常见可用于参数传递的对象如下：</p>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/kwIGY8-5C9643BD250B17CBBD5299C31BE5E31C.png" alt="img"></p>
-<h2 id="form表单action"><strong>Form表单action</strong></h2>
-<p>Form的action属性指向数据提交的目标资源URL，示例如下：</p>
+      <article style="margin-top: 2rem;"><h1 style="text-align:center;">Providers消息处理</h1>
+<h2 id="做好一个生物学家">做好一个生物学家</h2>
+<ul>
+<li>
+<h3 id="先做好一个生物学家">先做好一个生物学家</h3>
+</li>
+</ul>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/RBm3CN-2C96E9E65A69B3A8C41CFD619035B8FF.png" alt="img"></p>
+<ul>
+<li>
+<h3 id="了解下抽象派画风">了解下抽象派画风</h3>
+</li>
+</ul>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/54oetW-74F028ADDCE013F94FAD393C1A99AD16.png" alt="img"></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/TRZSkd-42417CBDF15F97B779FCEB1E53F2EBC4.png" alt="img"></p>
+<ul>
+<li>
+<h3 id="了解程序员画风">了解程序员画风</h3>
+</li>
+</ul>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/TspFbS-B79750B29B218CB4BF9ECB35FCE29715.png" alt="img"></p>
+<h2 id="危险地进食与糟糕的产出">危险地进食与糟糕的产出</h2>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/QicdVl-42477D1B5CC9F85566D334B0BCF67AC0.png" alt="img"></p>
+<h2 id="进食与产出的守卫者">进食与产出的守卫者</h2>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/Lnhh00-1CD35729A073F5C2B050E7C62CF5DF83.png" alt="img"></p>
+<h1 style="text-align:center;">如何读取消息提？</h1>
+<h2 id="问题驱动需求">问题驱动需求</h2>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/v5sjl2-21EF68F07A66D452D9F88A0241434341.png" alt="img"></p>
+<h2 id="messagebodyreader接口-isreadable方法">MessageBodyReader接口-isReadable方法</h2>
+<h3 id="1方法定义">1.方法定义</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -159,91 +181,191 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;form action=<span style="color:#a31515">&#34;doSomething/doA&#34;</span>&gt;  
-  &lt;input type=<span style="color:#a31515">&#34;submit&#34;</span>&gt;  
-&lt;/form&gt; 
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">public</span> <span style="color:#2b91af">boolean</span> isReadable(Class&lt;?&gt; clazz, Type type, 
+
+       Annotation[] annotations, MediaType mediaType) 
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>资源doSometing/doA将接收并处理form对象传递的参数。</strong></p>
-<h2 id="form表单method"><strong>Form表单method</strong></h2>
-<p>Form的method属性用于规定用何种方式提交表单参数，get或是post，示例如下：</p>
+</div><h3 id="2参数详解">2.参数详解</h3>
+<p><code>Class&lt;?&gt; class</code>：输出结果对象的Class，Class是一个类；</p>
+<p><code>Type type</code>：输出结果对象的Type，Type是Class的父接口，属于包java.lang.reflect；</p>
+<p><code>Annotation[] annotations</code>：当消息体被转换为方法A的参数B时，参数B前所冠有的注解集合；</p>
+<p><code>MediaType mediaType</code>：ContentType的大类；</p>
+<h3 id="3返回值">3.返回值</h3>
+<p>当返回值为真时表示可以进行readFrom处理，否则表示无法识别该消息，并抛出异常。</p>
+<h2 id="messagebodyreader接口-readfrom方法">MessageBodyReader接口-readFrom方法</h2>
+<h3 id="1方法定义-1">1.方法定义</h3>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;form action=<span style="color:#a31515">&#34;doSomething/doA&#34;</span> method=<span style="color:#a31515">&#34;post&#34;</span>&gt;  
-  &lt;input type=<span style="color:#a31515">&#34;submit&#34;</span>&gt;  
-&lt;/form&gt;
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">public</span> Serializable readFrom(   Class clazz, Type type, 
+
+         Annotation[] annotations, MediaType mediaType, 
+
+MultivaluedMap multivaluedMap,InputStream entityStream ) 
 </code></pre></td></tr></table>
 </div>
-</div><p><strong>method属性在未强制指定时，默认为get。</strong></p>
-<h3 id="关于get的注释"><strong>关于GET的注释</strong></h3>
-<ol>
-<li>将表单数据以名称/值对的形式附加到 URL 中</li>
-<li>URL的长度是有限的（大约 3000 字符）</li>
-<li>绝不要使用GET来发送敏感数据！（在 URL 中是可见的）</li>
-<li>GET 更适用于非安全数据，比如在 Google 中查询字符串</li>
-</ol>
-<h3 id="关于post的注释"><strong>关于POST的注释</strong></h3>
-<ol>
-<li>将表单数据附加到 HTTP 请求的 entity 内（数据不显示在 URL 中）</li>
-<li>没有长度限制</li>
-</ol>
-<h1 style="text-align:center;">@Form注解</h1>
-<h2 id="form语法"><strong>@Form语法</strong></h2>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/j1Ouyx-00A6798FF13D88498F2A78A459338384.png" alt="img"></p>
-<h2 id="在class方法中的用法"><strong>在Class方法中的用法</strong></h2>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/LHmyEX-0CF50AB6BC505CB7463A00348473ED2F.png" alt="img"></p>
-<p><strong>示例：</strong></p>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/wMVjBV-342F142A13432575DA7CAAB33A372E44.png" alt="img"></p>
-<h2 id="与form匹配的parametertype类"><strong>与@Form匹配的parameterType类</strong></h2>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/PQyDJd-D8BEDB88CEBB05511822410E5C95A778.png" alt="img"></p>
-<h2 id="from注解完整示例"><strong>@From注解完整示例</strong></h2>
-<ol>
+</div><h3 id="2参数详解-1">2.参数详解</h3>
+<p><code>Class&lt;?&gt; class</code>：输出结果对象的Class，Class是一个类；</p>
+<p><code>Type type</code>：输出结果对象的Type，Type是Class的父接口，属于包java.lang.reflect；</p>
+<p><code>Annotation[] annotations</code>：当消息体被转换为方法A的参数B时，参数B前所冠有的注解集合；</p>
+<p><code>MediaType mediaType</code>：ContentType的大类；</p>
+<p><code>MultivaluedMap multivaluedMap</code>：HTTP请求报文的头部域集合；</p>
+<p><code>InputStream entityStream</code>：HTTP请求报文的请求包体；</p>
+<h3 id="3返回值-1">3.返回值</h3>
+<p>一个对象。</p>
+<h2 id="messagebodyreader案例">MessageBodyReader案例</h2>
+<h3 id="1案例说明">1.案例说明</h3>
+<p>书商们通过各种方式收集书记信息，并整理成一定的格式。下面是信息系统A交付给书商的信息格式，但书商能够存储的格式是JSON。糟糕的是唯一一个能够为书商写存储方法的小赵正在台湾度蜜月，无法改写该存储方法的实现代码，因此一种更加富有弹性的同样可以实现该目标的代码编写要求被提了出来，现在这个任务落在了你的身上。</br></p>
+<p>信息系统A交付的信息格式：</p>
+<blockquote>
+<p>isbn=5214589
+caption=大学语文
+price=10.25</p>
+</blockquote>
+<p>书商可以处理的信息格式：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{  
+    &#34;caption&#34;:<span style="color:#a31515">&#34;大学语文&#34;</span>,  
+    &#34;price&#34;:10.25,  
+    &#34;isbn&#34;:<span style="color:#a31515">&#34;5214589&#34;</span>  
+} 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2代码示例">2.代码示例</h3>
+<ul>
 <li>
-<h3 id="表单页面"><strong>表单页面</strong></h3>
+<h3 id="book-bean的定义">Book bean的定义</h3>
 </li>
-</ol>
-<pre><code class="language-jsp" data-lang="jsp">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;  
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.bean;  
+<span style="color:#00f">import</span> java.io.Serializable;  
 
-&lt;%  
+@SuppressWarnings(<span style="color:#a31515">&#34;serial&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Book</span> <span style="color:#00f">implements</span> Serializable{  
 
-    String path = request.getContextPath();  
-    String basePath = request.getScheme() + &quot;://&quot; +   
-                                      request.getServerName() + &quot;:&quot; +  
-                                      request.getServerPort() + path;
-%&gt;  
+    <span style="color:#00f">private</span> String caption;  
+    <span style="color:#00f">private</span> <span style="color:#2b91af">float</span> price;  
+    <span style="color:#00f">private</span> String isbn;  
+    <span style="color:#00f">public</span> String getCaption() {  
+        <span style="color:#00f">return</span> caption;  
+    }  
 
-&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;https://www.w3.org/TR/html4/loose.dtd&quot;&gt;  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCaption(String caption) {  
+        <span style="color:#00f">this</span>.caption = caption;  
+    }  
 
-&lt;html&gt;  
-&lt;head&gt;  
-	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt; 
-    
-&lt;title&gt;表单参数&lt;/title&gt;  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">float</span> getPrice() {  
+        <span style="color:#00f">return</span> price;  
+    }  
 
-&lt;/head&gt;  
-    
-&lt;body&gt;  
-    &lt;form action=&quot;&lt;%=basePath%&gt;/test/form&quot; method=&quot;post&quot;&gt;  
-        &lt;input name=&quot;fage&quot; value=&quot;23&quot;&gt;  
-        &lt;input name=&quot;fname&quot; value=&quot;张三&quot;&gt;       
-        &lt;input name=&quot;fgender&quot; value=&quot;男&quot;&gt;  
-        &lt;input type=&quot;submit&quot;&gt;  
-    &lt;/form&gt;  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setPrice(<span style="color:#2b91af">float</span> price) {  
+        <span style="color:#00f">this</span>.price = price;  
+    }  
 
-&lt;/body&gt;  
-&lt;/html&gt;
+    <span style="color:#00f">public</span> String getIsbn() {  
+        <span style="color:#00f">return</span> isbn;  
+    }  
 
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setIsbn(String isbn) {  
+        <span style="color:#00f">this</span>.isbn = isbn;  
+    }  
 
-</code></pre><ol start="2">
+}  
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>
-<h3 id="parametertype类"><strong>parameterType类</strong></h3>
+<h3 id="bookapi的代码">BookAPI的代码</h3>
 </li>
-</ol>
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/book&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">BookAPI</span> {     
+
+    @POST  
+    @Consumes(<span style="color:#a31515">&#34;book/plain&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/json&#34;</span>)  
+    @Path(<span style="color:#a31515">&#34;/saveBook&#34;</span>)    
+    <span style="color:#00f">public</span> Book saveBook(Book book) {  
+        <span style="color:#00f">return</span> book;  
+    }  
+
+} 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<h3 id="provider的代码">Provider的代码</h3>
+</li>
+</ul>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -285,127 +407,119 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.bean;  
-<span style="color:#00f">import</span> javax.ws.rs.FormParam;  
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Provider  
+@Consumes(<span style="color:#a31515">&#34;book/plain&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">FormatBookInPlain</span> <span style="color:#00f">implements</span> MessageBodyReader&lt;Serializable&gt; {  
 
-<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Person</span> {  
-    
-    @FormParam(<span style="color:#a31515">&#34;fname&#34;</span>)  
-    <span style="color:#00f">private</span> String name;  
+    @Override  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">boolean</span> isReadable(Class&lt;?&gt; clazz, Type type,   
+                              Annotation[] annotations,   
+                              MediaType mediaType) {  
 
-    @FormParam(<span style="color:#a31515">&#34;fage&#34;</span>)  
-    <span style="color:#00f">private</span> <span style="color:#2b91af">int</span> age;  
+        System.out.println(<span style="color:#a31515">&#34;--------------- isReadable begins ------------------&#34;</span>);  
+        System.out.printf(<span style="color:#a31515">&#34;class:%s\n&#34;</span>, clazz.getName());   
+        System.out.printf(<span style="color:#a31515">&#34;type:%s\n&#34;</span>, type.getTypeName());  
+        System.out.printf(<span style="color:#a31515">&#34;number of annotation:%d\n&#34;</span>,annotations.length);  
 
-    @FormParam(<span style="color:#a31515">&#34;fgender&#34;</span>)  
-    <span style="color:#00f">private</span> String gender;  
+        <span style="color:#00f">for</span>(Annotation annotation : annotations) {  
+            System.out.printf(<span style="color:#a31515">&#34;\t annotation:%s\n&#34;</span>, annotation.annotationType().getName());  
+        }  
 
-    <span style="color:#00f">public</span> String getName() {  
-        <span style="color:#00f">return</span> name;  
-    }  
+        System.out.printf(<span style="color:#a31515">&#34;mediaType:%s\n&#34;</span>,mediaType.getType());  
+        System.out.println(<span style="color:#a31515">&#34;--------------- isReadable ends ------------------&#34;</span>);  
 
-    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setName(String name) {  
-        <span style="color:#00f">this</span>.name = name;  
-    }  
-
-    <span style="color:#00f">public</span> <span style="color:#2b91af">int</span> getAge() {  
-        <span style="color:#00f">return</span> age;  
-    }  
-
-    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setAge(<span style="color:#2b91af">int</span> age) {  
-        <span style="color:#00f">this</span>.age = age;  
-    }  
-
-    <span style="color:#00f">public</span> String getGender() {  
-        <span style="color:#00f">return</span> gender;  
-    }  
-
-    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setGender(String gender) {  
-        <span style="color:#00f">this</span>.gender = gender;  
-    }  
-
-}  
-</code></pre></td></tr></table>
-</div>
-</div><ol start="3">
-<li>
-<h3 id="api类"><strong>API类</strong></h3>
-</li>
-</ol>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.api;  
-
-@Path(<span style="color:#a31515">&#34;/test&#34;</span>)  
-<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">TestParam</span> {  
-
-    @POST  
-    @Produces(<span style="color:#a31515">&#34;text/html;charset=UTF-8&#34;</span>)      
-    @Path(<span style="color:#a31515">&#34;/form&#34;</span>)  
-    <span style="color:#00f">public</span> String testQuery(@Form Person person) {  
-
-        <span style="color:#00f">return</span> String.format(<span style="color:#a31515">&#34;我的档案:&lt;br&gt;姓名:%s，年龄：%d,性别：%s&#34;</span>,  
-                                                 person.getName(),  
-                                                 person.getAge(),  
-                                                 person.getGender());  
+        <span style="color:#00f">return</span> <span style="color:#00f">true</span>;  
         
     }  
 
+    @Override  
+    <span style="color:#00f">public</span> Serializable readFrom(Class clazz, Type type,   
+                                 Annotation[] annotations,   
+                                 MediaType mediaType,   
+                                 MultivaluedMap multivaluedMap,  
+                                 InputStream entityStream) <span style="color:#00f">throws</span> IOException,   
+                                 WebApplicationException {  
+                                     
+        System.out.println(<span style="color:#a31515">&#34;--------------- readFrom begins ------------------&#34;</span>);  
+        System.out.printf(<span style="color:#a31515">&#34;class:%s\n&#34;</span>, clazz.getName());   
+        System.out.printf(<span style="color:#a31515">&#34;type:%s\n&#34;</span>, type.getTypeName());  
+        System.out.printf(<span style="color:#a31515">&#34;number of annotation:%d\n&#34;</span>,annotations.length);  
+
+        <span style="color:#00f">for</span>(Annotation annotation : annotations) {  
+            System.out.printf(<span style="color:#a31515">&#34;\t annotation:%s\n&#34;</span>, annotation.annotationType().getName());  
+        }  
+
+        System.out.printf(<span style="color:#a31515">&#34;mediaType:%s\n&#34;</span>,mediaType.getType());  
+        System.out.printf(<span style="color:#a31515">&#34;number of head fields:%d\n&#34;</span>,multivaluedMap.keySet().size());  
+        Iterator&lt;?&gt; keys = multivaluedMap.keySet().iterator();  
+                                     
+        <span style="color:#00f">while</span>(keys.hasNext()) {  
+            String key = (String) keys.next();  
+            System.out.printf(<span style="color:#a31515">&#34;\t %s=%s\n&#34;</span>,key,multivaluedMap.get(key).toString() );  
+        }  
+
+        String entityText = IOUtils.toString(entityStream,<span style="color:#a31515">&#34;UTF-8&#34;</span>);  
+        System.out.printf(<span style="color:#a31515">&#34;entity body String:%s\n&#34;</span>,entityText);  
+        HashMap&lt;String, String&gt; hashMap = <span style="color:#00f">new</span> HashMap&lt;String, String&gt;();  
+        String[] requestData = entityText.split(<span style="color:#a31515">&#34;\n&#34;</span>);  
+        <span style="color:#00f">for</span>(<span style="color:#2b91af">int</span> index=0;index&lt;requestData.length;index++) {  
+            String valuePair = requestData[index];  
+            String[] keyValue = valuePair.split(<span style="color:#a31515">&#34;=&#34;</span>);  
+            hashMap.put(keyValue[0], keyValue[1]);  
+            System.out.printf(<span style="color:#a31515">&#34;valuePair:\t%s=%s\n&#34;</span>,keyValue[0],keyValue[1]);  
+        }  
+
+        Book result = <span style="color:#00f">new</span> Book();  
+        result.setCaption(hashMap.get(<span style="color:#a31515">&#34;caption&#34;</span>).toString());  
+        result.setIsbn(hashMap.get(<span style="color:#a31515">&#34;isbn&#34;</span>).toString());  
+        result.setPrice(Float.valueOf(hashMap.get(<span style="color:#a31515">&#34;price&#34;</span>).toString()));  
+        System.out.println(<span style="color:#a31515">&#34;--------------- readFrom ends ------------------&#34;</span>);  
+        <span style="color:#00f">return</span> result;  
+    }  
+
 }  
 </code></pre></td></tr></table>
 </div>
-</div><h1 style="text-align:center;">案例：秘密的情书</h1>
-<h2 id="信息交换的过程"><strong>信息交换的过程</strong></h2>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/lXFDoR-6DA2007028DFBC7CF99A6DDA0DCE49B8.png" alt="img"></p>
-<h2 id="算法a"><strong>算法A</strong></h2>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/cGKRWm-30C141F828C6911A618B7FA88377B528.png" alt="img"></p>
-<h2 id="算法b"><strong>算法B</strong></h2>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/5PqtTN-30C141F828C6911A618B7FA88377B528-20201029084549215.png" alt="img"></p>
-<h2 id="实际测试用例"><strong>实际测试用例</strong></h2>
-<h3 id="1-李俊传给张华的cipher1数据"><strong>1. 李俊传给张华的cipher1数据</strong></h3>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">cipher1=<span style="color:#a31515">&#34;2770d0b53955accfd6b97b160c699ebe7e0aeb843f1fff9cfd9498e8c6ae50358ffd37174f3880efcab8523ef692fcdd&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="2-张华对李俊的cipher1进行解码"><strong>2. 张华对李俊的cipher1进行解码</strong></h3>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/8hMdCZ-E9F78425CD4693D08B8B806A33538FD1.png" alt="img"></p>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/ngQZOy-2E82887A0A9529E391E330A92455091F.png" alt="img"></p>
-<h3 id="3张华创建自己的秘匙"><strong>3.张华创建自己的秘匙</strong></h3>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/6xhO9G-GpCUop-CD0B4D1A93EB634AB7C2132912E86744.png" alt="img" style="zoom:80%;" /></p>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/raXoiq-52F4CADDA8D2AD883212489DEC20AC25.png" alt="img"></p>
-<h3 id="4张华利用自己的秘匙加密明文"><strong>4.张华利用自己的秘匙加密明文</strong></h3>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/7S9ha6-96D53967CB53E0D5718F333243293D44.png" alt="img"></p>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/w5qsOc-3AD2F89A7986496BC918CBC005F293D7.png" alt="img"></p>
-<h3 id="5李俊收到张华的密文后进行解码"><strong>5.李俊收到张华的密文后进行解码</strong></h3>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/4xbxo5-A2D01E6BA6FF6290E083BBB2AC133286.png" alt="img"></p>
-<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/jomjjR-972E56CDFEEC59E32AA3EEFC1C4E8E8B.png" alt="img"></p>
-<h2 id="具体代码实现">具体代码实现</h2>
-<p>待更新ing······</p></article>
+</div><ul>
+<li>
+<h3 id="效果">效果</h3>
+</li>
+</ul>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/pfhCye-39547A8279DB648F41E7EA2F02B238A1.png" alt="img"></p></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
