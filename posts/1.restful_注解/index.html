@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>RESTful:1.注解 | codechf的个人博客</title>
+
+    
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="codechf" />
+<meta name="description" content="记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。
+" />
+
+
+
+<meta name="generator" content="Hugo 0.70.0" />
+
+<link rel="canonical" href="/posts/1.restful_%E6%B3%A8%E8%A7%A3/" />
+
+
+<meta property="og:title" content="RESTful:1.注解" />
+<meta property="og:description" content="记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/1.restful_%E6%B3%A8%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-10-10T14:20:14+08:00" />
+<meta property="article:modified_time" content="2020-10-10T14:20:14+08:00" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RESTful:1.注解"/>
+<meta name="twitter:description" content="记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。"/>
+
+
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/icomoon.css" />
+<link rel="stylesheet" href="/css/OverlayScrollbars.min.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+
+<style>
+  a {
+    color: seagreen !important;
+  }
+</style>
+
+
+
+<style>
+  .inverted a {
+     color: darkseagreen !important;
+  }
+</style>
+
+
+
+<style>
+  body {
+    
+      background-color: black;
+    
+    
+      background-image: url(/me/background.jpg);
+    
+  }
+</style>
+
+
+    
+
+
+  
+    <link rel="stylesheet" data-highlight href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/idea.min.css" />
+  
+
+
+
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+
+
+  </head>
+
+  <body>
+    
+<nav class="ui secondary inverted menu dream-menu">
+
+  <div class="item">
+    <i class="large link bullseye icon dream-flip-toggle" title="翻转！"></i>
+  </div>
+  <div class="item">
+    <i class="large link home icon" title="首页" onclick="window.location.href = ''"></i>
+  </div>
+  <div class="item">
+    <i class="large link icon theme-switch" onclick="themeSwitch()"></i>
+  </div>
+  
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui centered relaxed grid dream-grid">
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    
+    <section class="ui top attached segment cover">
+      <div class="cover-img" style="background-image: url(https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/qxQwgA-Rs59QB.png);"></div>
+    </section>
+    
+    <section class="ui attached segment">
+      <header>
+        <h1 class="ui large header">
+          RESTful:1.注解
+          <div class="sub header">
+            @
+            
+              
+                <a href="https://github.com/code-chf" target="_blank">codechf</a>
+              
+            
+
+            · 
+                星期六，十月 10 日，2020 年
+              
+
+            · 6 分钟阅读
+
+            · 更新于
+              
+                星期六，十月 10 日，2020 年
+              
+          </div>
+        </h1>
+      </header>
+
+      <article style="margin-top: 2rem;"><p>记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。</p>
+<h1 style="text-align:center">一、@Path注解</h1>
+<h2 id="1path位置">(1)@Path位置</h2>
+<h3 id="1放在类前面将class-test映射到路径a">1.放在类前面，将class Test映射到路径/a</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Test</span>{
+
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2放在方法前将方法method映射到路径b">2.放在方法前，将方法method映射到路径/b</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/b&#34;</span>)
+<span style="color:#00f">public</span> String methodB(){
+	<span style="color:#00f">return</span> <span style="color:#a31515">&#34;hello&#34;</span>;
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="2资源路径的映射思路">(2)资源路径的映射思路</h2>
+<h3 id="1抽象概念">1.抽象概念：</h3>
+<table><tr>
+		<td bgcolor="red" style="color: white;">协议</td>
+		<td bgcolor="blue"style="color: white;">主机</td>
+		<td bgcolor="green"style="color: white;">:端口</td>
+		<td bgcolor="orange"style="color: white;">/项目</td>
+		<td bgcolor="pink"style="color: white;">/类映射路径</td>
+		<td bgcolor="purple"style="color: white;">/方法映射路径</td>
+		<td bgcolor="black"style="color: white;">可选其他部分</td>
+</tr></table>
+<h3 id="2具体实例">2.具体实例：</h3>
+<table><tr>
+		<td bgcolor="red" style="color: white;">http://</td>
+		<td bgcolor="blue"style="color: white;">127.0.0.1</td>
+		<td bgcolor="green"style="color: white;">:8080</td>
+		<td bgcolor="orange"style="color: white;">/restful</td>
+		<td bgcolor="pink"style="color: white;">/a</td>
+		<td bgcolor="purple"style="color: white;">/b</td>
+		<td bgcolor="black"style="color: white;">/123456</td>
+</tr></table>
+<h2 id="3完整的例子">(3)完整的例子</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">MyAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;b&#34;</span>)  
+    <span style="color:#00f">public</span> String getMyName() {        
+        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;Mike&#34;</span>;  
+    }  
+} 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="4path中可使用正则表达式对资源进行通配映射">(4)@Path中可使用正则表达式对资源进行通配映射</h2>
+<h3 id="表达格式">表达格式：</h3>
+<p>1.<code>{variable-name[:reqular-expression]}</code></p>
+<h3 id="实例1">实例1：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">MyAPI</span>{
+	@GET
+	@Path(<span style="color:#a31515">&#34;{var:.*}/b&#34;</span>)
+	<span style="color:#00f">public</span> String getMyName(){
+		<span style="color:#00f">return</span> <span style="color:#a31515">&#34;Mike&#34;</span>;
+	}
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="可以通配如下url对资源的引用">可以通配如下URL对资源的引用：</h3>
+<ul>
+<li>GET/restful/a/1/b/</li>
+<li>GET/restful/a/c/b/</li>
+<li>GET/restful/a/2/d/b/</li>
+</ul>
+<h3 id="实例2">实例2:</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">MyAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;{var}/b&#34;</span>)  
+    <span style="color:#00f">public</span> String getMyName() {        
+        <span style="color:#00f">return</span> <span style="color:#a31515">&#34;Mike&#34;</span>;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="可以通配如下url对资源的引用-1">可以通配如下URL对资源的引用：</h3>
+<ul>
+<li>GET/restful/a/c/b/</li>
+<li>GET/restful/a/1/b/</li>
+</ul>
+<h3 id="但是不可以通配如下url">但是不可以通配如下URL：</h3>
+<ul>
+<li>GET/restful/a/1/2/b/</li>
+<li>GET/restful/a/1/c/2/b/</li>
+</ul>
+</br>
+<h1 style="text-align:center">二、@GET注解</h1>
+<h2 id="get位置">@GET位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-get">1.放在方法前，表示该方法允许的 HTTP 请求方法是 GET：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@GET  
+@Path(<span style="color:#a31515">&#34;/b&#34;</span>)  
+ <span style="color:#00f">public</span> String methodB() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;hello&#34;</span>;  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2资源路径的映射思路-1">2资源路径的映射思路</h3>
+<p>1.抽象概念：</p>
+<table><tr>
+		<td bgcolor="red" style="color: white;">协议</td>
+		<td bgcolor="blue"style="color: white;">主机</td>
+		<td bgcolor="green"style="color: white;">:端口</td>
+		<td bgcolor="orange"style="color: white;">/项目</td>
+		<td bgcolor="pink"style="color: white;">/类映射路径</td>
+		<td bgcolor="purple"style="color: white;">/方法映射路径</td>
+		<td bgcolor="black"style="color: white;">可选其他部分</td>
+</tr></table>
+<p>2.具体实例：</p>
+<table><tr>
+		<td bgcolor="red" style="color: white;">http://</td>
+		<td bgcolor="blue"style="color: white;">127.0.0.1</td>
+		<td bgcolor="green"style="color: white;">:8080</td>
+		<td bgcolor="orange"style="color: white;">/restful</td>
+		<td bgcolor="pink"style="color: white;">/a</td>
+		<td bgcolor="purple"style="color: white;">/b</td>
+		<td bgcolor="black"style="color: white;">/123456</td>
+</tr></table>
+</br>
+<h1 style="text-align:center">三、@POST注解</h1>
+<h2 id="post位置">@POST位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-post">1.放在方法前，表示该方法允许的 HTTP 请求方法是 POST：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@POST  
+@Path(<span style="color:#a31515">&#34;/post&#34;</span>)  
+<span style="color:#00f">public</span> String methodPost() {
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;post&#34;</span>;  
+}  
+</code></pre></td></tr></table>
+</div>
+</div></br>
+<h1 style="text-align:center">四、@PUT注解</h1>
+<h2 id="put位置">@PUT位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-put">1.放在方法前，表示该方法允许的 HTTP 请求方法是 PUT：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@PUT  
+@Path(<span style="color:#a31515">&#34;/put&#34;</span>)  
+ <span style="color:#00f">public</span> String methodPut() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;put&#34;</span>;  
+} 
+</code></pre></td></tr></table>
+</div>
+</div></br>
+<h1 style="text-align:center">五、@DELETE注解</h1>
+<h2 id="delete位置">@DELETE位置</h2>
+<h3 id="1放在方法前表示该方法允许的-http-请求方法是-delete">1.放在方法前，表示该方法允许的 HTTP 请求方法是 DELETE：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@DELETE  
+@Path(<span style="color:#a31515">&#34;/delete&#34;</span>)  
+ <span style="color:#00f">public</span> String methodDELETE() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;delete&#34;</span>;  
+} 
+</code></pre></td></tr></table>
+</div>
+</div></br>
+<h1 style="text-align:center">六、@Produces注解</h1>
+<h2 id="produces位置">@Produces位置</h2>
+<h3 id="1放在类前定义-class-test-中所有的方法返回值的格式">1.放在类前，定义 class Test 中所有的方法返回值的格式：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/a&#34;</span>)  
+@Produces(<span style="color:#a31515">&#34;text/plain; charset=utf-8&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Test</span>{ 
+
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2放在方法前定义该方法的返回值格式">2.放在方法前，定义该方法的返回值格式：</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Path(<span style="color:#a31515">&#34;/b&#34;</span>)  
+@Produces(<span style="color:#a31515">&#34;text/plain; charset=gb2312&#34;</span>)  
+ <span style="color:#00f">public</span> String methodB() {  
+    <span style="color:#00f">return</span> <span style="color:#a31515">&#34;你好&#34;</span>;  
+    
+}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="produces格式">@Produces格式</h2>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">@Produces (<span style="color:#a31515">&#34;Mime-Type/Content-Type; 字符编码&#34;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="mime-typecontent-type">Mime-Type/Content-Type</h2>
+<p>Mime（Multipurpose Internet Mail Extensions），描述消息内容类型的因特网标准。
+Mime-Type 强调资源扩展名；Content-Type 强调资源本身的类型。</p>
+<h2 id="常见-mime-typecontent-type">常见 Mime-Type/Content-Type</h2>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">扩展名</th>
+<th align="center">Minme-Type/Content-Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">超文本标记语言</td>
+<td align="center">.html<br />.htm</td>
+<td align="center">text/html</td>
+</tr>
+<tr>
+<td align="center">普通文本</td>
+<td align="center">.txt</td>
+<td align="center">text/plain</td>
+</tr>
+<tr>
+<td align="center">RTF文本</td>
+<td align="center">.rtf</td>
+<td align="center">application/rtf</td>
+</tr>
+<tr>
+<td align="center">GIF图形</td>
+<td align="center">.gif</td>
+<td align="center">image/gif</td>
+</tr>
+<tr>
+<td align="center">JPEG图形</td>
+<td align="center">.jpeg<br />.jpg</td>
+<td align="center">image/jpeg</td>
+</tr>
+<tr>
+<td align="center">mp4视频文件</td>
+<td align="center">.mp4</td>
+<td align="center">video/mp4</td>
+</tr>
+<tr>
+<td align="center">mp3音频文件</td>
+<td align="center">.mp3</td>
+<td align="center">audio/x-mpeg</td>
+</tr>
+<tr>
+<td align="center">JSON文件</td>
+<td align="center">.json</td>
+<td align="center">application/json</td>
+</tr>
+<tr>
+<td align="center">二进制流文件</td>
+<td align="center">*.*</td>
+<td align="center">application/octet-stream</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符编码">字符编码</h2>
+<h3 id="什么是字符编码">什么是字符编码？</h3>
+<p>        计算机要准确的处理各种字符集文字，需要进行字符编码，以便计算机能够识别和存储各种文字。</br>        字符编码 (encoding) 和字符集不同。字符集只是字符的集合，不一定适合作网络传送、处理，有时须经编码 (encode) 后才能应用。如 Unicode 可依不同需要以 UTF-8、UTF-16、UTF-32 等方式编码。
+</br>        字符编码就是以二进制的数字来对应字符集的字符。 因此，对字符进行编码，是信息交流的技术基础。</p>
+<h3 id="常见字符编码">常见字符编码</h3>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="left">特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ASCII 码</td>
+<td align="left">采取 7 位编码，所以是 2^7=128, 共可以表示 128 个字符，包括 34 个字符，（如换行 LF，回车 CR 等），其余 94 位为英文字母和标点符号及运算符号等。</td>
+</tr>
+<tr>
+<td align="center">ISO8859-1</td>
+<td align="left">在 ASCII 码的基础上涵盖了大多数西欧语言字符，仍然是单字节编码，它总共能表示 256 个字符。</td>
+</tr>
+<tr>
+<td align="center">GB2312</td>
+<td align="left">全称为《信息交换用汉字编码字符集基本集》，它是双字节编码，总的编码范围是 A1~F7，其中 A1~A9 为符号区，B0~F7 为汉字区。</td>
+</tr>
+<tr>
+<td align="center">GBK</td>
+<td align="left">全称《汉字内码扩展规范》，扩展了 GB2312，加入更多的汉字，它的编码范围是 8140~FEFE（去掉 XX7F），与 GB2312 兼容。</td>
+</tr>
+<tr>
+<td align="center">GB18030</td>
+<td align="left">《数字交换用汉字编码字符集》，它可能是单字节、双字节或者四字节编码，与 GB2312 编码兼容。</td>
+</tr>
+<tr>
+<td align="center">UTF-8</td>
+<td align="left">UTF-8 用 1 到 6 个字节编码 Unicode 字符。用在网页上可以统一页面显示中文简体繁体及其它语言（如英文，日文，韩文）。</td>
+</tr>
+<tr>
+<td align="center">UTF-16</td>
+<td align="left">具体定义了 Unicode 字符在计算机中的存取方法。采用 2 字节来表示 Unicode 转化格式，它是定长的表示方法，不论什么字符都可以用两个字节表示。</td>
+</tr>
+<tr>
+<td align="center">BIG5</td>
+<td align="left">Big5，又称为大五码或五大码，是使用繁体中文（正体中文）社区中最常用的电脑汉字字符集标准。Big5 码是一套双字节字符集，使用了双八码存储方法，即以两个字节来表示一个字。</td>
+</tr>
+</tbody>
+</table>
+</br>
+<h1 style="text-align:center">七、案例成功需要注意的三个规范</h1>
+<h2 id="1系统分析与设计">1.系统分析与设计</h2>
+<p>对给定的需求进行分析，并明确该需求涉及到哪些请求与响应，并将这些请求进行分类。每一类的请求可集中在一个 Class 中，该类中的每种请求对应设计为该 Class 中的相关方法及其实现代码。</br></br>
+<img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/8Q8zF0-63D5BB03D0D914C34042783525D537CE.png" alt="63D5BB03D0D914C34042783525D537CE">
+</br></p>
+<h2 id="2注解与web服务器">2.注解与Web服务器</h2>
+<h3 id="规划并设置注解">规划并设置注解</h3>
+<p>        对规划已定的 Class 和方法设置所需标注，这些标注包括：请求方法约束、路径绑定、输入参数控制、输出结果控制、访问权限控制等。
+</br>        本小结案例中只涉及请求方法约束、路径绑定、输出结果控制这 3 个层面的简单实现。</br></br></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2020/10/cLt6mB-BC97C68003E07D731D28763B02EBD5C3.png" alt="BC97C68003E07D731D28763B02EBD5C3">
+</br></p>
+<h2 id="3正确配置服务器-webxml">3.正确配置服务器 web.xml</h2>
+<p>        在 web.xml 中对设计好的 API Class 进行正确的配置，使 RESTEasy 框架可以在 Tomcat 启动时正确地在 Web 容器中注册这些 API Class。只有 Web 容器成功注册这些 API Class 后，我们才能调用这些 API Class 所提供的资源访问接口实现系统功能。</br></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">&lt;context-param&gt;  
+    &lt;param-name&gt;resteasy.resources&lt;/param-name&gt;  
+    &lt;param-value&gt; 全路径 Class1 名，全路径 Class2 名，...&lt;/param-value&gt;  
+&lt;/context-param&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="3api代码">3.API代码</h2>
+<h3 id="1restfulentitystudent">(1)restful.entity.Student</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.entity;
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlElement;
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlRootElement;
+
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Student</span> {
+    <span style="color:#00f">private</span> String code;
+    <span style="color:#00f">private</span> String name;
+    
+    <span style="color:#00f">public</span> String getCode() {
+        <span style="color:#00f">return</span> code;
+    }
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCode(String code) {
+        <span style="color:#00f">this</span>.code = code;
+    }
+
+    <span style="color:#00f">public</span> String getName() {
+        <span style="color:#00f">return</span> name;
+    }
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setName(String name) {
+        <span style="color:#00f">this</span>.name = name;
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2restfulentityteacher">(2)restful.entity.Teacher</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.entity;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlElement;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlRootElement;  
+
+@XmlRootElement(name = <span style="color:#a31515">&#34;teacher&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Teacher</span> {  
+    <span style="color:#00f">private</span> String code;  
+    <span style="color:#00f">private</span> String name;  
+    <span style="color:#00f">private</span> String title;  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getCode() {  
+        <span style="color:#00f">return</span> code;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCode(String code) {  
+        <span style="color:#00f">this</span>.code = code;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getName() {  
+        <span style="color:#00f">return</span> name;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setName(String name) {  
+        <span style="color:#00f">this</span>.name = name;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getTitle() {  
+        <span style="color:#00f">return</span> title;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setTitle(String title) {  
+        <span style="color:#00f">this</span>.title = title;  
+    }  
+} 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3restfulentityschedule">(3)restful.entity.Schedule</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.entity;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlElement;  
+<span style="color:#00f">import</span> javax.xml.bind.annotation.XmlRootElement;  
+
+@XmlRootElement(name = <span style="color:#a31515">&#34;schedule&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">Schedule</span> {  
+    <span style="color:#00f">private</span> String code;  
+    <span style="color:#00f">private</span> String caption;  
+    <span style="color:#00f">private</span> String classNO;  
+    <span style="color:#00f">private</span> String time;  
+    <span style="color:#00f">private</span> String classroom;
+    
+    @XmlElement  
+    <span style="color:#00f">public</span> String getCode() {  
+        <span style="color:#00f">return</span> code;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCode(String code) {  
+        <span style="color:#00f">this</span>.code = code;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getCaption() {  
+        <span style="color:#00f">return</span> caption;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setCaption(String caption) {  
+        <span style="color:#00f">this</span>.caption = caption;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getClassNO() {  
+        <span style="color:#00f">return</span> classNO;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setClassNO(String classNO) {  
+        <span style="color:#00f">this</span>.classNO = classNO;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getTime() {  
+        <span style="color:#00f">return</span> time;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setTime(String time) {  
+        <span style="color:#00f">this</span>.time = time;  
+    }  
+
+    @XmlElement  
+    <span style="color:#00f">public</span> String getClassroom() {  
+        <span style="color:#00f">return</span> classroom;  
+    }  
+
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> setClassroom(String classroom) {  
+        <span style="color:#00f">this</span>.classroom = classroom;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4restfulapistudentapi">(4)restful.api.StudentAPI</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">import</span> java.util.ArrayList;  
+<span style="color:#00f">import</span> java.util.List;  
+<span style="color:#00f">import</span> javax.ws.rs.GET;  
+<span style="color:#00f">import</span> javax.ws.rs.POST;  
+<span style="color:#00f">import</span> javax.ws.rs.Path;  
+<span style="color:#00f">import</span> javax.ws.rs.Produces;  
+<span style="color:#00f">import</span> restful.entity.Schedule;  
+<span style="color:#00f">import</span> restful.entity.Student;  
+
+@Path(<span style="color:#a31515">&#34;/student&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">StudentAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;/basicInfo&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/json;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> Student basicInfo() {  
+        Student student = <span style="color:#00f">new</span> Student();  
+        student.setCode(<span style="color:#a31515">&#34;0140035&#34;</span>);  
+        student.setName(<span style="color:#a31515">&#34;张三&#34;</span>);        
+        <span style="color:#00f">return</span> student;  
+    }  
+
+    @POST  
+    @Path(<span style="color:#a31515">&#34;/schedule&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/xml;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> List&lt;Schedule&gt; schedule() {  
+        List&lt;Schedule&gt; schedules = <span style="color:#00f">new</span> ArrayList&lt;Schedule&gt;();  
+        Schedule schedule = <span style="color:#00f">new</span> Schedule();  
+        schedule.setCode(<span style="color:#a31515">&#34;00001&#34;</span>);  
+        schedule.setCaption(<span style="color:#a31515">&#34;线性代数&#34;</span>);  
+        schedule.setClassNO(<span style="color:#a31515">&#34;A01&#34;</span>);  
+        schedule.setClassroom(<span style="color:#a31515">&#34;5121&#34;</span>);  
+        schedule.setTime(<span style="color:#a31515">&#34;1-123&#34;</span>);  
+        schedules.add(schedule);  
+        schedule = <span style="color:#00f">new</span> Schedule();  
+        schedule.setCode(<span style="color:#a31515">&#34;00002&#34;</span>);  
+        schedule.setCaption(<span style="color:#a31515">&#34;大学语文&#34;</span>);  
+        schedule.setClassNO(<span style="color:#a31515">&#34;B03&#34;</span>);  
+        schedule.setClassroom(<span style="color:#a31515">&#34;1101&#34;</span>);  
+        schedule.setTime(<span style="color:#a31515">&#34;4-56&#34;</span>);  
+        schedules.add(schedule);  
+        <span style="color:#00f">return</span> schedules;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5restfulapiteacherapi">(5)restful.api.TeacherAPI</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.api;  
+<span style="color:#00f">import</span> java.util.ArrayList;  
+<span style="color:#00f">import</span> java.util.List;  
+<span style="color:#00f">import</span> javax.ws.rs.GET;  
+<span style="color:#00f">import</span> javax.ws.rs.POST;  
+<span style="color:#00f">import</span> javax.ws.rs.Path;  
+<span style="color:#00f">import</span> javax.ws.rs.Produces;  
+<span style="color:#00f">import</span> restful.entity.Schedule;  
+<span style="color:#00f">import</span> restful.entity.Teacher;  
+
+@Path(<span style="color:#a31515">&#34;/teacher&#34;</span>)  
+<span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">TeacherAPI</span> {  
+    @GET  
+    @Path(<span style="color:#a31515">&#34;/basicInfo&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/xml;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> Teacher basicInfo() {  
+        Teacher teacher = <span style="color:#00f">new</span> Teacher();  
+        teacher.setCode(<span style="color:#a31515">&#34;000001&#34;</span>);  
+        teacher.setName(<span style="color:#a31515">&#34;陈老师&#34;</span>);  
+        teacher.setTitle(<span style="color:#a31515">&#34;讲师&#34;</span>);  
+        <span style="color:#00f">return</span> teacher;  
+    }  
+
+    @POST  
+    @Path(<span style="color:#a31515">&#34;/schedule&#34;</span>)  
+    @Produces(<span style="color:#a31515">&#34;application/json;charset=UTF-8&#34;</span>)  
+    <span style="color:#00f">public</span> List&lt;Schedule&gt; schedule() {  
+        List&lt;Schedule&gt; schedules = <span style="color:#00f">new</span> ArrayList&lt;Schedule&gt;();  
+        Schedule schedule = <span style="color:#00f">new</span> Schedule();  
+        schedule.setCode(<span style="color:#a31515">&#34;00002&#34;</span>);  
+        schedule.setCaption(<span style="color:#a31515">&#34;大学语文&#34;</span>);  
+        schedule.setClassNO(<span style="color:#a31515">&#34;B03&#34;</span>);  
+        schedule.setClassroom(<span style="color:#a31515">&#34;1101&#34;</span>);  
+        schedule.setTime(<span style="color:#a31515">&#34;4-56&#34;</span>);  
+        schedules.add(schedule);  
+        <span style="color:#00f">return</span> schedules;  
+    }  
+}  
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="6webxml">(6)web.xml</h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#00f">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>  
+
+&lt;web-app version=<span style="color:#a31515">&#34;3.0&#34;</span> xmlns=<span style="color:#a31515">&#34;https://java.sun.com/xml/ns/javaee&#34;</span> xmlns:xsi=<span style="color:#a31515">&#34;https://www.w3.org/2001/XMLSchema-instance&#34;</span> xsi:schemaLocation=<span style="color:#a31515">&#34;https://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_3_0.xsd&#34;</span>&gt;  
+
+    &lt;display-name&gt;restful&lt;/display-name&gt;   
+
+    &lt;context-param&gt;  
+        &lt;param-name&gt;resteasy.resources&lt;/param-name&gt;  
+        &lt;param-value&gt;restful.api.StudentAPI,restful.api.TeacherAPI&lt;/param-value&gt;  
+    &lt;/context-param&gt;  
+
+    &lt;listener&gt;  
+        &lt;listener-class&gt;org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap&lt;/listener-class&gt;  
+    &lt;/listener&gt;  
+
+    &lt;servlet&gt;  
+        &lt;servlet-name&gt;Resteasy&lt;/servlet-name&gt;  
+        &lt;servlet-class&gt;org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher&lt;/servlet-class&gt;  
+    &lt;/servlet&gt;  
+
+    &lt;context-param&gt;  
+        &lt;param-name&gt;resteasy.servlet.mapping.prefix&lt;/param-name&gt;  
+        &lt;param-value&gt;/&lt;/param-value&gt;  
+    &lt;/context-param&gt;  
+
+    &lt;servlet-mapping&gt;  
+        &lt;servlet-name&gt;Resteasy&lt;/servlet-name&gt;  
+        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  
+    &lt;/servlet-mapping&gt;  
+
+&lt;/web-app&gt;
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>上课时间：2020年10月10日，星期四，下午</p>
+</blockquote></article>
+    </section>
+
+    <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
+      
+        
+          <a class="ui label" href="/tags/java" title="java">java</a>
+        
+      
+      <div
+        class="ui label"
+        style="float: right; cursor: pointer;"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i>保存为图片
+      </div>
+    </footer>
+
+    
+      <footer class="ui attached segment" data-html2canvas-ignore>
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"></a>本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </footer>
+    
+
+    
+    
+    
+
+    
+      <div class="ui segment">
+        <div id="vcomments"></div>
+      </div>
+      <script>
+        new Valine({
+          el: '#vcomments',
+          appId: "IxV03G57m5LqJ7yGI28hfg44-gzGzoHsz",
+          appKey: "NL8D7xjtE7NRz1uGhbMw8TC9"
+        })
+      </script> 
+    
+
+  </div>
+  <div class="sixteen wide mobile sixteen wide tablet four wide computer column">
+    <article class="dream-header">
+  <section class="ui top attached center aligned segment">
+    <div class="ui small circular image">
+      
+        <img src="/me/me/1.png">
+      
+    </div>
+
+    
+    <div class="ui medium header">CHENG-HF 的博客<div class="sub header" style="margin-top: 0.5rem;">与其感慨路难行，不如马上出发。</div>
+    </div>
+    
+
+    <div class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="归档"></i>
+      </a>
+      
+      <a class="item" href="/tags">
+        <i class="tags icon" title="所有标签"></i>
+      </a>
+      <a class="item" href="/categories">
+        <i class="th list icon" title="所有分类"></i>
+      </a>
+    </div>
+  </section>
+
+  
+  <section class="ui attached center aligned segment dream-tags">
+    
+      <a class="ui label" href="/tags/java" title="java">java</a>
+    
+      <a class="ui label" href="/tags/mac" title="mac">mac</a>
+    
+      <a class="ui label" href="/tags/%E5%85%B6%E4%BB%96" title="其他">其他</a>
+    
+      <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
+    
+      <a class="ui label" href="/tags/%E6%96%87%E6%A1%A3" title="文档">文档</a>
+    
+      <a class="ui label" href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80" title="编程语言">编程语言</a>
+    
+  </section>
+  
+
+  
+  <section class="ui attached segment dream-categories">
+    <div class="ui accordion">
+      
+      
+      
+      
+      
+
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/bug%E5%A4%84%E7%90%86" class="item">bug处理</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/" class="item">Tomcat启动错误</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/mac%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3" class="item">mac操作相关</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/mac-os-%E7%BB%88%E7%AB%AF-iterm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/" class="item">Mac OS 终端 iTerm2 并配置 zsh</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/mac%E4%BD%BF%E7%94%A8tips%E6%B1%87%E6%80%BB/" class="item">Mac使用Tips汇总</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/" class="item">Mac加速时间机器备份</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="item">Mac常用终端命令</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/python" class="item">python</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/python_2%E7%88%AC%E8%99%AB_3request%E6%A8%A1%E5%9D%97/" class="item">Python爬虫_3Request模块</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" class="item">BeautifulSoup编码问题</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E4%B8%8A%E8%AF%BE%E7%AC%94%E8%AE%B0java%E5%AE%9E%E8%AE%AD" class="item">上课笔记java实训</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA/" class="item">类的解析：对象的动态创建</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E4%B8%8A%E8%AF%BE%E7%AC%94%E8%AE%B0web%E4%B8%8Erestful%E6%8A%80%E6%9C%AF" class="item">上课笔记web与restful技术</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/4.restful_4.%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86/" class="item">RESTful:4.消息处理</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/3.restful_3.%E8%A1%A8%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" class="item">RESTful:3.表单参数传递</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/1.restful_%E6%B3%A8%E8%A7%A3/" class="item">RESTful:1.注解</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/2.restful_%E7%AE%80%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/" class="item">RESTful:2.简单参数传递</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E5%85%B6%E4%BB%96" class="item">其他</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/%E7%A5%9E%E8%88%9Fk670e-g6e3%E8%AF%A6%E7%BB%86%E6%8A%A5%E8%A1%A8/" class="item">神舟K670e G6e3详细报表</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/%E9%9B%86%E5%AE%A2ap&#43;ac%E7%BB%84%E7%BD%91%E6%89%AB%E7%9B%B2%E8%B4%B4/" class="item">集客AP&#43;AC组网扫盲贴</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+        
+
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E6%96%87%E6%A1%A3" class="item">文档</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/" class="item">常用正则表达式模板</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/markdown%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95%E6%96%87%E6%A1%A3/" class="item">Markdown标准语法文档</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/vim%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97/" class="item">Vim中文指南</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/" class="item">Mac常用终端命令</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        
+      
+
+      
+    </div>
+  </section>
+  
+
+  <section class="ui attached segment header-socials">
+    <nav class="ui secondary menu dream-menu dream-socials">
+  
+    <div class="item">
+      <a href="/index.xml">
+        <i class=" rss square icon" title="RSS"></i>
+      </a>
+    </div>
+  
+  
+    <div class="item">
+      <a href="mailto:chenghf122112@outlook.com">
+        <i class=" mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+    <div class="item">
+      <a href="https://twitter.com/@chenghfhf" target="_blank">
+        <i class=" twitter icon" title="Twitter"></i>
+      </a>
+    </div>
+  
+
+  
+    <div class="item">
+      <a href="https://facebook.com//hf.cheng.982" target="_blank">
+        <i class=" facebook icon" title="Facebook"></i>
+      </a>
+    </div>
+  
+
+  
+    <div class="item">
+      <a href="https://instagram.com/huafeicheng" target="_blank">
+        <i class=" instagram icon" title="Instagram"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/code-chf" target="_blank">
+        <i class=" github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+  
+    <div class="item">
+      <a href="https://qm.qq.com/cgi-bin/qm/qr?k=ru1O1V8-jqlEWjRtqT4jiY0kClygKgxu&noverify=0%20" target="_blank">
+        <i class=" qq icon" title="qq"></i>
+      </a>
+    </div>
+  
+
+</nav>
+
+  </section>
+
+  <section class="ui bottom attached center aligned segment">
+    
+      <p>© 2019 - 2020 codechf的个人博客</p>
+    
+
+    <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+    
+      <p>记录生活，记录美好~</p>
+    
+  </section>
+</article>
+
+    
+  </div>
+
+</div>
+
+
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <div class="ui centered relaxed grid dream-grid dream-back">
+  
+  
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">About Me</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>Hi, my name is Cheng Hf.</p>
+<p>This is my blog.</p>
+
+        </div>
+      </article>
+    </section>
+  
+    <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+      <article>
+        <div class="ui top attached segment">
+          <h3 class="ui header">About Me</h3>
+        </div>
+        <div class="ui bottom attached segment markdown-body">
+          <p>Hi, my name is Cheng Hf.</p>
+<p>This is my blog.</p>
+<p>Hi, my name is Cheng Hf.</p>
+<p>This is my blog.</p>
+<p>Hi, my name is Cheng Hf.</p>
+<p>This is my blog.</p>
+
+        </div>
+      </article>
+    </section>
+  
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article>
+      <div class="ui top attached segment">
+        <h3 class="ui header">社交链接</h3>
+      </div>
+      <div class="ui bottom attached segment">
+        <nav class="ui secondary menu dream-menu dream-socials">
+  
+    <div class="item">
+      <a href="/index.xml">
+        <i class="large rss square icon" title="RSS"></i>
+      </a>
+    </div>
+  
+  
+    <div class="item">
+      <a href="mailto:chenghf122112@outlook.com">
+        <i class="large mail icon" title="Email"></i>
+      </a>
+    </div>
+  
+
+  
+    <div class="item">
+      <a href="https://twitter.com/@chenghfhf" target="_blank">
+        <i class="large twitter icon" title="Twitter"></i>
+      </a>
+    </div>
+  
+
+  
+    <div class="item">
+      <a href="https://facebook.com//hf.cheng.982" target="_blank">
+        <i class="large facebook icon" title="Facebook"></i>
+      </a>
+    </div>
+  
+
+  
+    <div class="item">
+      <a href="https://instagram.com/huafeicheng" target="_blank">
+        <i class="large instagram icon" title="Instagram"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+    <div class="item">
+      <a href="https://github.com/code-chf" target="_blank">
+        <i class="large github icon" title="GitHub"></i>
+      </a>
+    </div>
+  
+
+  
+
+  
+
+  
+  
+    <div class="item">
+      <a href="https://qm.qq.com/cgi-bin/qm/qr?k=ru1O1V8-jqlEWjRtqT4jiY0kClygKgxu&noverify=0%20" target="_blank">
+        <i class="large qq icon" title="qq"></i>
+      </a>
+    </div>
+  
+
+</nav>
+
+      </div>
+    </article>
+  </section>
+
+  <section class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+      <footer class="ui segment">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"></a>本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
+      </footer>
+    
+  </section>
+
+  
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+  window.darkNav =  true 
+  window.hasTwitterEmbed =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+
+    
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/post.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+
+  
+    
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/languages/ocaml.min.js"></script>
+     
+  
+
+  <script>
+  hljs.initHighlightingOnLoad()
+  setHighlightTheme()
+
+  function setHighlightTheme() {
+    var isDark = localStore.getItem('hugo-theme-dream-is-dark')
+    var lightTheme = "idea"
+    var darkTheme = "atelier-seaside-dark"
+    var theme = isDark ? darkTheme : lightTheme
+
+    $('link[data-highlight]').attr('href', 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/' + theme + '.min.css')
+    $('pre').css('background', isDark ? '#333' : '')
+  }
+</script>
+
+
+
+
+
+    
+      <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="搜索" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('/index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-98295641-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
+  </body>
+</html>

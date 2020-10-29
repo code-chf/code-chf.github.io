@@ -7,17 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;/a&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
-    <lastBuildDate>Sat, 10 Oct 2020 14:20:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2020 09:07:53 +0800</lastBuildDate>
     
 	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>RESTful:4.消息处理</title>
+      <link>/posts/4.restful_4.%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86/</link>
+      <pubDate>Thu, 29 Oct 2020 09:07:53 +0800</pubDate>
+      
+      <guid>/posts/4.restful_4.%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RESTful:3.表单参数传递</title>
+      <link>/posts/3.restful_3.%E8%A1%A8%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/</link>
+      <pubDate>Thu, 29 Oct 2020 08:07:54 +0800</pubDate>
+      
+      <guid>/posts/3.restful_3.%E8%A1%A8%E5%8D%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92/</guid>
+      <description>&lt;p&gt;本章是RESTful学习的第三章，主要介绍了Form表单及@Form注解的应用，并通过一个实战的例子要巩固加深相关知识。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>RESTful:1.注解</title>
-      <link>/posts/1.resrful_%E6%B3%A8%E8%A7%A3/</link>
+      <link>/posts/1.restful_%E6%B3%A8%E8%A7%A3/</link>
       <pubDate>Sat, 10 Oct 2020 14:20:14 +0800</pubDate>
       
-      <guid>/posts/1.resrful_%E6%B3%A8%E8%A7%A3/</guid>
+      <guid>/posts/1.restful_%E6%B3%A8%E8%A7%A3/</guid>
       <description>&lt;p&gt;记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。&lt;/p&gt;</description>
     </item>
     
