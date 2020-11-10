@@ -568,6 +568,24 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000"># 多页爬取肯德基门店信息</span>
@@ -583,21 +601,39 @@
    
     <span style="color:#008000"># post请求参数处理</span>
     word = input(<span style="color:#a31515">&#39;请输入城市：&#39;</span>)
-    page_index = input(<span style="color:#a31515">&#39;请输入要获取第几页的数据：&#39;</span>)
-    page_size = input(<span style="color:#a31515">&#39;请觉得每页显示多少条数据：&#39;</span>)
+    index = input(<span style="color:#a31515">&#39;请输入每页显示记录的数目：&#39;</span>)
     data = {
         <span style="color:#a31515">&#39;cname&#39;</span>: <span style="color:#a31515">&#39;&#39;</span>,
         <span style="color:#a31515">&#39;pid&#39;</span>: <span style="color:#a31515">&#39;&#39;</span>,
         <span style="color:#a31515">&#39;keyword&#39;</span>: word,  <span style="color:#008000"># 关键字</span>
-        <span style="color:#a31515">&#39;pageIndex&#39;</span>: page_index,  <span style="color:#008000"># 获取的是第几页的数据</span>
-        <span style="color:#a31515">&#39;pageSize&#39;</span>: page_size,  <span style="color:#008000"># 每页显示的数据数量</span>
+        <span style="color:#a31515">&#39;pageIndex&#39;</span>: <span style="color:#a31515">&#39;1&#39;</span>,  <span style="color:#008000"># 获取的是第几页的数据</span>
+        <span style="color:#a31515">&#39;pageSize&#39;</span>: index,  <span style="color:#008000"># 每页显示的数据数量</span>
     }
-    response = requests.post(url=post_url, data=data, headers=headers)
+    page_txt = requests.post(url=post_url, data=data, headers=headers).json()
    
-    list_data = response.text
+    <span style="color:#008000"># 数据处理</span>
+    store_txt = []
+    store_txt.append(page_txt[<span style="color:#a31515">&#39;Table1&#39;</span>])  <span style="color:#008000"># page_txt中的Table1对应的就是数据</span>
+    cnt = page_txt[<span style="color:#a31515">&#39;Table&#39;</span>][0][<span style="color:#a31515">&#39;rowcount&#39;</span>]  <span style="color:#008000"># page_txt中的Table对应的是记录总数</span>
+    page_cnt = cnt//eval(index) + 2  <span style="color:#008000"># 页数</span>
+   
+    <span style="color:#008000"># 多页查询</span>
+    <span style="color:#00f">for</span> i <span style="color:#00f">in</span> range(2, page_cnt):
+        ki = str(i)
+        data = {
+            <span style="color:#a31515">&#39;cname&#39;</span>: <span style="color:#a31515">&#39;&#39;</span>,
+            <span style="color:#a31515">&#39;pid&#39;</span>: <span style="color:#a31515">&#39;&#39;</span>,
+            <span style="color:#a31515">&#39;keyword&#39;</span>: word,  <span style="color:#008000"># 关键字</span>
+            <span style="color:#a31515">&#39;pageIndex&#39;</span>: ki,  <span style="color:#008000"># 获取的是第几页的数据</span>
+            <span style="color:#a31515">&#39;pageSize&#39;</span>: index,  <span style="color:#008000"># 每页显示的数据数量</span>
+        }
+        page_txt = requests.post(post_url, data, headers).json()
+        store_txt.append(page_txt[<span style="color:#a31515">&#39;Table1&#39;</span>])
+   
+    <span style="color:#008000"># 持久化存储</span>
     fileName = word + <span style="color:#a31515">&#39;.json&#39;</span>
     fp = open(fileName, <span style="color:#a31515">&#39;w&#39;</span>, encoding=<span style="color:#a31515">&#39;utf-8&#39;</span>)
-    json.dump(list_data, fp=fp, ensure_ascii=False)
+    json.dump(store_txt, fp=fp, ensure_ascii=False)
    
     <span style="color:#00f">print</span>(<span style="color:#a31515">&#39;successful!&#39;</span>)
 </code></pre></td></tr></table>
