@@ -81,7 +81,7 @@
       <pubDate>Sat, 10 Oct 2020 14:20:14 +0800</pubDate>
       
       <guid>https://codechf.cn/posts/1.restful_%E6%B3%A8%E8%A7%A3/</guid>
-      <description>&lt;p&gt;记录了RESTful中用到的几个常用注解，@Path，@GET，@POST，@PUT，@DELETE，@Produces，以及在做RESTful开发过程中需要遵循的几点规范。&lt;/p&gt;</description>
+      <description>&lt;p&gt;记录了RESTful中用到的几个常用注解，@Path、@GET、@POST、@PUT、@DELETE、@Produces，以及在做RESTful开发过程中需要遵循的几点规范。&lt;/p&gt;</description>
     </item>
     
     <item>
