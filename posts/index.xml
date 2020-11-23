@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;/a&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
-    <lastBuildDate>Thu, 12 Nov 2020 14:32:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2020 16:39:44 +0800</lastBuildDate>
     
 	<atom:link href="https://codechf.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我的vimrc配置</title>
+      <link>https://codechf.cn/posts/%E6%88%91%E7%9A%84vimrc%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 23 Nov 2020 16:39:44 +0800</pubDate>
+      
+      <guid>https://codechf.cn/posts/%E6%88%91%E7%9A%84vimrc%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;这是我的个人vimrc配置，vim编辑器的使用还在不断学习过程中。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>RESTful:5.过滤器</title>
