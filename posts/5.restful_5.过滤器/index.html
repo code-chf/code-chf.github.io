@@ -250,12 +250,6 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.filter;  
@@ -276,20 +270,14 @@
         System.out.println(<span style="color:#00f">this</span>.getClass().getName() + <span style="color:#a31515">&#34;正在被销毁...&#34;</span>);         
     }  
     @Override  
-    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> doFilter(ServletRequest servletRequest,   
-                                   ServletResponse servletResponse, FilterChain chain)  
-            <span style="color:#00f">throws</span> IOException, ServletException {  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) <span style="color:#00f">throws</span> IOException, ServletException {  
         request = (HttpServletRequest)servletRequest;  
         response = (HttpServletResponse)servletResponse;  
         response.setCharacterEncoding(<span style="color:#a31515">&#34;UTF-8&#34;</span>);  
-        response.getWriter().write(String.format(<span style="color:#a31515">&#34;来自%s的访问,访问的资源是%s,处理过滤器为%s&lt;hr&gt;&#34;</span>,  
-                            request.getRemoteAddr(),  
-                            request.getRequestURI(),  
-                            <span style="color:#00f">this</span>.getClass().getName()));
+        response.getWriter().write(String.format(<span style="color:#a31515">&#34;来自%s的访问,访问的资源是%s,处理过滤器为%s&lt;hr&gt;&#34;</span>, request.getRemoteAddr(), request.getRequestURI(), <span style="color:#00f">this</span>.getClass().getName()));
 		<span style="color:#008000">//chain.doFilter()的作用是，连接到下一个过滤器，将本过滤器处理好的servltRequest传递给下一个过滤器，下一个过滤器返回的数据response可作为本次过滤器的request继续下一个过滤器，过滤器由xml配置文件配置
 </span><span style="color:#008000"></span>        chain.doFilter(servletRequest, servletResponse);  
-        response.getWriter().write(String.format(<span style="color:#a31515">&#34;&lt;br&gt;After doFilter,%s&lt;hr&gt;&#34;</span>,  
-                <span style="color:#00f">this</span>.getClass().getName()));  
+        response.getWriter().write(String.format(<span style="color:#a31515">&#34;&lt;br&gt;After doFilter,%s&lt;hr&gt;&#34;</span>, <span style="color:#00f">this</span>.getClass().getName()));  
     }  
     @Override  
     <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> init(FilterConfig filterConfig) <span style="color:#00f">throws</span> ServletException {  
@@ -577,9 +565,6 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.filter;  
@@ -593,10 +578,7 @@
 <span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">ResponseFilter</span> <span style="color:#00f">implements</span> ContainerResponseFilter{  
     @Context HttpServletRequest request;  
     @Override  
-    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> filter(ContainerRequestContext containerRequestContext,   
-  
-                      ContainerResponseContext containerResponseContext) <span style="color:#00f">throws</span> IOException {  
-  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> filter(ContainerRequestContext containerRequestContext, ContainerResponseContext containerResponseContext) <span style="color:#00f">throws</span> IOException {  
                 String keyWords = request.getSession().getAttribute(<span style="color:#a31515">&#34;keyWords&#34;</span>).toString();  
                 String replacement = request.getSession().getAttribute(<span style="color:#a31515">&#34;replacement&#34;</span>).toString();  
                 String responseText = containerResponseContext.getEntity().toString().replace(keyWords,replacement);   
