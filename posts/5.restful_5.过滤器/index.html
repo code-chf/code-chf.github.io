@@ -134,7 +134,7 @@
                 星期四，十一月 12 日，2020 年
               
 
-            · 10 分钟阅读
+            · 11 分钟阅读
 
             · 更新于
               
@@ -179,6 +179,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">
@@ -186,8 +188,10 @@
        &lt;filter-name&gt;NormalFilter1&lt;/filter-name&gt;  
        &lt;filter-class&gt;restful.filter.NormalFilter1&lt;/filter-class&gt;  
   &lt;/filter&gt;  
+  <span style="color:#008000">&lt;!-- 指明过滤器的覆盖范围，即哪些url访问的资源可以使用过滤器  --&gt;</span>
    &lt;filter-mapping&gt;  
        &lt;filter-name&gt;NormalFilter1&lt;/filter-name&gt;  
+	   <span style="color:#008000">&lt;!-- /*表示覆盖web内的所有资源 --&gt;</span>
        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  
    &lt;/filter-mapping&gt;  
    &lt;filter&gt;  
@@ -251,6 +255,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.filter;  
@@ -280,8 +285,9 @@
         response.getWriter().write(String.format(<span style="color:#a31515">&#34;来自%s的访问,访问的资源是%s,处理过滤器为%s&lt;hr&gt;&#34;</span>,  
                             request.getRemoteAddr(),  
                             request.getRequestURI(),  
-                            <span style="color:#00f">this</span>.getClass().getName()));          
-        chain.doFilter(servletRequest, servletResponse);  
+                            <span style="color:#00f">this</span>.getClass().getName()));
+		<span style="color:#008000">//chain.doFilter()的作用是，连接到下一个过滤器，将本过滤器处理好的servltRequest传递给下一个过滤器，下一个过滤器返回的数据response可作为本次过滤器的request继续下一个过滤器，过滤器由xml配置文件配置
+</span><span style="color:#008000"></span>        chain.doFilter(servletRequest, servletResponse);  
         response.getWriter().write(String.format(<span style="color:#a31515">&#34;&lt;br&gt;After doFilter,%s&lt;hr&gt;&#34;</span>,  
                 <span style="color:#00f">this</span>.getClass().getName()));  
     }  
@@ -399,15 +405,6 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.filter;  
@@ -420,17 +417,11 @@
 <span style="color:#00f">import</span> javax.ws.rs.core.Response;  
 <span style="color:#00f">public</span> <span style="color:#00f">class</span> <span style="color:#2b91af">RequestFilter</span> <span style="color:#00f">implements</span> ContainerRequestFilter{  
     @Override  
-    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> filter(ContainerRequestContext containerRequestContext)   
-            <span style="color:#00f">throws</span> IOException {  
-        String theVisitedURL = containerRequestContext  
-                .getUriInfo()  
-                .getPath();  
+    <span style="color:#00f">public</span> <span style="color:#2b91af">void</span> filter(ContainerRequestContext containerRequestContext) <span style="color:#00f">throws</span> IOException {  
+        String theVisitedURL = containerRequestContext.getUriInfo().getPath();  
         System.out.printf(<span style="color:#a31515">&#34;访问路径:%s\n&#34;</span>,theVisitedURL);  
-        System.out.printf(<span style="color:#a31515">&#34;访问方法:%s\n&#34;</span>,containerRequestContext  
-                            .getRequest()  
-                            .getMethod());  
-        MultivaluedMap&lt;String, String&gt; headers =   
-                    containerRequestContext.getHeaders();  
+        System.out.printf(<span style="color:#a31515">&#34;访问方法:%s\n&#34;</span>,containerRequestContext.getRequest().getMethod());  
+        MultivaluedMap&lt;String, String&gt; headers = containerRequestContext.getHeaders();  
         Iterator&lt;String&gt; keys =  headers.keySet().iterator();  
         <span style="color:#00f">while</span> (keys.hasNext()){  
             String key =  keys.next().toString();  
@@ -442,11 +433,8 @@
         <span style="color:#00f">if</span>(theVisitedURL.equals(<span style="color:#a31515">&#34;/filter/hello&#34;</span>)){  
             System.out.println(theVisitedURL+<span style="color:#a31515">&#34; : OK!&#34;</span>);             
             }<span style="color:#00f">else</span>{  
-                containerRequestContext  
-                .abortWith(  
-                            Response.ok(theVisitedURL+<span style="color:#a31515">&#34;,没有权限！&#34;</span>)  
-                            .build()  
-                            );  
+                containerRequestContext.abortWith(
+                            Response.ok(theVisitedURL+<span style="color:#a31515">&#34;,没有权限！&#34;</span>).build());  
             }         
     }  
 } 
@@ -551,9 +539,9 @@
     @Path(<span style="color:#a31515">&#34;/safeOutput&#34;</span>)  
     @Produces(<span style="color:#a31515">&#34;text/html;charset=UTF-8&#34;</span>)  
     <span style="color:#00f">public</span> String safeOutput( @Context HttpServletRequest request,  
-                                @FormParam(<span style="color:#a31515">&#34;keyWords&#34;</span>) String keyWords,  
-                                @FormParam(<span style="color:#a31515">&#34;replacement&#34;</span>) String replacement,  
-                                @FormParam(<span style="color:#a31515">&#34;uploadText&#34;</span>) String uploadText) {  
+                              @FormParam(<span style="color:#a31515">&#34;keyWords&#34;</span>) String keyWords,  
+                              @FormParam(<span style="color:#a31515">&#34;replacement&#34;</span>) String replacement,  
+                              @FormParam(<span style="color:#a31515">&#34;uploadText&#34;</span>) String uploadText) {  
         request.getSession().setAttribute(<span style="color:#a31515">&#34;keyWords&#34;</span>, keyWords);  
         request.getSession().setAttribute(<span style="color:#a31515">&#34;replacement&#34;</span>, replacement);  
         <span style="color:#00f">return</span> uploadText;  
@@ -592,9 +580,6 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#00f">package</span> restful.filter;  
@@ -614,10 +599,7 @@
   
                 String keyWords = request.getSession().getAttribute(<span style="color:#a31515">&#34;keyWords&#34;</span>).toString();  
                 String replacement = request.getSession().getAttribute(<span style="color:#a31515">&#34;replacement&#34;</span>).toString();  
-                String responseText = containerResponseContext  
-                                        .getEntity()  
-                                        .toString()  
-                                        .replace(keyWords,replacement);   
+                String responseText = containerResponseContext.getEntity().toString().replace(keyWords,replacement);   
                 containerResponseContext.setEntity(  
                     responseText+<span style="color:#a31515">&#34;&lt;hr&gt;&#34;</span>+(<span style="color:#00f">new</span> Date())  
                 );  
