@@ -223,6 +223,28 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#008000">#该脚本实现myblog/content下的文章更新、config.toml配置文件更新和同时部署到gitee码云和github</span>
@@ -273,7 +295,6 @@ cd ..
 
 <span style="color:#008000">#同步部署到github上面</span>
 echo <span style="color:#a31515">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
-hugo
 <span style="color:#008000">#自定义创建public_github发布目录</span>
 hugo --destination=<span style="color:#a31515">&#34;public_github&#34;</span>
 <span style="color:#008000"># Go To Public folder</span>
@@ -289,6 +310,29 @@ git commit -m <span style="color:#a31515">&#34;</span>$msg<span style="color:#a3
 <span style="color:#008000">#删除url并重新添加url</span>
 git remote rm origin
 git remote add origin https://github.com/code-chf/code-chf.github.io.git
+<span style="color:#008000"># Push source and build repos.</span>
+git push -u origin master
+<span style="color:#008000"># Come Back up to the Project Root</span>
+cd ..
+
+
+<span style="color:#008000">#部署到个人本地服务器</span>
+echo <span style="color:#a31515">&#34;\033[0;32mDeploying updates to Server...\033[0m&#34;</span>
+<span style="color:#008000">#自定义创建public_server发布目录</span>
+hugo --destination=<span style="color:#a31515">&#34;public_server&#34;</span> --baseURL=<span style="color:#a31515">&#34;/&#34;</span> 
+<span style="color:#008000"># Go To Public folder</span>
+cd public_server
+<span style="color:#008000"># git init</span>
+git add .
+<span style="color:#008000"># Commit changes.</span>
+msg=<span style="color:#a31515">&#34;rebuilding site `date`&#34;</span>
+<span style="color:#00f">if</span> [ $# -eq 1 ]
+  <span style="color:#00f">then</span> msg=<span style="color:#a31515">&#34;</span>$1<span style="color:#a31515">&#34;</span>
+<span style="color:#00f">fi</span>
+git commit -m <span style="color:#a31515">&#34;</span>$msg<span style="color:#a31515">&#34;</span>
+<span style="color:#008000">#删除url并重新添加url</span>
+git remote rm origin
+git remote add origin codechf@192.168.1.8:/root/myblog/public_server.git
 <span style="color:#008000"># Push source and build repos.</span>
 git push -u origin master
 <span style="color:#008000"># Come Back up to the Project Root</span>
