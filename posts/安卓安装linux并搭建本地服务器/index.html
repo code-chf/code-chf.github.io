@@ -243,46 +243,28 @@
 <p>回到主页，先不要着急安装，先点击右下角的配置按钮，进入配置窗口。</p>
 <img src='https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/01/STemN8-27zm6b.jpg' alt='STemN8-27zm6b'/>
 <p>建议修改的内容：</p>
-<ol>
-<li>
-<p>修改架构
+<p><strong>1. 修改架构</strong>
 如为 arm64 架构的 CPU，建议将架构修改为 arm64。其实armhf也是arm架构，只是版本较低，适合低端手机处理器，arm64兼容armhf，顾这里选择arm64即arrch64。</p>
-</li>
-<li>
-<p>修改源地址
+<p><strong>2. 修改源地址</strong>
 如果在国内，请将源地址改为国内的镜像，海外的源下载速度可能会慢。
 例如 Debian 的源：<a href="https://mirrors.163.com/debian/">https://mirrors.163.com/debian/</a> 或 <a href="https://mirrors.tuna.tsinghua.edu.cn/debian/">https://mirrors.tuna.tsinghua.edu.cn/debian/</a>
 如果选择安装的其他发行版本，如CentOs或Ubuntu，个人使用的是Debian，网上也有用Ubuntu的，其实Ubuntu可能会更适合arm64结构的处理器。</p>
-</li>
-<li>
-<p>设置安装类型和安装路径
+<p><strong>3. 设置安装类型和安装路径</strong>
 安装类型有很多种，这里选择目录进行安装，镜像安装会出现一些问题，如果镜像安装出现问题可以查看<a href="https://www.htcp.net/4427.html">Linux Deploy 项目介绍</a>中的常见问题。
 这里安装类型选择目录，安装路径选择<code>/data/sdcard/debian</code>，可以根据自己需要自行设置，建议下载<a href="http://download.pc6.com/down/56118">re管理器</a>便于管理目录。</p>
-</li>
-<li>
-<p>修改文件系统
+<p><strong>4. 修改文件系统</strong>
 将文件系统修改为 ext4，可提高性能。</p>
-</li>
-<li>
-<p>修改用户名
+<p><strong>5. 修改用户名</strong>
 可以将用户名修改为其它的。</p>
-</li>
-<li>
-<p>修改用户密码
+<p><strong>6. 修改用户密码</strong>
 可以将用户密码修改为其它的，安装完毕后即可使用自己设置的密码。</p>
-</li>
-<li>
-<p>挂载
+<p><strong>7. 挂载</strong>
 启用挂载，可以将手机本机存储挂载到Linux服务器中，这样载服务器就能利用本地存储存取数据了。
 勾选启用按钮，编辑挂载点列表，输入<code>/sdcard:/sdcard</code>即可。</p>
-</li>
-<li>
-<p>启用 SSH
+<p><strong>8. 启用 SSH</strong>
 选中『允许使用 SSH 服务器』复选框，可顺便在『SSH 设置』中，修改 SSH 的端口。这样即可使用 SSH 连接容器。</p>
-</li>
-<li>
-<p><strong>下面是我的个人配置，供参考：</strong></p>
-</li>
+<ol start="9">
+<li><strong>下面是我的个人配置，供参考：</strong></li>
 </ol>
 <p><img src='https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/01/HtlMLk-6UjeHP.jpg' alt='HtlMLk-6UjeHP' style='zoom:33%;' /></p>
 <p>另外，如果有需要，可以在配置里开启初始化功能，这样会在服务器<code>/etc/rc.local</code>中创建一个自启动文件，可以自定义添加一些脚本命令，每次启动服务器就会自动执行。</p>
