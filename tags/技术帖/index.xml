@@ -2,112 +2,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>技术帖 on codechf的个人博客</title>
-    <link>/tags/%E6%8A%80%E6%9C%AF%E5%B8%96/</link>
+    <link>https://codechf.cn/tags/%E6%8A%80%E6%9C%AF%E5%B8%96/</link>
     <description>Recent content in 技术帖 on codechf的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans-CN</language>
     <copyright>&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;&lt;/a&gt;本作品采用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议&lt;/a&gt;进行许可。</copyright>
     <lastBuildDate>Mon, 18 Jan 2021 21:31:01 +0800</lastBuildDate>
     
-	<atom:link href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://codechf.cn/tags/%E6%8A%80%E6%9C%AF%E5%B8%96/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>安卓安装Linux并搭建本地服务器</title>
-      <link>/posts/%E5%AE%89%E5%8D%93%E5%AE%89%E8%A3%85Linux%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>https://codechf.cn/posts/%E5%AE%89%E5%8D%93%E5%AE%89%E8%A3%85Linux%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Mon, 18 Jan 2021 21:31:01 +0800</pubDate>
       
-      <guid>/posts/%E5%AE%89%E5%8D%93%E5%AE%89%E8%A3%85Linux%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>https://codechf.cn/posts/%E5%AE%89%E5%8D%93%E5%AE%89%E8%A3%85Linux%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>&lt;p&gt;闲置的小米5手机变废为宝，通过Linux Deploy为它安装了Linux本地服务器，并实现了各种开发环境的搭建，这篇博客主要记录安装过程和遇到的一些问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>用python_docx编写99乘法表</title>
-      <link>/posts/Python_1python%E5%AD%A6%E4%B9%A0_2%E7%94%A8python_docx%E7%BC%96%E5%86%9999%E4%B9%98%E6%B3%95%E8%A1%A8/</link>
+      <link>https://codechf.cn/posts/Python_1python%E5%AD%A6%E4%B9%A0_2%E7%94%A8python_docx%E7%BC%96%E5%86%9999%E4%B9%98%E6%B3%95%E8%A1%A8/</link>
       <pubDate>Mon, 02 Nov 2020 18:57:31 +0800</pubDate>
       
-      <guid>/posts/Python_1python%E5%AD%A6%E4%B9%A0_2%E7%94%A8python_docx%E7%BC%96%E5%86%9999%E4%B9%98%E6%B3%95%E8%A1%A8/</guid>
+      <guid>https://codechf.cn/posts/Python_1python%E5%AD%A6%E4%B9%A0_2%E7%94%A8python_docx%E7%BC%96%E5%86%9999%E4%B9%98%E6%B3%95%E8%A1%A8/</guid>
       <description>&lt;p&gt;使用第三方库python_docx实现99乘法表的创建过程，使用python_docx中的table块。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Hugo博客同步部署到github Pages和gitee Pages</title>
-      <link>/posts/hugo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0github-Pages%E5%92%8Cgitee-Pages/</link>
+      <link>https://codechf.cn/posts/hugo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0github-Pages%E5%92%8Cgitee-Pages/</link>
       <pubDate>Mon, 02 Nov 2020 12:45:22 +0800</pubDate>
       
-      <guid>/posts/hugo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0github-Pages%E5%92%8Cgitee-Pages/</guid>
+      <guid>https://codechf.cn/posts/hugo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0github-Pages%E5%92%8Cgitee-Pages/</guid>
       <description>&lt;p&gt;自动将博客部署到github和gitee的方法，实现博客的自动化过程。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Python爬虫_3Request模块</title>
-      <link>/posts/Python_2%E7%88%AC%E8%99%AB_3Request%E6%A8%A1%E5%9D%97/</link>
+      <link>https://codechf.cn/posts/Python_2%E7%88%AC%E8%99%AB_3Request%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Sun, 25 Oct 2020 18:24:24 +0800</pubDate>
       
-      <guid>/posts/Python_2%E7%88%AC%E8%99%AB_3Request%E6%A8%A1%E5%9D%97/</guid>
+      <guid>https://codechf.cn/posts/Python_2%E7%88%AC%E8%99%AB_3Request%E6%A8%A1%E5%9D%97/</guid>
       <description>&lt;p&gt;学习使用Requests模块实现简单爬取数据的目标，完成get/post两种方式的学习，以及学习异步请求，局部刷新AJAX的数据如何爬取，包含一些实践内容。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>常用正则表达式模板</title>
-      <link>/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/</link>
+      <link>https://codechf.cn/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Tue, 20 Oct 2020 23:49:09 +0800</pubDate>
       
-      <guid>/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/</guid>
+      <guid>https://codechf.cn/posts/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A8%A1%E6%9D%BF/</guid>
       <description>&lt;p&gt;开发中常用的一些正则表达式，用正则校验数据。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>BeautifulSoup编码问题</title>
-      <link>/posts/Python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</link>
+      <link>https://codechf.cn/posts/Python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 01 Oct 2020 09:27:39 +0800</pubDate>
       
-      <guid>/posts/Python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://codechf.cn/posts/Python_1python%E5%AD%A6%E4%B9%A0_1%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;p&gt;写爬虫遇到的BeautifulSoup编码问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Tomcat启动错误</title>
-      <link>/posts/Tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/</link>
+      <link>https://codechf.cn/posts/Tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/</link>
       <pubDate>Thu, 01 Oct 2020 09:27:39 +0800</pubDate>
       
-      <guid>/posts/Tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/</guid>
+      <guid>https://codechf.cn/posts/Tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/</guid>
       <description>&lt;p&gt;Eclipse开发过程中，Tomcat无法启动的问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Mac OS 终端 iTerm2 并配置 zsh</title>
-      <link>/posts/Mac-OS-%E7%BB%88%E7%AB%AF-iTerm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</link>
+      <link>https://codechf.cn/posts/Mac-OS-%E7%BB%88%E7%AB%AF-iTerm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>/posts/Mac-OS-%E7%BB%88%E7%AB%AF-iTerm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</guid>
+      <guid>https://codechf.cn/posts/Mac-OS-%E7%BB%88%E7%AB%AF-iTerm2-%E5%B9%B6%E9%85%8D%E7%BD%AE-zsh/</guid>
       <description>&lt;p&gt;MacOs 第三方shell（iTerm）并配置zsh&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Mac使用Tips汇总</title>
-      <link>/posts/Mac%E4%BD%BF%E7%94%A8Tips%E6%B1%87%E6%80%BB/</link>
+      <link>https://codechf.cn/posts/Mac%E4%BD%BF%E7%94%A8Tips%E6%B1%87%E6%80%BB/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>/posts/Mac%E4%BD%BF%E7%94%A8Tips%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://codechf.cn/posts/Mac%E4%BD%BF%E7%94%A8Tips%E6%B1%87%E6%80%BB/</guid>
       <description>&lt;p&gt;Mac常用小技巧及黑苹果优化技巧。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Mac加速时间机器备份</title>
-      <link>/posts/Mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</link>
+      <link>https://codechf.cn/posts/Mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>/posts/Mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</guid>
+      <guid>https://codechf.cn/posts/Mac%E6%97%B6%E9%97%B4%E6%9C%BA%E5%99%A8%E8%A7%A3%E9%99%A4%E5%A4%87%E4%BB%BD/</guid>
       <description>&lt;p&gt;解决Macos时间机器备份速度慢的问题。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Mac常用终端命令</title>
-      <link>/posts/Mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</link>
+      <link>https://codechf.cn/posts/Mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 18 Jun 2020 09:27:39 +0800</pubDate>
       
-      <guid>/posts/Mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://codechf.cn/posts/Mac%E5%B8%B8%E7%94%A8%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;收录Mac常用终端命令。&lt;/p&gt;</description>
     </item>
     
