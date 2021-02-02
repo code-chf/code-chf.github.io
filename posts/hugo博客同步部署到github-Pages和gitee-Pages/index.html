@@ -146,12 +146,14 @@
       </header>
 
       <article style="margin-top: 2rem;"><p>自动将博客部署到github和gitee的方法，实现博客的自动化过程。</p>
-<h1 id="hugo博客同步部署到github和gitee的两种方法">hugo博客同步部署到github和gitee的两种方法</h1>
+<h1 id="hugo博客多平台自动部署">hugo博客多平台自动部署</h1>
 <p>用hugo搭建个人博客时，常常需要部署到github或gitee，因为github支持自动部署但国内访问速度很慢，gitee免费版速度快但却不支持自动部署，而且还不能绑定自己的域名，所以最后研究出下面的同时部署的方法。</p>
+<p>同时，自己搭建了一个服务器，所以加上远程服务器，现在有三个平台需要同步。</p>
 <h2 id="方法一">方法一</h2>
+<p>手动部署，用git手动部署，缺点是麻烦，优点是可以针对性部署。</p>
 <h2 id="方法二">方法二</h2>
 <p>在hugo站点根目录hugo/myblog下，新建脚本deploy.sh，因为我用的是mac电脑，能够运行.sh后缀的脚本文件，如果是windows就需要新建deploy.bat文件，然后里面写上需要执行的终端命令，即完成博客发布的一系列过程，hugo发布目录默认是public作为gitee的本地仓库，通过<code>hugo --destination=&quot;public_github&quot;</code>命令指定hugo发布的目录，作为github的本地仓库。</p>
-<p>deploy.sh</p>
+<p><strong>自动化脚本deploy.sh</strong></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
@@ -254,11 +256,14 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
 <span style="color:#008000">#该脚本实现myblog/content下的文章更新、config.toml配置文件更新和同时部署到gitee码云和github</span>
 
+echo <span style="color:#a31515">&#34;\033[0;32m开始同步hugo博客站点！!\033[0m&#34;</span>
 <span style="color:#008000">#git博客站点主要文件</span>
 git add config.toml
 git add content/*
@@ -275,11 +280,11 @@ git commit -m <span style="color:#a31515">&#34;</span>$msg<span style="color:#a3
 git remote rm origin
 git remote add origin https://github.com/code-chf/myblog.git
 git push -u origin master
-
+echo <span style="color:#a31515">&#34;\033[0;32mHugo站点同步成功！!\033[0m&#34;</span>
 
 
 <span style="color:#008000">#自动部署到gitee码云</span>
-echo <span style="color:#a31515">&#34;\033[0;32mDeploying updates to Gitee...\033[0m&#34;</span>
+echo <span style="color:#a31515">&#34;\033[0;32m开始部署到Gitee...\033[0m&#34;</span>
 <span style="color:#008000"># 用hugo建立一个静态站点</span>
 hugo --baseURL=<span style="color:#a31515">&#34;https://codechf.gitee.io&#34;</span>
 <span style="color:#008000"># Go To Public folder</span>
@@ -300,11 +305,11 @@ git remote add origin https://gitee.com/codechf/codechf.git
 git push -u origin master
 <span style="color:#008000"># Come Back up to the Project Root</span>
 cd ..
-
+echo <span style="color:#a31515">&#34;\033[0;32mGitee部署成功！\033[0m&#34;</span>
 
 
 <span style="color:#008000">#同步部署到github上面</span>
-echo <span style="color:#a31515">&#34;\033[0;32mDeploying updates to GitHub...\033[0m&#34;</span>
+echo <span style="color:#a31515">&#34;\033[0;32m开始部署到GitHub...\033[0m&#34;</span>
 <span style="color:#008000">#自定义创建public_github发布目录</span>
 hugo --destination=<span style="color:#a31515">&#34;public_github&#34;</span>
 <span style="color:#008000"># Go To Public folder</span>
@@ -324,10 +329,10 @@ git remote add origin https://github.com/code-chf/code-chf.github.io.git
 git push -u origin master
 <span style="color:#008000"># Come Back up to the Project Root</span>
 cd ..
-
+echo <span style="color:#a31515">&#34;\033[0;32mGithub部署成功！\033[0m&#34;</span>
 
 <span style="color:#008000">#部署到个人本地服务器</span>
-echo <span style="color:#a31515">&#34;\033[0;32mDeploying updates to Server...\033[0m&#34;</span>
+echo <span style="color:#a31515">&#34;\033[0;32m开始部署到远程服务器...\033[0m&#34;</span>
 <span style="color:#008000">#自定义创建public_server发布目录</span>
 hugo --destination=<span style="color:#a31515">&#34;public_server&#34;</span> --baseURL=<span style="color:#a31515">&#34;/&#34;</span>
 <span style="color:#008000"># Go To Public folder</span>
@@ -354,7 +359,8 @@ ssh codechf@ipv6.codechf.cn &gt; /dev/null 2&gt;&amp;1 <span style="color:#a3151
 </span><span style="color:#a31515">git pull /home/gitrepo/public_server.git
 </span><span style="color:#a31515">exit
 </span><span style="color:#a31515">eeooff</span>
-echo <span style="color:#00f">done</span>!
+echo <span style="color:#a31515">&#34;\033[0;32m远程服务器部署成功！\033[0m&#34;</span>
+echo <span style="color:#a31515">&#34;\033[0;32m脚本运行完毕！\033[0m&#34;</span>
 
 </code></pre></td></tr></table>
 </div>
