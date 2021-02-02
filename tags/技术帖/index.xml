@@ -31,12 +31,12 @@
     </item>
     
     <item>
-      <title>Hugo博客同步部署到github Pages和gitee Pages</title>
-      <link>https://codechf.cn/posts/hugo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0github-Pages%E5%92%8Cgitee-Pages/</link>
+      <title>Hugo博客多平台部署（github、gitee、远程服务器）</title>
+      <link>https://codechf.cn/posts/Hugo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2githubgitee%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Mon, 02 Nov 2020 12:45:22 +0800</pubDate>
       
-      <guid>https://codechf.cn/posts/hugo%E5%8D%9A%E5%AE%A2%E5%90%8C%E6%AD%A5%E9%83%A8%E7%BD%B2%E5%88%B0github-Pages%E5%92%8Cgitee-Pages/</guid>
-      <description>&lt;p&gt;自动将博客部署到github和gitee的方法，实现博客的自动化过程。&lt;/p&gt;</description>
+      <guid>https://codechf.cn/posts/Hugo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2githubgitee%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>&lt;p&gt;自动将博客部署到github、gitee和远程服务器的方法，实现博客的自动化过程。&lt;/p&gt;</description>
     </item>
     
     <item>
