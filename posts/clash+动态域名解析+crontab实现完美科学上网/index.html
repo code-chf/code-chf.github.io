@@ -116,7 +116,7 @@
   <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
     
     <section class="ui top attached segment cover">
-      <div class="cover-img" style="background-image: url(/img/default1.jpg);"></div>
+      <div class="cover-img" style="background-image: url(https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/NZoRvm-bnW62l.jpg);"></div>
     </section>
     
     <section class="ui attached segment">
@@ -135,7 +135,7 @@
                 星期三，二月 3 日，2021 年
               
 
-            · 7 分钟阅读
+            · 9 分钟阅读
 
             · 更新于
               
@@ -158,10 +158,14 @@ Clash for MacOs、iPhone 8、iPad 10.5、小米5</p>
 <p><strong>电脑端准备</strong>
 电脑端点击上方任务栏的clash图标，勾选“允许局域网连接”，一定要勾选此项，这样clash的端口才会开放出来。
 然后打开电脑设置里的“网络”，记下当前电脑的局域网IP地址，我的是<code>192.168.1.17</code>，然后打开clash的控制台，点击“设置”，记下“HTTP代理端口”，默认是&quot;7890&rdquo;。</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/mWkdQl-%E6%88%AA%E5%B1%8F2021-02-03%2019.21.44.png" alt="截屏2021-02-03 19.21.44" style="zoom: 50%;" /></p>
 </li>
 <li>
 <p><strong>设备端准备</strong>
-打开手机或其他设备的Wi-Fi设置选项，保证电脑和设备在一个局域网下，及一个网关下，打开Wi-Fi选择界面，点击Wi-Fi右侧的按钮进入Wi-Fi高级设置界面，找到<code>代理</code>或<code>HTTP代理</code>，选择<code>手动</code>，输入服务器地址（电脑的IP地址），以及端口（clash的HTTP代理端口，默认7890），点击存储后浏览器打开<a href="https://www.google.com">www.google.com</a>或<a href="https://www.youtube.com">www.youtube.com</a>就能够正常访问了，可以看到手机无需打开vpn，也不用折腾软路由，就能够实现科学上网，前提是电脑不关机。</p>
+打开手机或其他设备的Wi-Fi设置选项，保证电脑和设备在一个局域网下，及一个网关下，打开Wi-Fi选择界面，点击Wi-Fi右侧的按钮进入Wi-Fi高级设置界面，找到<code>代理</code>或<code>HTTP代理</code>，选择<code>手动</code>，输入服务器地址（电脑的IP地址），以及端口（clash的HTTP代理端口，默认7890），点击存储后浏览器打开<a href="https://www.google.com">www.google.com</a> 或 <a href="https://www.youtube.com">www.youtube.com</a> 就能够正常访问了，可以看到手机无需打开vpn，也不用折腾软路由，就能够实现科学上网，前提是电脑不关机。</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/7sO525-image-20210203192729295.png" alt="image-20210203192729295" style="zoom:33%;" /></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/KJgSqz-image-20210203192751600.png" alt="image-20210203192751600" style="zoom:33%;" /></p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/UzmeE7-image-20210203193050083.png" alt="image-20210203193050083" style="zoom:33%;" /></p>
 </li>
 </ul>
 <h2 id="2实现ddns动态域名解析">2.实现DDNS动态域名解析</h2>
@@ -207,12 +211,12 @@ Clash for MacOs、iPhone 8、iPad 10.5、小米5</p>
 </li>
 <li>
 <p><strong>设置自动化脚本，定时更新ipv4地址</strong>
-这里用到了ArDNSPod脚本（作者<a href="https://github.com/imki911/ArDNSPod">imki911</a>,改自<a href="https://github.com/anrip/dnspod-shell">anrip</a>)。
-开始设计脚本前，我们要先利用腾讯云的接口，在dnspod的管理界面<a href="https://console.dnspod.cn/account/token#">https://console.dnspod.cn/account/token#</a>创建API Token，创建成功后获得ID和Token，利用这两个信息，就可以通过API修改域名解析值了，详见API文档：<a href="https://www.dnspod.cn/docs/info.html#d">https://www.dnspod.cn/docs/info.html#d</a>。</p>
+这里用到了ArDNSPod脚本（作者<a href="https://github.com/imki911/ArDNSPod">imki911</a> ,改自<a href="https://github.com/anrip/dnspod-shell">anrip</a>)。
+开始设计脚本前，我们要先利用腾讯云的接口，在dnspod的管理界面<a href="https://console.dnspod.cn/account/token#">https://console.dnspod.cn/account/token#</a> 创建API Token，创建成功后获得ID和Token，利用这两个信息，就可以通过API修改域名解析值了，详见API文档：<a href="https://www.dnspod.cn/docs/info.html#d">https://www.dnspod.cn/docs/info.html#d</a> 。</p>
+<p>首先进入<a href="https://github.com/imki911/ArDNSPod">https://github.com/imki911/ArDNSPod</a> ，下载脚本文件，将之前得到的ID和token写入dns.conf 文件, 并指定要绑定的子域名。注意arToken由ID和Token通过英文逗号组合而成。</p>
+<p><strong>dns.conf</strong></p>
 </li>
 </ul>
-<p>首先进入<a href="https://github.com/imki911/ArDNSPod">https://github.com/imki911/ArDNSPod</a>，下载脚本文件，将之前得到的ID和token写入dns.conf 文件, 并指定要绑定的子域名。注意arToken由ID和Token通过英文逗号组合而成。</p>
-<p><strong>dns.conf</strong></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -225,7 +229,7 @@ Clash for MacOs、iPhone 8、iPad 10.5、小米5</p>
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
 <span style="color:#008000"># 1. Combine your token ID and token together as follows</span>
 arToken=<span style="color:#a31515">&#34;211315,0ad030f2ff924e3add1ddsfs454fs1d&#34;</span>
 
@@ -235,8 +239,16 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
 
 </code></pre></td></tr></table>
 </div>
-</div><p>ddnspod.sh中，IPtype选择1或2，如果没有nvram，将<code>ip addr show dev eth0 | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d' | awk 'NR==1'</code>中的 eth0 改为本机上的网口设备（通过ipconfig命令查看网络接口）</p>
+</div><ul>
+<li>
+<p>ddnspod.sh中，IPtype选择1或2，如果没有nvram，将<code>ip addr show dev eth0 | sed -e's/^.*inet6 \([^ ]*\)\/.*$/\1/;t;d' | awk 'NR==1'</code>中的 eth0 改为本机上的网口设备（通过ipconfig命令查看网络接口）</p>
 <p>我将文件dns.conf中的内容复制到ddnspod.sh的最后，并注释掉. $DIR/dns.conf（也可以不用合并成两个文件，参照作者描述方法）。最终形成一个文件ddnspod.sh。</p>
+</li>
+<li>
+<p>打开终端，输入<code>cd 脚本文件所在目录</code> ，输入<code>sh ddnspod.sh</code> 运行脚本，结果如下：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/ejOJAi-image-20210203193814273.png" alt="image-20210203193814273" style="zoom: 77%;" /></p>
+</li>
+</ul>
 <p><strong>ddnspod.sh</strong></p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -532,7 +544,7 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">290
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#00f">#!/bin/bash
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#00f">#!/bin/bash
 </span><span style="color:#00f"></span>source /etc/profile
 <span style="color:#008000">#################################################</span>
 <span style="color:#008000"># AnripDdns v5.08</span>
@@ -824,13 +836,77 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
 
 </code></pre></td></tr></table>
 </div>
-</div></article>
+</div><h1 id="crontab设置定时任务">crontab设置定时任务</h1>
+<p>脚本命令准备好之后，接下来就是为系统设置定时任务，这里我们用crontab实现。</p>
+<p>终端输入<code>crontab -l</code>查看当前用户下是否有定时任务，如果提示“zsh: command not found: crontab” 则需要去下载crontab相关的包，这里可以百度下。</p>
+<p>输入如果没有定时任务，则输入<code>crontab -e</code>新建一条任务，之后会提示选择用何种方式打开，这里建议第二种，选择vim打开。打开之后就是我们的任务脚本编辑区域，cron表达式可以百度，这里不再多讲，菜鸟教程也很不错<a href="https://www.runoob.com/linux/linux-comm-crontab.html">Linux crontab命令—菜鸟教程 </a> ，这里附上我的脚本：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#00f">#!/bin/bash
+</span><span style="color:#00f"></span><span style="color:#008000"># m h  dom mon dow   command</span>
+
+<span style="color:#008000"># *    *    *    *    *</span>
+<span style="color:#008000"># -    -    -    -    -</span>
+<span style="color:#008000"># |    |    |    |    |</span>
+<span style="color:#008000"># |    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span>
+<span style="color:#008000"># |    |    |    +---------- 月份 (1 - 12)</span> 
+<span style="color:#008000"># |    |    +--------------- 一个月中的第几天 (1 - 31)</span>
+<span style="color:#008000"># |    +-------------------- 小时 (0 - 23)</span>
+<span style="color:#008000"># +------------------------- 分钟 (0 - 59)</span>
+
+*/30 * * * * /bin/bash ~/DDNS/ddnspod.sh &gt;&gt; ~/log/crontab.log
+</code></pre></td></tr></table>
+</div>
+</div><p>最后一条命令的意思是，每隔30分钟，用/bin/bash执行~/DDNS/ddnspod.sh脚本文件，并把输出信息写入crontab.log中。</p>
+<p>查看日志：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/XvJJ6n-image-20210203200117149.png" alt="image-20210203200117149" style="zoom:80%;" /></p>
+<p>最后，在手机上代理改成我们绑定的域名，比如我的是clash.codechf.cn，这是一个子域名，当我们手机设置后，它就会先找到域名对应的IP，然后通过这个IP用电脑转发数据，访问局域网内的资源，通过这个clash端口实现科学上网。</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/nEwMcI-image-20210203201636625.png" alt="image-20210203201636625" style="zoom:33%;" /></p>
+<h1 id="遇到的坑">遇到的坑</h1>
+<ol>
+<li>
+<p>这个坑花了很多时间去填，脚本在shell可以运行，但是在crontab任务中却运行出错，一开始以为是权限问题，改成777了还是那样，后来给ddnspod.sh单个文件附加了执行权限，也还是没用，查看日志，输出结果如下：</p>
+<p><img src="https://gitee.com/codechf/uPic-file/raw/master/uPic/2021/02/tkB77L-image-20210203200445201.png" alt="image-20210203200445201"></p>
+<p>分析过后，发现sh脚本确实是执行了，只是脚本没有执行成功，脚本里面的语句系统不认识，就无法执行代码，就没有结果，最后上网搜索，才找到原因。</p>
+<p>因为我的MacOS一直用的是zsh，早就不用bash了，所以脚本文件缺少环境的设置，在ddnspod.sh开头加上下面两行代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#00f">#!/bin/bash
+</span><span style="color:#00f"></span>source /etc/profile
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>其他问题暂时没有遇到，有需要的话参考其他博客，问题挺全面的：<a href="https://blog.csdn.net/qq_34485626/article/details/111408192">MAC crontab定时任务不执行shell</a></p>
+</li>
+</ol>
+<h1 id="成果">成果</h1>
+<p>这么一番设置，在家就能畅快科学上网了，就算突然断电咋也不怕，不固定IP也不用担心，电脑会自动帮你把新的IP更新到域名中，手机就不用频繁的切换IP了。</p></article>
     </section>
 
     <footer class="ui attached segment dream-tags" data-html2canvas-ignore>
       
         
-          <a class="ui label" href="/tags/%E5%85%B6%E4%BB%96" title="其他">其他</a>
+          <a class="ui label" href="/tags/%E6%8A%80%E6%9C%AF%E5%B8%96" title="技术帖">技术帖</a>
         
       
       <div
@@ -934,6 +1010,12 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
             
               <div class="item">
                 <div class="content">
+                  <a href="/posts/clash&#43;%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90&#43;crontab%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="item">clash&#43;动态域名解析&#43;crontab实现完美科学上网</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
                   <a href="/posts/%E5%AE%89%E5%8D%93%E5%AE%89%E8%A3%85Linux%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="item">安卓安装Linux并搭建本地服务器</a>
                 </div>
               </div>
@@ -992,6 +1074,12 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
             
               <div class="item">
                 <div class="content">
+                  <a href="/posts/Python_1python%E5%AD%A6%E4%B9%A0_2%E7%94%A8python_docx%E7%BC%96%E5%86%9999%E4%B9%98%E6%B3%95%E8%A1%A8/" class="item">用python_docx编写99乘法表</a>
+                </div>
+              </div>
+            
+              <div class="item">
+                <div class="content">
                   <a href="/posts/Python_2%E7%88%AC%E8%99%AB_3Request%E6%A8%A1%E5%9D%97/" class="item">Python爬虫_3Request模块</a>
                 </div>
               </div>
@@ -1019,26 +1107,6 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
               <div class="item">
                 <div class="content">
                   <a href="/posts/Tomecat%E5%90%AF%E5%8A%A8%E9%94%99%E8%AF%AF/" class="item">Tomcat启动错误</a>
-                </div>
-              </div>
-            
-            </div>
-          </div>
-        
-      
-        
-
-        
-          <div class="title">
-            <i class="dropdown icon"></i>
-            <a href="/categories/python" class="item">python</a>
-          </div>
-          <div class="content">
-            <div class="ui list">
-            
-              <div class="item">
-                <div class="content">
-                  <a href="/posts/Python_1python%E5%AD%A6%E4%B9%A0_2%E7%94%A8python_docx%E7%BC%96%E5%86%9999%E4%B9%98%E6%B3%95%E8%A1%A8/" class="item">用python_docx编写99乘法表</a>
                 </div>
               </div>
             
@@ -1122,12 +1190,6 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
             
               <div class="item">
                 <div class="content">
-                  <a href="/posts/clash&#43;%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90&#43;crontab%E5%AE%9E%E7%8E%B0%E5%AE%8C%E7%BE%8E%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="item">clash&#43;动态域名解析&#43;crontab实现完美科学上网</a>
-                </div>
-              </div>
-            
-              <div class="item">
-                <div class="content">
                   <a href="/posts/%E7%A5%9E%E8%88%9FK670e-g6e3%E8%AF%A6%E7%BB%86%E6%8A%A5%E8%A1%A8/" class="item">神舟K670e G6e3详细报表</a>
                 </div>
               </div>
@@ -1144,6 +1206,22 @@ arDdnsCheck <span style="color:#a31515">&#34;codechf.cn&#34;</span> <span style=
       
         
 
+        
+          <div class="title">
+            <i class="dropdown icon"></i>
+            <a href="/categories/%E6%95%99%E7%A8%8B" class="item">教程</a>
+          </div>
+          <div class="content">
+            <div class="ui list">
+            
+              <div class="item">
+                <div class="content">
+                  <a href="/posts/Hugo%E5%8D%9A%E5%AE%A2%E5%A4%9A%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2githubgitee%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="item">Hugo博客多平台部署（github、gitee、远程服务器）</a>
+                </div>
+              </div>
+            
+            </div>
+          </div>
         
       
         

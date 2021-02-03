@@ -18,17 +18,12 @@
   </url>
   
   <url>
+    <loc>https://codechf.cn/categories/Linux%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-02-03T17:02:04+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://codechf.cn/tags/</loc>
-    <lastmod>2021-02-03T17:02:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codechf.cn/tags/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2021-02-03T17:02:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codechf.cn/categories/%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2021-02-03T17:02:04+08:00</lastmod>
   </url>
   
@@ -38,17 +33,12 @@
   </url>
   
   <url>
-    <loc>https://codechf.cn/categories/Linux%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-01-18T21:31:01+08:00</lastmod>
+    <loc>https://codechf.cn/tags/%E6%8A%80%E6%9C%AF%E5%B8%96/</loc>
+    <lastmod>2021-02-03T17:02:04+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://codechf.cn/posts/%E5%AE%89%E5%8D%93%E5%AE%89%E8%A3%85Linux%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    <lastmod>2021-01-18T21:31:01+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://codechf.cn/tags/%E6%8A%80%E6%9C%AF%E5%B8%96/</loc>
     <lastmod>2021-01-18T21:31:01+08:00</lastmod>
   </url>
   
@@ -155,6 +145,16 @@
   <url>
     <loc>https://codechf.cn/posts/Vim%E4%B8%AD%E6%96%87%E6%8C%87%E5%8D%97/</loc>
     <lastmod>2020-10-06T11:39:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codechf.cn/tags/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2020-10-05T00:28:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://codechf.cn/categories/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2020-10-05T00:28:51+08:00</lastmod>
   </url>
   
   <url>

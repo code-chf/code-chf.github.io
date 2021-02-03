@@ -13,18 +13,9 @@
     
     
     <item>
-      <title>其他</title>
-      <link>https://codechf.cn/categories/%E5%85%B6%E4%BB%96/</link>
-      <pubDate>Wed, 03 Feb 2021 17:02:04 +0800</pubDate>
-      
-      <guid>https://codechf.cn/categories/%E5%85%B6%E4%BB%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linux学习</title>
       <link>https://codechf.cn/categories/Linux%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Mon, 18 Jan 2021 21:31:01 +0800</pubDate>
+      <pubDate>Wed, 03 Feb 2021 17:02:04 +0800</pubDate>
       
       <guid>https://codechf.cn/categories/Linux%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
@@ -72,6 +63,15 @@
       <pubDate>Fri, 09 Oct 2020 16:03:13 +0800</pubDate>
       
       <guid>https://codechf.cn/categories/%E4%B8%8A%E8%AF%BE%E7%AC%94%E8%AE%B0JAVA%E5%AE%9E%E8%AE%AD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>其他</title>
+      <link>https://codechf.cn/categories/%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Mon, 05 Oct 2020 00:28:51 +0800</pubDate>
+      
+      <guid>https://codechf.cn/categories/%E5%85%B6%E4%BB%96/</guid>
       <description></description>
     </item>
     
